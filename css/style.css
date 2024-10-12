@@ -380,10 +380,9 @@ input:focus {
 }
 
 .hompage .ellipse-5-pyGvKy {
-  background: linear-gradient(180deg, rgb(218.00000220537186, 40.00000141561031, 120.00000044703484) 0%, rgb(75.00000312924385, 178.00000458955765, 229.00000154972076) 76.49999856948853%);
-  border-radius: 330px;
-  filter: blur(400px);
-  ;
+    background: linear-gradient(to right, rgba(172, 112, 224, 0.7), rgba(139, 183, 230, 0.7), rgba(204, 224, 255, 0.5));
+    filter: blur(30px);
+    border-radius: 20px;
   height: 660px;
   left: 151px;
   top: -88px;

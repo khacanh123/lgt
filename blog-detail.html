@@ -1,0 +1,3116 @@
+<html>
+
+<head>
+    <style type="text/css">
+        .turbo-progress-bar {
+            position: fixed;
+            display: block;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: #0076ff;
+            z-index: 9999;
+            transition:
+                width 300ms ease-out,
+                opacity 150ms 150ms ease-in;
+            transform: translate3d(0, 0, 0);
+        }
+    </style>
+    <style type="text/css">
+        .turbo-progress-bar {
+            position: fixed;
+            display: block;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: #0076ff;
+            z-index: 9999;
+            transition:
+                width 300ms ease-out,
+                opacity 150ms 150ms ease-in;
+            transform: translate3d(0, 0, 0);
+        }
+    </style>
+    <style id="st_globalStyles">
+        /* MEDIA QUERIES */
+        .anima-desktop-only {
+            @media (max-width: 768px) {
+                display: none !important;
+            }
+        }
+
+        /* SCROLLBAR */
+
+        [dark-scroll]::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        [dark-scroll]::-webkit-scrollbar-track-piece {
+            background-color: #2b2b2b;
+            border: 1px solid #1d1d1d;
+        }
+
+        [dark-scroll]::-webkit-scrollbar-thumb {
+            height: 10px;
+            background-color: #4d4d4d;
+        }
+
+        [dark-scroll]::-webkit-scrollbar-thumb:hover {
+            background-color: #5a5a5a;
+        }
+
+        /* LOAD PROGRESS */
+
+        .turbolinks-progress-bar {
+            height: 3px;
+            background-color: #ff6250;
+        }
+
+        /* GROUPING */
+
+        [data-id].ui-selecting {
+            box-shadow: inset 0 0 0 1px #4285f4 !important;
+        }
+
+        [data-id].ui-selected {
+            box-shadow: inset 0 0 0 1px #4285f4 !important;
+        }
+
+        /* CURSOR */
+
+        body[mode='comments'] * {
+            cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjkxNjQ4IDIzLjQxMDlDNS40OTE1MyAyMi45ODg3IDUuOTMxNzkgMjIuMzkzNSA2LjIzMjggMjEuNjQwN0M0Ljc5MDY5IDE5LjczODMgNCAxNy4zOTMzIDQgMTQuOTk3NUM0IDguOTM0MSA4LjkzMjgyIDQgMTUuMDAyMiA0QzIxLjA3MTcgNCAyNiA4LjkzOTE5IDI2IDE1LjAwMjVDMjYgMjEuMDY1OSAyMS4wNjcyIDI2IDE0Ljk5NzggMjZDMTIuOTg5NiAyNiAxMS4wMzUzIDI1LjQ1NTcgOS4zMjM2NyAyNC40MjMxQzguNDI5NjUgMjQuOTU3MiA3LjQxNDM0IDI1LjIyNjggNi4zMDAxOCAyNS4yMjY4QzUuOTU0MjYgMjUuMjI2OCA1LjU5OTM1IDI1LjIwMTQgNS4yNTM0MiAyNS4xNDU0QzQuOTAzIDI1LjA4OTUgNC42Mjg5NiAyNC44MDQ2IDQuNTUyNTggMjQuNDE4QzQuNDc2MjEgMjQuMDI2NCA0LjYxOTk3IDIzLjYyOTYgNC45MTY0OCAyMy40MTA5WiIgZmlsbD0iI0ZGNjI1MCIvPgo8L3N2Zz4K') 0 24,
+                auto !important;
+        }
+
+        body[mode='code'] [data-id]:not(.hidden) {
+            cursor: default;
+        }
+
+        /* default node state */
+
+        body[mode='code'] [data-id]:not(.hidden),
+        body[mode='comments'] [data-id]:not(.hidden) {
+            pointer-events: all;
+        }
+
+        /* is_image */
+
+        body[mode='code'] [data-id].is_image [data-id],
+        body[mode='comments'] [data-id].is_image [data-id] {
+            pointer-events: none !important;
+        }
+
+        /* without a data-id or ignored */
+
+        [data-id].ignore,
+        body[mode='code'] *:not([data-id]) {
+            pointer-events: none !important;
+        }
+
+        /* disable transforms for ignored elements */
+
+
+        body[mode='code'] [data-id]:hover {
+            transform: none !important;
+        }
+
+        /* ANIMA BUTTONS */
+        .an-button {
+            position: relative;
+            height: 28px;
+            padding: 0 20px;
+            font-size: 14px;
+            border-radius: 4px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            vertical-align: middle;
+            white-space: nowrap;
+            transition-property: all;
+            transition-duration: 100ms;
+            appearance: none;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.2s ease;
+            border-width: 0;
+        }
+
+        .an-button>div {
+            width: 100%;
+        }
+
+        .an-button.primary {
+            background: #ff6250;
+            color: #ffffff;
+        }
+
+        .an-button.primary:hover:not(:disabled) {
+            background: #e2412e;
+        }
+
+        .an-button.secondary {
+            background: transparent;
+            border: 1px solid #ff6250;
+            color: #ff6250;
+        }
+
+        .an-button.secondary:hover:not(:disabled) {
+            color: #ffffff;
+            background: #ff6250;
+        }
+
+        .an-button.rounded {
+            border-radius: 100px;
+        }
+
+        .an-button:disabled {
+            opacity: 0.5;
+        }
+
+        .an-button:disabled {
+            cursor: default;
+        }
+
+        .an-button:active,
+        .an-button:focus {
+            outline: none;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1440, maximum-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png">
+    <meta name="og:type" content="website">
+    <meta name="twitter:card" content="photo">
+    <script id="anima-load-script" src="load.js"></script>
+    <script id="anima-hotspots-script" src="hotspots.js"></script>
+    <style id="hotspots-styles">
+        .hotspot {
+            position: absolute;
+            border: 1px solid #2a9fd8;
+            background: rgba(0, 173, 255, 0.54);
+            opacity: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+    <script id="s_turbo" src="https://animaapp.s3.amazonaws.com/static/turbo.es2017-umd.js"></script>
+    <script id="anima-overrides-script" src="overrides.js"></script>
+    <script src="https://animaapp.s3.amazonaws.com/js/timeline.js"></script>
+    <style>
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+        @import url("https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:500,400,700,600");
+
+        /* The following line is used to measure usage of this code. You can remove it if you want. */
+        @import url("https://px.animaapp.com/6614e36db71f0b8421cfefca.6614e36eb71f0b8421cfefcd.LqnDzdx.hch.png");
+
+
+        .screen textarea:focus,
+        .screen input:focus {
+            outline: none;
+        }
+
+        .screen * {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+        }
+
+        .screen div {
+            -webkit-text-size-adjust: none;
+        }
+
+        .component-wrapper a {
+            display: contents;
+            pointer-events: auto;
+            text-decoration: none;
+        }
+
+        .component-wrapper * {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+            pointer-events: none;
+        }
+
+        .component-wrapper a *,
+        .component-wrapper input,
+        .component-wrapper video,
+        .component-wrapper iframe {
+            pointer-events: auto;
+        }
+
+        .component-wrapper.not-ready,
+        .component-wrapper.not-ready * {
+            visibility: hidden !important;
+        }
+
+        .screen a {
+            display: contents;
+            text-decoration: none;
+        }
+
+        .full-width-a {
+            width: 100%;
+        }
+
+        .full-height-a {
+            height: 100%;
+        }
+
+        .container-center-vertical {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .container-center-vertical>* {
+            flex-shrink: 0;
+            pointer-events: auto;
+        }
+
+        .container-center-horizontal {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            pointer-events: none;
+            width: 100%;
+        }
+
+        .container-center-horizontal>* {
+            flex-shrink: 0;
+            pointer-events: auto;
+        }
+
+        .auto-animated div {
+            --z-index: -1;
+            opacity: 0;
+            position: absolute;
+        }
+
+        .auto-animated input {
+            --z-index: -1;
+            opacity: 0;
+            position: absolute;
+        }
+
+        .auto-animated .container-center-vertical,
+        .auto-animated .container-center-horizontal {
+            opacity: 1;
+        }
+
+        .overlay-base {
+            display: none;
+            height: 100%;
+            opacity: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .overlay-base.animate-appear {
+            align-items: center;
+            animation: reveal 0.3s ease-in-out 1 normal forwards;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+        }
+
+        .overlay-base.animate-disappear {
+            animation: reveal 0.3s ease-in-out 1 reverse forwards;
+            display: block;
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        .overlay-base.animate-disappear * {
+            pointer-events: none;
+        }
+
+        @keyframes reveal {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .animate-nodelay {
+            animation-delay: 0s;
+        }
+
+        .align-self-flex-start {
+            align-self: flex-start;
+        }
+
+        .align-self-flex-end {
+            align-self: flex-end;
+        }
+
+        .align-self-flex-center {
+            align-self: flex-center;
+        }
+
+        .valign-text-middle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .valign-text-bottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .listeners-active,
+        .listeners-active * {
+            pointer-events: auto;
+        }
+
+        .hidden,
+        .hidden * {
+            pointer-events: none;
+            visibility: hidden;
+        }
+
+        .smart-layers-pointers,
+        .smart-layers-pointers * {
+            pointer-events: auto;
+            visibility: visible;
+        }
+
+        .listeners-active-click,
+        .listeners-active-click * {
+            cursor: pointer;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000000;
+            --black-haze: #f5f6f8;
+            --black-haze-2: #f6f6f7;
+            --bright-gray: #323e4f;
+            --pale-sky: #697483;
+            --steel-gray: #1b2533;
+            --white: #ffffff;
+            --white-2: #ffffff4c;
+
+            --font-size-l: 18px;
+            --font-size-m: 16px;
+            --font-size-s: 14px;
+            --font-size-xl: 20px;
+            --font-size-xs: 12px;
+            --font-size-xxl: 48px;
+
+            --font-family-plus_jakarta_sans: "Plus Jakarta Sans", Helvetica;
+        }
+
+        .plusjakartasans-normal-bright-gray-16px {
+            color: var(--bright-gray);
+            font-family: var(--font-family-plus_jakarta_sans);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .plusjakartasans-semi-bold-steel-gray-16px {
+            color: var(--steel-gray);
+            font-family: var(--font-family-plus_jakarta_sans);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .plusjakartasans-normal-pale-sky-16px {
+            color: var(--pale-sky);
+            font-family: var(--font-family-plus_jakarta_sans);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .plusjakartasans-semi-bold-steel-gray-20px {
+            color: var(--steel-gray);
+            font-family: var(--font-family-plus_jakarta_sans);
+            font-size: var(--font-size-xl);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .plusjakartasans-medium-black-14px {
+            color: var(--black);
+            font-family: var(--font-family-plus_jakarta_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .plusjakartasans-semi-bold-black-16px {
+            color: var(--black);
+            font-family: var(--font-family-plus_jakarta_sans);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .plusjakartasans-medium-pale-sky-18px {
+            color: var(--pale-sky);
+            font-family: var(--font-family-plus_jakarta_sans);
+            font-size: var(--font-size-l);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .plusjakartasans-semi-bold-steel-gray-18px {
+            color: var(--steel-gray);
+            font-family: var(--font-family-plus_jakarta_sans);
+            font-size: var(--font-size-l);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        :root {}
+
+
+        /* screen - blog-detail */
+
+        .blog-detail {
+            background-color: var(--white);
+            height: 3867px;
+            overflow: hidden;
+            overflow-x: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .blog-detail .image-7Soxz2 {
+            background-color: transparent;
+            background-image: url(https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/image.svg);
+            background-position: 50% 50%;
+            background-size: cover;
+            height: 607px;
+            left: 0px;
+            overflow: hidden;
+            position: absolute;
+            top: 68px;
+            width: 1441px;
+        }
+
+        .blog-detail .bredcrumb-7Soxz2 {
+            align-items: flex-start;
+            background-color: transparent;
+            display: inline-flex;
+            gap: 8px;
+            left: 72px;
+            position: absolute;
+            top: 92px;
+        }
+
+        .blog-detail .menu-1a3SpL {
+            color: var(--black-haze-2);
+            font-family: var(--font-family-plus_jakarta_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 500;
+            letter-spacing: 0.00px;
+            line-height: 20.3px;
+            margin-top: -1.00px;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .menu-W0AUkx {
+            color: var(--black-haze-2);
+            font-family: var(--font-family-plus_jakarta_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 400;
+            letter-spacing: 0.00px;
+            line-height: 20.3px;
+            margin-top: -1.00px;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .menu-5PQrrz {
+            color: var(--black-haze-2);
+            font-family: var(--font-family-plus_jakarta_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 600;
+            letter-spacing: 0.00px;
+            line-height: 20.3px;
+            margin-top: -1.00px;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .frame-109-7Soxz2 {
+            align-items: flex-start;
+            background-color: var(--white);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            left: 198px;
+            overflow: hidden;
+            padding: 32px 56px;
+            position: absolute;
+            top: 376px;
+            width: 1045px;
+        }
+
+        .blog-detail .frame-108-vOLPQu {
+            align-items: flex-start;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+            width: 100%;
+        }
+
+        .blog-detail .frame-110-p9j5Kv {
+            align-items: flex-start;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 8px;
+            position: relative;
+        }
+
+        .blog-detail .badge-0jkz6Y {
+            align-items: flex-start;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            position: relative;
+        }
+
+        .blog-detail .title-p9j5Kv {
+            align-self: stretch;
+            background-color: transparent;
+            color: var(--steel-gray);
+            font-family: var(--font-family-plus_jakarta_sans);
+            font-size: var(--font-size-xxl);
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: -1.50px;
+            line-height: 60px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .june-29-2024-p9j5Kv {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .frame-111-vOLPQu {
+            align-items: flex-start;
+            background-color: transparent;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .blog-detail .white-shirts-are-an-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .x1-sort-clothes-before-washing-X2F042 {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24.0px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .classification-by-color-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .how-to-wash-white-an-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .classification-by-material-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .wash-delicate-fabric-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .x2-use-the-right-detergent-and-bleach-X2F042 {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24.0px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .the-right-detergent-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .specialized-laundry-detergent-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .use-a-detergent-spec-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .bleach-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .use-oxygen-bleach-or-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .x3-how-to-wash-clothes-properly-X2F042 {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24.0px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .washing-clothesprope-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .washing-temperature-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .wash-white-shirts-at-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .wash-cycle-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .choose-a-gentle-or-m-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .using-fabric-softener-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .fabric-softener-not-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .x4-how-to-iron-a-shirt-properly-X2F042 {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24.0px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .the-correct-way-to-i-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .prepare-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .use-a-high-quality-i-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .how-to-iron-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .start-at-the-collar-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .x5-drying-and-preserving-white-shirts-X2F042 {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24.0px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .drying-and-storing-w-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .drying-clothes-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .dry-white-shirts-in-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .preserve-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .store-white-shirts-i-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .x6-handling-stubborn-stains-X2F042 {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24.0px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .treating-new-stains-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .sweat-stains-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .use-vinegar-or-lemon-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .food-stains-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .baking-soda-is-an-ef-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .ink-stains-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .use-alcohol-or-an-al-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .x7-notes-when-washing-clothes-X2F042 {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24.0px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .some-small-but-impor-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .using-laundry-bag-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .use-a-laundry-bag-to-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .hand-washing-for-delicate-whites-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .for-sensitive-and-ex-X2F042 {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .frame-112-7Soxz2 {
+            left: 1320px;
+            position: absolute;
+            top: 530px;
+            width: 48px;
+        }
+
+        .blog-detail .frame-62-x3c1RT {
+            align-self: stretch;
+            background-color: transparent;
+            width: 100%;
+        }
+
+        .blog-detail .frame-111-x3c1RT {
+            align-items: center;
+            background-color: var(--black-haze);
+            border-radius: 100px;
+            gap: 10px;
+            padding: 12px;
+        }
+
+        .blog-detail .vuesaxlinearshare-xaJDfP {
+            background-color: transparent;
+            height: 24px;
+            position: relative;
+            width: 24px;
+        }
+
+        .blog-detail .footer-7Soxz2 {
+            align-items: flex-start;
+            background-color: var(--black-haze);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            left: -1px;
+            overflow: hidden;
+            padding: 56px 72px;
+            position: absolute;
+            top: 3453px;
+            width: 100%;
+        }
+
+        .blog-detail .frame-177-JadvY2 {
+            align-items: flex-start;
+            align-self: stretch;
+            background-color: transparent;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-color: #dce5e9;
+            border-left-style: none;
+            border-right-style: none;
+            border-top-style: none;
+            display: flex;
+            flex: 0 0 auto;
+            justify-content: space-between;
+            padding: 0px 0px 56px;
+            position: relative;
+            width: 100%;
+        }
+
+        .blog-detail .frame-rIu9Fo {
+            align-items: flex-start;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            flex-grow: 1;
+            gap: 10px;
+            padding: 6px 0px;
+        }
+
+        .blog-detail .group-lstiV0 {
+            background-color: transparent;
+            height: 103.75440979003906px;
+            position: relative;
+            width: 200px;
+        }
+
+        .blog-detail .layer-1-tbQxKp {
+            height: 104px;
+            width: 200px;
+        }
+
+        .blog-detail .group-T8Gxja {
+            background-color: transparent;
+            height: 104px;
+            left: 0px;
+            position: relative;
+            top: 0px;
+            width: 200px;
+        }
+
+        .blog-detail .vector-83xCAi {
+            height: 104px;
+            width: 96px;
+        }
+
+        .blog-detail .group-83xCAi {
+            background-color: transparent;
+            height: 104px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 96px;
+        }
+
+        .blog-detail .clip-path-group-83xCAi {
+            height: 104px;
+            width: 96px;
+        }
+
+        .blog-detail .group-aAyInb {
+            background-color: transparent;
+            height: 46px;
+            left: 110px;
+            position: absolute;
+            top: 29px;
+            width: 90px;
+        }
+
+        .blog-detail .section-02-rIu9Fo {
+            background-color: transparent;
+            flex: 1;
+            flex-grow: 1;
+            height: 164px;
+            position: relative;
+        }
+
+        .blog-detail .frame-178-qggKHi {
+            left: 0px;
+            top: 0px;
+            width: 324px;
+        }
+
+        .blog-detail .about-us-E38dys {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 27.9px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .our-story-E38dys {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .our-mission-E38dys {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .our-vision-E38dys {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .core-value-E38dys {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .section-5-rIu9Fo {
+            background-color: transparent;
+            flex: 1;
+            flex-grow: 1;
+            height: 198px;
+            position: relative;
+        }
+
+        .blog-detail .frame-178-pGgSMx {
+            left: 0px;
+            top: 0px;
+            width: 324px;
+        }
+
+        .blog-detail .products-ywyQnO {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 27.9px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .laundry-detergent-ywyQnO {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .hc-beauty-ywyQnO {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .floor-cleaner-ywyQnO {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .dishwashing-liquid-ywyQnO {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .hand-sanitizer-ywyQnO {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .frame-178-rIu9Fo {
+            flex: 1;
+            flex-grow: 1;
+        }
+
+        .blog-detail .contact-us-PeYx7H {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 27.9px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .frame-112-PeYx7H {
+            align-self: stretch;
+            flex: 0 0 auto;
+            position: relative;
+            width: 100%;
+        }
+
+        .blog-detail .frame-114-Z9W401 {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            gap: 12px;
+            position: relative;
+            width: 100%;
+        }
+
+        .blog-detail .frame-62-dt9Dey {
+            align-items: center;
+            background-color: var(--black-haze);
+            border-radius: 100px;
+            display: inline-flex;
+            gap: 10px;
+            padding: 8px;
+        }
+
+        .blog-detail .vuesaxlinearcall-calling-joEvYx {
+            background-color: transparent;
+            height: 24px;
+            position: relative;
+            width: 24px;
+        }
+
+        .blog-detail .x84-912-488-627-dt9Dey {
+            background-color: transparent;
+            flex: 1;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .frame-115-Z9W401 {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            gap: 12px;
+            position: relative;
+            width: 100%;
+        }
+
+        .blog-detail .frame-62-TZwUE8 {
+            align-items: center;
+            background-color: var(--black-haze);
+            border-radius: 100px;
+            display: inline-flex;
+            gap: 10px;
+            padding: 8px;
+        }
+
+        .blog-detail .vuesaxlinearsms-tracking-IYTNqJ {
+            background-color: transparent;
+            height: 24px;
+            position: relative;
+            width: 24px;
+        }
+
+        .blog-detail .hcvietnaminfogmailcom-TZwUE8 {
+            background-color: transparent;
+            flex: 1;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .frame-116-Z9W401 {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            gap: 12px;
+            position: relative;
+            width: 100%;
+        }
+
+        .blog-detail .frame-62-rIX2CM {
+            align-items: center;
+            background-color: var(--black-haze);
+            border-radius: 100px;
+            display: inline-flex;
+            gap: 10px;
+            padding: 8px;
+        }
+
+        .blog-detail .vuesaxlinearlocation-qx8FHd {
+            background-color: transparent;
+            height: 24px;
+            position: relative;
+            width: 24px;
+        }
+
+        .blog-detail .x522-minh-khai-vinh-t-rIX2CM {
+            background-color: transparent;
+            flex: 1;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .frame-179-JadvY2 {
+            align-items: flex-start;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            justify-content: space-between;
+            position: relative;
+            width: 100%;
+        }
+
+        .blog-detail .x2024-copyright-do-minh-tung-lam-studio-xDZQMu {
+            background-color: transparent;
+            color: var(--bright-gray);
+            font-family: var(--font-family-plus_jakarta_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 400;
+            letter-spacing: 0.00px;
+            line-height: 20.3px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .frame-180-xDZQMu {
+            background-color: transparent;
+            flex: 0 0 auto;
+            position: relative;
+        }
+
+        .blog-detail .blog-list-7Soxz2::-webkit-scrollbar {
+            display: none;
+            width: 0;
+        }
+
+        .blog-detail .blog-list-7Soxz2 {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            gap: 56px;
+            justify-content: center;
+            left: 1px;
+            overflow: hidden;
+            overflow-x: scroll;
+            padding: 96px 72px;
+            position: absolute;
+            top: 2688px;
+            width: 100%;
+        }
+
+        .blog-detail .ellipse-5-fGtK8H {
+            background: linear-gradient(180deg, rgb(75.00000312924385, 178.00000458955765, 229.00000154972076) 23.500001430511475%, rgb(234.00000125169754, 62.00000010430813, 148.000006377697) 100%);
+            background-color: transparent;
+            border-radius: 242px/242.5px;
+            filter: blur(400px);
+            ;
+            height: 485px;
+            left: 478px;
+            opacity: 0.4;
+            position: absolute;
+            top: 144px;
+            width: 484px;
+        }
+
+        .blog-detail .frame-16-fGtK8H {
+            align-items: flex-start;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            gap: 16px;
+            position: relative;
+            width: 100%;
+        }
+
+        .blog-detail .frame-169-E2WvxC {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            flex-grow: 1;
+            gap: 16px;
+            position: relative;
+        }
+
+        .blog-detail .related-blogs-c8xwM1 {
+            align-self: stretch;
+            background-color: transparent;
+            color: var(--steel-gray);
+            font-family: var(--font-family-plus_jakarta_sans);
+            font-size: var(--font-size-xxl);
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: -1.50px;
+            line-height: 60px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .frame-150-E2WvxC {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            position: relative;
+            width: 565px;
+        }
+
+        .blog-detail .base-button-Hvt56c {
+            background-color: var(--black-haze);
+            padding: 10px;
+        }
+
+        .blog-detail .vuesaxlineararrow-left-zLTm3R {
+            background-color: transparent;
+            height: 20px;
+            position: relative;
+            width: 20px;
+        }
+
+        .blog-detail .base-button-beF555 {
+            background-color: var(--black-haze);
+            padding: 10px;
+        }
+
+        .blog-detail .vuesaxlineararrow-right-zfL2mV {
+            height: 20px;
+            width: 20px;
+        }
+
+        .blog-detail .frame-167-fGtK8H::-webkit-scrollbar {
+            display: none;
+            width: 0;
+        }
+
+        .blog-detail .frame-167-fGtK8H {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-wrap: nowrap;
+            gap: 24px;
+            overflow: hidden;
+            overflow-x: scroll;
+            position: relative;
+            width: 1296px;
+        }
+
+        .blog-detail .frame-31-o1CUxg {
+            background-image: url(https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/frame-31.svg);
+        }
+
+        .blog-detail .base-button-Npq5Rm {
+            background-color: transparent;
+        }
+
+        .blog-detail .text-EOmWwp {
+            line-height: 21px;
+        }
+
+        .blog-detail .vuesaxlineararrow-right-EOmWwp {
+            height: 16px;
+            width: 16px;
+        }
+
+        .blog-detail .frame-31-yJQxE1 {
+            background-image: url(https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/frame-31-1.svg);
+        }
+
+        .blog-detail .base-button-3c7zPW {
+            background-color: transparent;
+        }
+
+        .blog-detail .text-WM5URL {
+            line-height: 21px;
+        }
+
+        .blog-detail .vuesaxlineararrow-right-WM5URL {
+            height: 16px;
+            width: 16px;
+        }
+
+        .blog-detail .frame-31-ew3cNB {
+            background-image: url(https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/frame-31-2.svg);
+        }
+
+        .blog-detail .base-button-LKVlKj {
+            background-color: transparent;
+        }
+
+        .blog-detail .text-VGzCWy {
+            line-height: 21px;
+        }
+
+        .blog-detail .vuesaxlineararrow-right-VGzCWy {
+            height: 16px;
+            width: 16px;
+        }
+
+        .blog-detail .frame-31-RJBIac {
+            background-image: url(https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/frame-31-3.svg);
+        }
+
+        .blog-detail .base-button-WQMgAz {
+            background-color: transparent;
+        }
+
+        .blog-detail .text-YpNbzS {
+            line-height: 21px;
+        }
+
+        .blog-detail .vuesaxlineararrow-right-YpNbzS {
+            height: 16px;
+            width: 16px;
+        }
+
+        .blog-detail .frame-31-mUSmxN {
+            background-image: url(https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/frame-31-4.svg);
+        }
+
+        .blog-detail .base-button-yh3tDA {
+            background-color: transparent;
+        }
+
+        .blog-detail .text-drweIx {
+            line-height: 21px;
+        }
+
+        .blog-detail .vuesaxlineararrow-right-drweIx {
+            height: 16px;
+            width: 16px;
+        }
+
+        .blog-detail .frame-31-4q5EYM {
+            background-image: url(https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/frame-31-5.svg);
+        }
+
+        .blog-detail .base-button-91nnER {
+            background-color: transparent;
+        }
+
+        .blog-detail .text-Wr2zNb {
+            line-height: 21px;
+        }
+
+        .blog-detail .vuesaxlineararrow-right-Wr2zNb {
+            height: 16px;
+            width: 16px;
+        }
+
+        .blog-detail .frame-168-fGtK8H {
+            align-items: center;
+            align-self: stretch;
+            background-color: transparent;
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+        }
+
+        .blog-detail .base-button-P0l8BZ {
+            background-color: transparent;
+            border: 1px solid;
+            border-color: var(--black);
+            padding: 8px 16px;
+        }
+
+        .blog-detail .text-vxrxz0 {
+            color: var(--black);
+            font-family: var(--font-family-plus_jakarta_sans);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px;
+        }
+
+        .blog-detail .header-7Soxz2 {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            gap: 10px;
+            left: 0px;
+            padding: 0px 72px;
+            position: fixed;
+            top: 0px;
+            width: 100%;
+        }
+
+        .blog-detail .rectangle-5-obqJsl {
+            -webkit-backdrop-filter: blur(91.73332977294922px) brightness(100%);
+            backdrop-filter: blur(91.73332977294922px) brightness(100%);
+            background-color: #ffffff1a;
+            box-shadow: inset -45.86666488647461px 45.86666488647461px 45.86666488647461px #ffffff1a, inset 45.86666488647461px -45.86666488647461px 45.86666488647461px #c1c1c11a;
+            height: 80px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 100%;
+        }
+
+        .blog-detail .frame-obqJsl {
+            height: 80px;
+            width: 134px;
+        }
+
+        .blog-detail .group-xQ4xgP {
+            background-color: transparent;
+            height: 66px;
+            left: 7px;
+            position: relative;
+            top: 8px;
+            width: 127px;
+        }
+
+        .blog-detail .layer-1-QLml5Z {
+            height: 66px;
+            width: 127px;
+        }
+
+        .blog-detail .group-nlCVkn {
+            background-color: transparent;
+            height: 66px;
+            left: 0px;
+            position: relative;
+            top: 0px;
+            width: 127px;
+        }
+
+        .blog-detail .vector-Iowv7Y {
+            height: 66px;
+            width: 61px;
+        }
+
+        .blog-detail .group-Iowv7Y {
+            background-color: transparent;
+            height: 66px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 61px;
+        }
+
+        .blog-detail .clip-path-group-Iowv7Y {
+            height: 66px;
+            width: 61px;
+        }
+
+        .blog-detail .group-XRxfaS {
+            background-color: transparent;
+            height: 29px;
+            left: 70px;
+            position: absolute;
+            top: 18px;
+            width: 57px;
+        }
+
+        .blog-detail .frame-2-obqJsl {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            flex: 1;
+            flex-grow: 1;
+            gap: 20px;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        .blog-detail .frame-4-xexJto {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            gap: 20px;
+            justify-content: flex-end;
+            position: relative;
+            width: 538px;
+        }
+
+        .blog-detail .menu-587lA2 {
+            align-items: center;
+            display: flex;
+            flex: 1;
+            flex-grow: 1;
+            gap: 10px;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .blog-detail .menu-4bl9p4 {
+            align-items: center;
+            display: flex;
+            flex: 1;
+            flex-grow: 1;
+            gap: 10px;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .blog-detail .menu-Tu4RV2 {
+            align-items: center;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 10px;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .blog-detail .vuesaxlineararrow-down-6ZYzQx {
+            height: 24px;
+            width: 24px;
+        }
+
+        .blog-detail .menu-wDqeUx {
+            align-items: center;
+            display: flex;
+            flex: 1;
+            flex-grow: 1;
+            gap: 10px;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .blog-detail .language-xexJto {
+            align-items: flex-start;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            position: relative;
+        }
+
+        .blog-detail .dropdown-button-basic-4J3VpZ {
+            align-items: center;
+            background-color: transparent;
+            border: 1px solid;
+            border-color: #dadce0;
+            border-radius: 8px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 4px;
+            padding: 0px 16px;
+            position: relative;
+        }
+
+        .blog-detail .vuesaxlineararrow-down-QABZz8 {
+            height: 14px;
+            width: 14px;
+        }
+
+        .blog-detail .content-QABZz8 {
+            align-items: center;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 4px;
+            height: 32px;
+            position: relative;
+        }
+
+        .blog-detail .dropdown-2YIyuU {
+            background-color: transparent;
+            color: var(--pale-sky);
+            font-family: var(--font-family-plus_jakarta_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 400;
+            letter-spacing: 0.00px;
+            line-height: 20.3px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .vuesaxlineararrow-down-2YIyuU {
+            height: 14px;
+            width: 14px;
+        }
+
+        .blog-detail .base-button-1i4ZWo {
+            background-color: transparent;
+            border: 1px solid;
+            border-color: var(--black);
+            padding: 8px 16px;
+        }
+
+        .blog-detail .text-HikvV4 {
+            line-height: 21px;
+        }
+
+        .blog-detail .arrow-right {
+            background-color: transparent;
+            height: 12px;
+            position: relative;
+            width: 12px;
+        }
+
+        .blog-detail .base-badge {
+            align-items: center;
+            background-color: #fdf2f8;
+            border-radius: 50px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 4px;
+            padding: 4px 12px;
+            position: relative;
+        }
+
+        .blog-detail .base-button {
+            align-items: center;
+            border-radius: 8px;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 8px;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blog-detail .blog-card {
+            -webkit-backdrop-filter: blur(25.266666412353516px) brightness(100%);
+            align-items: flex-start;
+            backdrop-filter: blur(25.266666412353516px) brightness(100%);
+            background-color: var(--white-2);
+            border: 1px solid;
+            border-color: var(--white);
+            border-radius: 16px;
+            box-shadow: inset -12.633333206176758px 12.633333206176758px 12.633333206176758px #ffffff1a, inset 12.633333206176758px -12.633333206176758px 12.633333206176758px #c1c1c11a;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 16px;
+            position: relative;
+            width: 305px;
+        }
+
+        .blog-detail .bredcrumb-base {
+            align-items: center;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            gap: 8px;
+            position: relative;
+        }
+
+        .blog-detail .button {
+            align-items: flex-start;
+            background-color: transparent;
+            display: inline-flex;
+            flex: 0 0 auto;
+            position: relative;
+        }
+
+        .blog-detail .clip-path-group {
+            background-color: transparent;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+        }
+
+        .blog-detail .frame {
+            background-color: transparent;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blog-detail .frame-111 {
+            align-self: stretch;
+            display: flex;
+            flex: 0 0 auto;
+            position: relative;
+            width: 100%;
+        }
+
+        .blog-detail .frame-112 {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .blog-detail .frame-178 {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+        }
+
+        .blog-detail .frame-31 {
+            align-self: stretch;
+            background-color: transparent;
+            background-position: 50% 50%;
+            background-size: cover;
+            border-radius: 4px;
+            height: 157px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .blog-detail .frame-62 {
+            flex: 0 0 auto;
+            position: relative;
+        }
+
+        .blog-detail .home {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 27.9px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .how-to-wash-clothes-gently-and-safely {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .label {
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent;
+            background: linear-gradient(180deg, rgb(234.00000125169754, 62.00000010430813, 148.000006377697) 0%, rgb(21.000000648200512, 120.00000044703484, 177.0000046491623) 100%);
+            background-clip: text;
+            background-color: transparent;
+            color: transparent;
+            font-family: var(--font-family-plus_jakarta_sans);
+            font-size: var(--font-size-xs);
+            font-style: normal;
+            font-weight: 500;
+            letter-spacing: 0.00px;
+            line-height: 15.6px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: left;
+            text-fill-color: transparent;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .layer-1 {
+            background-color: transparent;
+            left: 0px;
+            position: relative;
+            top: 0px;
+        }
+
+        .blog-detail .menu {
+            background-color: transparent;
+            position: relative;
+        }
+
+        .blog-detail .text {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            margin-top: -1.00px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .blog-detail .this-laundry-deterge {
+            align-self: stretch;
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: 24px;
+            position: relative;
+            text-align: left;
+        }
+
+        .blog-detail .vector {
+            background-color: transparent;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+        }
+
+        .blog-detail .vuesaxlineararrow-down {
+            background-color: transparent;
+            position: relative;
+        }
+
+        .blog-detail .vuesaxlineararrow-right {
+            background-color: transparent;
+            position: relative;
+        }
+    </style>
+    <script id="anime-js-script" src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"
+        integrity="sha256-98Q574VkbV+PkxXCKSgL6jVq9mrVbS7uCdA+vt0sLS8=" crossorigin="anonymous"></script>
+    <script id="imgloaded-js-script" src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script id="imgloaded-js-script" src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <style id="action-links-styles">
+        @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+        #anima-interface {
+            transition: all 0.5s ease-in-out;
+        }
+
+        #anima-watermark {
+            transition: all 0.5s ease-in-out;
+            display: none;
+        }
+
+        #anima-watermark-link {
+            position: fixed;
+            bottom: 20px;
+            height: 30px;
+            border-radius: 1000px;
+            background: #3B3B3B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            user-select: none;
+            transition: width 0.25s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+            text-decoration: none;
+            color: #fff;
+            padding: 8px 16px 8px 11px;
+            font-family: Mulish, sans-serif;
+            font-size: 12px;
+        }
+
+        #anima-watermark-link .text {
+            margin-left: 6px;
+        }
+
+        .omniview-anima-action-links .link {
+            height: 30px;
+            width: 30px;
+            border-radius: 1000px;
+            background: #3B3B3B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            user-select: none;
+            transition: width 0.25s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .omniview-anima-action-links #comment-link .text,
+        .omniview-anima-action-links #code-link .text {
+            display: none;
+            font-size: 12px;
+            margin-right: 5px;
+        }
+
+        .omniview-anima-action-links #comment-link:hover,
+        .omniview-anima-action-links #code-link:hover {
+            width: 105px;
+        }
+
+        .omniview-anima-action-links #comment-link.pop-active,
+        .omniview-anima-action-links #code-link.pop-active {
+            width: 105px;
+            background: #FF6250;
+        }
+
+        .omniview-anima-action-links #comment-link.pop-active .text,
+        .omniview-anima-action-links #code-link.pop-active .text {
+            display: block
+        }
+
+        .omniview-anima-action-links #comment-link:hover .text,
+        .omniview-anima-action-links #code-link:hover .text {
+            display: block;
+        }
+
+        .link.navigation {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            height: 32px;
+            color: #fff;
+            font-size: 12px;
+            cursor: default;
+            padding: 0 5px;
+        }
+
+        .link.navigation .icon {
+            margin: 0 6px;
+            fill: none;
+            stroke: currentColor;
+            cursor: pointer;
+        }
+
+        .link.navigation .icon.disabled {
+            opacity: 0.5;
+            cursor: default;
+        }
+
+
+        .link.navigation .home-icon {
+            margin-left: 6px;
+            fill: currentColor;
+            stroke: currentColor;
+            cursor: pointer;
+        }
+
+        .omniview-anima-action-links .restart {
+            height: 30px;
+            padding: 0 12px;
+            background: #3B3B3B;
+            border-radius: 1000px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #f1f1f1;
+            font-size: 12px;
+        }
+
+        .omniview-anima-action-links {
+            display: flex;
+            align-items: center;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-family: Mulish, sans-serif;
+            transition: all 0.5s ease-in-out;
+            opacity: 1;
+        }
+
+        .omniview-anima-action-links>*+* {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+
+        .idle {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #popoverOpener {
+            position: absolute;
+            left: 50%;
+            margin-left: -10vw;
+            text-align: center;
+            top: 45vh;
+            width: 20vw;
+        }
+
+
+        .popover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1060;
+            display: none;
+            font-family: "sans-serif";
+            font-size: 14px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+        }
+
+        .popover.top {
+            margin-top: -12px
+        }
+
+        .popover.right {
+            margin-left: 10px
+        }
+
+        .popover.bottom {
+            margin-top: 10px
+        }
+
+        .popover.left {
+            margin-left: -10px
+        }
+
+        .popover-title {
+            padding: 8px 14px;
+            margin: 0;
+            font-size: 14px;
+            background-color: #f7f7f7;
+            border-bottom: 1px solid #ebebeb;
+            border-radius: 5px 5px 0 0
+        }
+
+        .popover-content {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            overflow: hidden;
+            font-family: Mulish, sans-serif;
+        }
+
+
+
+        .popover>.arrow,
+        .popover>.arrow:after {
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid
+        }
+
+        .popover>.arrow {
+            border-width: 11px
+        }
+
+        .popover>.arrow:after {
+            content: "";
+            border-width: 10px
+        }
+
+        .popover.top>.arrow {
+            bottom: -11px;
+            left: 50%;
+            margin-left: -11px;
+            border-top-color: #999;
+            border-top-color: rgba(0, 0, 0, .25);
+            border-bottom-width: 0
+        }
+
+        .popover.top>.arrow:after {
+            bottom: 1px;
+            margin-left: -10px;
+            content: " ";
+            border-top-color: #fff;
+            border-bottom-width: 0
+        }
+
+        .popover.right>.arrow {
+            top: 50%;
+            left: -11px;
+            margin-top: -11px;
+            border-right-color: #999;
+            border-right-color: rgba(0, 0, 0, .25);
+            border-left-width: 0
+        }
+
+        .popover.right>.arrow:after {
+            bottom: -10px;
+            left: 1px;
+            content: " ";
+            border-right-color: #fff;
+            border-left-width: 0
+        }
+
+        .popover.bottom>.arrow {
+            top: -11px;
+            left: 50%;
+            margin-left: -11px;
+            border-top-width: 0;
+            border-bottom-color: #999;
+            border-bottom-color: rgba(0, 0, 0, .25)
+        }
+
+        .popover.bottom>.arrow:after {
+            top: 1px;
+            margin-left: -10px;
+            content: " ";
+            border-top-width: 0;
+            border-bottom-color: #fff
+        }
+
+        .popover.left>.arrow {
+            top: 50%;
+            right: -11px;
+            margin-top: -11px;
+            border-right-width: 0;
+            border-left-color: #999;
+            border-left-color: rgba(0, 0, 0, .25)
+        }
+
+        .popover.left>.arrow:after {
+            right: 1px;
+            bottom: -10px;
+            content: " ";
+            border-right-width: 0;
+            border-left-color: #fff
+        }
+
+
+
+        #anima-comment-popover,
+        #anima-code-popover {
+            background: #333333;
+            color: #fff;
+        }
+
+        #anima-comment-popover.top>.arrow,
+        #anima-comment-popover.top>.arrow:after,
+        #anima-code-popover.top>.arrow:after,
+        #anima-code-popover.top>.arrow {
+            border-top-color: #333;
+        }
+
+        #anima-comment-popover .btn,
+        #anima-code-popover .btn {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 6px 20px;
+            background: #FF6250;
+            color: #fff;
+            border-radius: 100px;
+            width: max-content;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 550px) {
+            #anima-watermark-link {
+                padding: 6px !important;
+            }
+
+            #anima-watermark-link .text {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin: 0px; background: rgb(255, 255, 255); overflow-x: hidden;" dark-scroll=""><input type="hidden"
+        id="anPageName" name="page" value="blog-detail">
+    <div class="container-center-horizontal">
+        <div class="blog-detail screen " data-id="70:29018">
+            <div class="image-7Soxz2" data-id="70:29019-9eebd5ba-ef47-4798-b890-0d81eb35507c"></div>
+            <div class="bredcrumb-7Soxz2" data-id="70:29020">
+                <article class="bredcrumb-base" data-id="I70:29020;48:4486">
+                    <div class="menu-1a3SpL menu" data-id="I70:29020;48:4486;48:4470">Home</div><img class="arrow-right"
+                        data-id="I70:29020;48:4486;48:4471"
+                        src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/arrow-right.svg"
+                        anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/arrow-right.svg"
+                        alt="Arrow-Right">
+                </article>
+                <article class="bredcrumb-base" data-id="I70:29020;48:4487">
+                    <div class="menu-W0AUkx menu" data-id="I70:29020;48:4487;48:4470">Blog</div><img class="arrow-right"
+                        data-id="I70:29020;48:4487;48:4471"
+                        src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/arrow-right.svg"
+                        anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/arrow-right.svg"
+                        alt="Arrow-Right">
+                </article>
+                <article class="bredcrumb-base" data-id="I70:29020;48:4488">
+                    <p class="menu-5PQrrz menu" data-id="I70:29020;48:4488;48:4468">Secret to Washing White Shirts to
+                        Make Them Shine Like New</p>
+                </article>
+            </div>
+            <div class="frame-109-7Soxz2" data-id="70:29021">
+                <div class="frame-108-vOLPQu" data-id="70:29022">
+                    <div class="frame-110-p9j5Kv" data-id="70:29023">
+                        <div class="badge-0jkz6Y" data-id="70:29024">
+                            <div class="base-badge" data-id="I70:29024;50:17727">
+                                <div class="label" data-id="I70:29024;50:17727;50:17517">Tips</div>
+                            </div>
+                        </div>
+                        <div class="base-badge" data-id="70:29025">
+                            <div class="label" data-id="I70:29025;50:17517">Laundry</div>
+                        </div>
+                    </div>
+                    <h1 class="title-p9j5Kv" data-id="70:29026">Secret to Washing White Shirts to Make Them Shine Like
+                        New</h1>
+                    <div class="june-29-2024-p9j5Kv plusjakartasans-normal-pale-sky-16px" data-id="70:29027">June 29,
+                        2024</div>
+                </div>
+                <div class="frame-111-vOLPQu frame-111" data-id="70:29028">
+                    <p class="white-shirts-are-an-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29029">
+                        White shirts are an indispensable item in everyone's wardrobe, from students to working people.
+                        However, washing&nbsp;clothes&nbsp;to keep white shirts bright as new is not always easy.
+                        Stains, sweat and improper&nbsp;washing methods&nbsp;can make white shirts turn yellow and lose
+                        their freshness. Below are tips to wash white shirts bright as new from&nbsp;HC Vietnam&nbsp;to
+                        help you solve this problem.</p>
+                    <p class="x1-sort-clothes-before-washing-X2F042 plusjakartasans-semi-bold-steel-gray-20px"
+                        data-id="70:29030">1. Sort Clothes Before Washing</p>
+                    <div class="classification-by-color-X2F042 plusjakartasans-semi-bold-steel-gray-16px"
+                        data-id="70:29031">Classification By Color:</div>
+                    <p class="how-to-wash-white-an-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29032">
+                        How to wash white and colored clothes&nbsp;to avoid dye transfer from colored clothes to white
+                        clothes. This helps white clothes retain their brightness and prevent fading.</p>
+                    <div class="classification-by-material-X2F042 plusjakartasans-semi-bold-steel-gray-16px"
+                        data-id="70:29033">Classification by Material:</div>
+                    <p class="wash-delicate-fabric-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29034">
+                        Wash delicate fabrics such as silk, linen and thick fabrics such as denim, cotton separately to
+                        avoid damaging the fabric fibers by washing them together with different fabrics.</p>
+                    <p class="x2-use-the-right-detergent-and-bleach-X2F042 plusjakartasans-semi-bold-steel-gray-20px"
+                        data-id="70:29035">2. Use the Right Detergent and Bleach</p>
+                    <p class="the-right-detergent-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29036">The
+                        right detergent and bleach will effectively clean white clothes without damaging the fabric.</p>
+                    <div class="specialized-laundry-detergent-X2F042 plusjakartasans-semi-bold-steel-gray-16px"
+                        data-id="70:29037">Specialized Laundry Detergent:</div>
+                    <p class="use-a-detergent-spec-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29038">
+                        Use a detergent specifically designed for white clothes to keep colors fresh and remove stains
+                        effectively.</p>
+                    <div class="bleach-X2F042 plusjakartasans-semi-bold-steel-gray-16px" data-id="70:29039">Bleach:
+                    </div>
+                    <p class="use-oxygen-bleach-or-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29040">
+                        Use oxygen bleach or baking soda to brighten white shirts without damaging the fabric. Avoid
+                        using chlorine bleach, which can damage fabric fibers and cause yellowing.</p>
+                    <p class="x3-how-to-wash-clothes-properly-X2F042 plusjakartasans-semi-bold-steel-gray-20px"
+                        data-id="70:29041">3. How to Wash Clothes Properly</p>
+                    <p class="washing-clothesprope-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29042">
+                        Washing clothes&nbsp;properly not only helps clean them but also protects the fabric fibers and
+                        keeps white shirts bright and new.</p>
+                    <div class="washing-temperature-X2F042 plusjakartasans-semi-bold-steel-gray-16px"
+                        data-id="70:29043">Washing Temperature:</div>
+                    <p class="wash-white-shirts-at-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29044">
+                        Wash white shirts at 30-40 degrees Celsius. This temperature helps remove stains and bacteria
+                        without damaging the fabric fibers.</p>
+                    <div class="wash-cycle-X2F042 plusjakartasans-semi-bold-steel-gray-16px" data-id="70:29045">Wash
+                        Cycle:</div>
+                    <p class="choose-a-gentle-or-m-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29046">
+                        Choose a gentle or medium wash cycle to avoid stretching and damaging the fabric. If your white
+                        shirt has stubborn stains, soak it in detergent mixed with a little baking soda or vinegar
+                        before washing.</p>
+                    <div class="using-fabric-softener-X2F042 plusjakartasans-semi-bold-steel-gray-16px"
+                        data-id="70:29047">Using Fabric Softener:</div>
+                    <p class="fabric-softener-not-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29048">
+                        Fabric softener not only softens clothes, it also reduces static and keeps clothes wrinkle-free.
+                    </p>
+                    <p class="x4-how-to-iron-a-shirt-properly-X2F042 plusjakartasans-semi-bold-steel-gray-20px"
+                        data-id="70:29049">4. How to Iron a Shirt Properly</p>
+                    <p class="the-correct-way-to-i-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29050">
+                        The correct way to iron a shirt&nbsp;helps keep it flat and in shape.</p>
+                    <div class="prepare-X2F042 plusjakartasans-semi-bold-steel-gray-16px" data-id="70:29051">Prepare:
+                    </div>
+                    <p class="use-a-high-quality-i-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29052">
+                        Use a high-quality iron that can adjust the temperature to suit each type of fabric. Before
+                        ironing, dampen the shirt with a spray bottle of water or iron while the shirt is still slightly
+                        damp.</p>
+                    <div class="how-to-iron-X2F042 plusjakartasans-semi-bold-steel-gray-16px" data-id="70:29053">How to
+                        Iron:</div>
+                    <p class="start-at-the-collar-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29054">
+                        Start at the collar, then the shoulders, the body, and finally the sleeves. Iron from the inside
+                        out to avoid shiny surfaces. Use steam to soften the fabric and make ironing easier.</p>
+                    <p class="x5-drying-and-preserving-white-shirts-X2F042 plusjakartasans-semi-bold-steel-gray-20px"
+                        data-id="70:29055">5. Drying and Preserving White Shirts</p>
+                    <p class="drying-and-storing-w-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29056">
+                        Drying and storing white shirts properly is the step to keep them bright and new.</p>
+                    <div class="drying-clothes-X2F042 plusjakartasans-semi-bold-steel-gray-16px" data-id="70:29057">
+                        Drying Clothes:</div>
+                    <p class="dry-white-shirts-in-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29058">Dry
+                        white shirts in a cool place, away from direct sunlight to avoid damaging the fabric. White
+                        shirts should be hung horizontally on hangers to keep their shape and avoid wrinkling.</p>
+                    <div class="preserve-X2F042 plusjakartasans-semi-bold-steel-gray-16px" data-id="70:29059">Preserve:
+                    </div>
+                    <p class="store-white-shirts-i-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29060">
+                        Store white shirts in a cool, dry place. Avoid exposing white shirts to items that may cause
+                        yellowing, such as perfume, cosmetics, or other chemicals.</p>
+                    <div class="x6-handling-stubborn-stains-X2F042 plusjakartasans-semi-bold-steel-gray-20px"
+                        data-id="70:29061">6. Handling Stubborn Stains</div>
+                    <p class="treating-new-stains-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29062">
+                        Treating new stains will help keep your white shirts clean and free of yellowing.</p>
+                    <div class="sweat-stains-X2F042 plusjakartasans-semi-bold-steel-gray-16px" data-id="70:29063">Sweat
+                        Stains:</div>
+                    <p class="use-vinegar-or-lemon-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29064">
+                        Use vinegar or lemon to remove sweat stains from white shirts. Apply vinegar or lemon juice to
+                        the stain, leave for a few minutes, then wash as usual.</p>
+                    <div class="food-stains-X2F042 plusjakartasans-semi-bold-steel-gray-16px" data-id="70:29065">Food
+                        Stains:</div>
+                    <p class="baking-soda-is-an-ef-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29066">
+                        Baking soda is an effective natural cleaner for food stains. Mix baking soda with water to form
+                        a paste, apply to the stain and let sit for 15-20 minutes before washing.</p>
+                    <div class="ink-stains-X2F042 plusjakartasans-semi-bold-steel-gray-16px" data-id="70:29067">Ink
+                        Stains:</div>
+                    <p class="use-alcohol-or-an-al-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29068">
+                        Use alcohol or an alcohol-based cleaner to remove ink stains. Apply alcohol to the stain, rub
+                        gently, and then wash with detergent.</p>
+                    <p class="x7-notes-when-washing-clothes-X2F042 plusjakartasans-semi-bold-steel-gray-20px"
+                        data-id="70:29069">7. Notes When Washing Clothes</p>
+                    <p class="some-small-but-impor-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29070">
+                        Some small but important notes when washing clothes to protect your white shirts.</p>
+                    <div class="using-laundry-bag-X2F042 plusjakartasans-semi-bold-steel-gray-16px" data-id="70:29071">
+                        Using Laundry Bag:</div>
+                    <p class="use-a-laundry-bag-to-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29072">
+                        Use a laundry bag to protect delicate and delicate fabrics such as silk and linen when washing
+                        in the washing machine. The bag helps reduce friction and stretching of the fabric.</p>
+                    <p class="hand-washing-for-delicate-whites-X2F042 plusjakartasans-semi-bold-steel-gray-16px"
+                        data-id="70:29073">Hand Washing For Delicate Whites:</p>
+                    <p class="for-sensitive-and-ex-X2F042 plusjakartasans-normal-bright-gray-16px" data-id="70:29074">
+                        For sensitive and expensive white shirts, hand wash to protect the fabric and keep the shirt
+                        looking new.</p>
+                </div>
+            </div>
+            <div class="frame-112-7Soxz2 frame-112" data-id="70:29075"><img class="frame-62-x3c1RT frame-62"
+                    data-id="70:29076"
+                    src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/frame-62.svg"
+                    anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/frame-62.svg"
+                    alt="Frame 62">
+                <div class="frame-111-x3c1RT frame-111" data-id="70:29080"><img class="vuesaxlinearshare-xaJDfP"
+                        data-id="70:29081"
+                        src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vuesax-linear-share.svg"
+                        anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vuesax-linear-share.svg"
+                        alt="vuesax/linear/share"></div>
+            </div>
+            <footer class="footer-7Soxz2" data-id="70:29082">
+                <div class="frame-177-JadvY2" data-id="I70:29082;135:1785">
+                    <div class="frame-rIu9Fo frame" data-id="I70:29082;135:1735">
+                        <div class="group-lstiV0" data-id="I70:29082;135:1736">
+                            <div class="layer-1-tbQxKp layer-1" data-id="I70:29082;135:1737">
+                                <div class="group-T8Gxja" data-id="I70:29082;135:1738"><img class="vector-83xCAi vector"
+                                        data-id="I70:29082;135:1739"
+                                        src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vector.svg"
+                                        anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vector.svg"
+                                        alt="Vector"><img class="group-83xCAi" data-id="I70:29082;135:1740"
+                                        src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/group@2x.png"
+                                        anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/group@2x.png"
+                                        alt="Group"><img class="clip-path-group-83xCAi clip-path-group"
+                                        data-id="I70:29082;135:1747"
+                                        src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/clip-path-group@2x.png"
+                                        anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/clip-path-group@2x.png"
+                                        alt="Clip path group"><img class="group-aAyInb" data-id="I70:29082;135:1773"
+                                        src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/group-1@2x.png"
+                                        anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/group-1@2x.png"
+                                        alt="Group"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-02-rIu9Fo" data-id="I70:29082;135:1781">
+                        <div class="frame-178-qggKHi frame-178" data-id="I70:29082;135:1812">
+                            <div class="about-us-E38dys plusjakartasans-semi-bold-steel-gray-18px"
+                                data-id="I70:29082;135:1782">About us</div>
+                            <div class="our-story-E38dys plusjakartasans-normal-pale-sky-16px"
+                                data-id="I70:29082;135:1810">Our story</div>
+                            <div class="our-mission-E38dys plusjakartasans-normal-pale-sky-16px"
+                                data-id="I70:29082;135:1813">Our mission</div>
+                            <div class="our-vision-E38dys plusjakartasans-normal-pale-sky-16px"
+                                data-id="I70:29082;135:1821">Our vision</div>
+                            <div class="core-value-E38dys plusjakartasans-normal-pale-sky-16px"
+                                data-id="I70:29082;135:1823">Core Value</div>
+                        </div>
+                    </div>
+                    <div class="section-5-rIu9Fo" data-id="I70:29082;135:1815">
+                        <div class="frame-178-pGgSMx frame-178" data-id="I70:29082;135:1816">
+                            <div class="products-ywyQnO plusjakartasans-semi-bold-steel-gray-18px"
+                                data-id="I70:29082;135:1817">Products</div>
+                            <div class="laundry-detergent-ywyQnO plusjakartasans-normal-pale-sky-16px"
+                                data-id="I70:29082;135:1818">Laundry Detergent</div>
+                            <div class="hc-beauty-ywyQnO plusjakartasans-normal-pale-sky-16px"
+                                data-id="I70:29082;135:1819">HC Beauty</div>
+                            <div class="floor-cleaner-ywyQnO plusjakartasans-normal-pale-sky-16px"
+                                data-id="I70:29082;135:1832">Floor Cleaner</div>
+                            <div class="dishwashing-liquid-ywyQnO plusjakartasans-normal-pale-sky-16px"
+                                data-id="I70:29082;135:1834">Dishwashing Liquid</div>
+                            <div class="hand-sanitizer-ywyQnO plusjakartasans-normal-pale-sky-16px"
+                                data-id="I70:29082;135:1836">Hand Sanitizer</div>
+                        </div>
+                    </div>
+                    <div class="frame-178-rIu9Fo frame-178" data-id="I70:29082;135:1838">
+                        <div class="contact-us-PeYx7H plusjakartasans-semi-bold-steel-gray-18px"
+                            data-id="I70:29082;135:1839">Contact us</div>
+                        <div class="frame-112-PeYx7H frame-112" data-id="I70:29082;135:1846">
+                            <div class="frame-114-Z9W401" data-id="I70:29082;135:1847">
+                                <div class="frame-62-dt9Dey frame-62" data-id="I70:29082;135:1848"><img
+                                        class="vuesaxlinearcall-calling-joEvYx" data-id="I70:29082;135:1849"
+                                        src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67087531bf64a14f6308b3b8/img/vuesax-linear-call-calling.svg"
+                                        anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67087531bf64a14f6308b3b8/img/vuesax-linear-call-calling.svg"
+                                        alt="vuesax/linear/call-calling"></div>
+                                <div class="x84-912-488-627-dt9Dey plusjakartasans-normal-pale-sky-16px"
+                                    data-id="I70:29082;135:1850">(+84) 912 488 627</div>
+                            </div>
+                            <div class="frame-115-Z9W401" data-id="I70:29082;135:1851">
+                                <div class="frame-62-TZwUE8 frame-62" data-id="I70:29082;135:1852"><img
+                                        class="vuesaxlinearsms-tracking-IYTNqJ" data-id="I70:29082;135:1853"
+                                        src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67087531bf64a14f6308b3b8/img/vuesax-linear-sms-tracking.svg"
+                                        anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67087531bf64a14f6308b3b8/img/vuesax-linear-sms-tracking.svg"
+                                        alt="vuesax/linear/sms-tracking"></div>
+                                <div class="hcvietnaminfogmailcom-TZwUE8 plusjakartasans-normal-pale-sky-16px"
+                                    data-id="I70:29082;135:1854">hcvietnam.info@gmail.com</div>
+                            </div>
+                            <div class="frame-116-Z9W401" data-id="I70:29082;135:1855">
+                                <div class="frame-62-rIX2CM frame-62" data-id="I70:29082;135:1856"><img
+                                        class="vuesaxlinearlocation-qx8FHd" data-id="I70:29082;135:1857"
+                                        src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67087c5a9661cc2b677d3c23/img/vuesax-linear-location.svg"
+                                        anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67087c5a9661cc2b677d3c23/img/vuesax-linear-location.svg"
+                                        alt="vuesax/linear/location"></div>
+                                <p class="x522-minh-khai-vinh-t-rIX2CM plusjakartasans-normal-pale-sky-16px"
+                                    data-id="I70:29082;135:1858">522 Minh Khai, Vinh Tuy Ward, Hai Ba Trung District,
+                                    Hanoi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="frame-179-JadvY2" data-id="I70:29082;135:1882">
+                    <p class="x2024-copyright-do-minh-tung-lam-studio-xDZQMu" data-id="I70:29082;135:1652">2024
+                        Copyright Do Minh Tung Lam Studio</p><img class="frame-180-xDZQMu" data-id="I70:29082;135:1913"
+                        src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/frame-180.svg"
+                        anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/frame-180.svg"
+                        alt="Frame 180">
+                </div>
+            </footer>
+            <div class="blog-list-7Soxz2" data-id="70:29083">
+                <div class="ellipse-5-fGtK8H" data-id="70:29084"></div>
+                <div class="frame-16-fGtK8H" data-id="70:29085">
+                    <div class="frame-169-E2WvxC" data-id="70:29086">
+                        <div class="related-blogs-c8xwM1" data-id="70:29087">Related blogs</div>
+                    </div>
+                    <div class="frame-150-E2WvxC" data-id="70:29088">
+                        <article class="button" data-id="70:29089">
+                            <div class="base-button-Hvt56c base-button" data-id="I70:29089;12:2003"><img
+                                    class="vuesaxlineararrow-left-zLTm3R" data-id="I70:29089;12:2003;12:1950"
+                                    src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vuesax-linear-arrow-left.svg"
+                                    anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vuesax-linear-arrow-left.svg"
+                                    alt="vuesax/linear/arrow-left"></div>
+                        </article>
+                        <article class="button" data-id="70:29090">
+                            <div class="base-button-beF555 base-button" data-id="I70:29090;12:2003"><img
+                                    class="vuesaxlineararrow-right-zfL2mV vuesaxlineararrow-right"
+                                    data-id="I70:29090;12:2003;12:1950"
+                                    src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vuesax-linear-arrow-right.svg"
+                                    anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vuesax-linear-arrow-right.svg"
+                                    alt="vuesax/linear/arrow-right"></div>
+                        </article>
+                    </div>
+                </div>
+                <div class="frame-167-fGtK8H" data-id="70:29091">
+                    <article class="blog-card" data-id="70:29092">
+                        <div class="frame-31-o1CUxg frame-31"
+                            data-id="I70:29092;115:658-1fdfeaac-bb83-4906-b706-d62ba4bd6189"></div>
+                        <p class="how-to-wash-clothes-gently-and-safely plusjakartasans-semi-bold-black-16px"
+                            data-id="I70:29092;115:646">How to Wash Clothes Gently and Safely</p>
+                        <p class="this-laundry-deterge plusjakartasans-normal-bright-gray-16px"
+                            data-id="I70:29092;115:647">This laundry detergent technology provides key benefits such as
+                            mold resistance...</p>
+                        <div class="button" data-id="I70:29092;115:648">
+                            <div class="base-button-Npq5Rm base-button" data-id="I70:29092;115:648;12:2743">
+                                <div class="text-EOmWwp text plusjakartasans-medium-black-14px"
+                                    data-id="I70:29092;115:648;12:2743;12:1939">See more</div><img
+                                    class="vuesaxlineararrow-right-EOmWwp vuesaxlineararrow-right"
+                                    data-id="I70:29092;115:648;12:2743;12:1940"
+                                    src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vuesax-linear-arrow-right-1.svg"
+                                    anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vuesax-linear-arrow-right-1.svg"
+                                    alt="vuesax/linear/arrow-right">
+                            </div>
+                        </div>
+                    </article>
+                    <article class="blog-card" data-id="70:29093">
+                        <div class="frame-31-yJQxE1 frame-31"
+                            data-id="I70:29093;115:658-491cfa4d-0f40-44a5-bd9c-54a674b42d4d"></div>
+                        <p class="how-to-wash-clothes-gently-and-safely plusjakartasans-semi-bold-black-16px"
+                            data-id="I70:29093;115:646">How to Wash Clothes Gently and Safely</p>
+                        <p class="this-laundry-deterge plusjakartasans-normal-bright-gray-16px"
+                            data-id="I70:29093;115:647">This laundry detergent technology provides key benefits such as
+                            mold resistance...</p>
+                        <div class="button" data-id="I70:29093;115:648">
+                            <div class="base-button-3c7zPW base-button" data-id="I70:29093;115:648;12:2743">
+                                <div class="text-WM5URL text plusjakartasans-medium-black-14px"
+                                    data-id="I70:29093;115:648;12:2743;12:1939">See more</div><img
+                                    class="vuesaxlineararrow-right-WM5URL vuesaxlineararrow-right"
+                                    data-id="I70:29093;115:648;12:2743;12:1940"
+                                    src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vuesax-linear-arrow-right-1.svg"
+                                    anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vuesax-linear-arrow-right-1.svg"
+                                    alt="vuesax/linear/arrow-right">
+                            </div>
+                        </div>
+                    </article>
+                    <article class="blog-card" data-id="70:29094">
+                        <div class="frame-31-ew3cNB frame-31"
+                            data-id="I70:29094;115:658-81fa8448-5443-4e8f-a8d0-1a8b8050397c"></div>
+                        <p class="how-to-wash-clothes-gently-and-safely plusjakartasans-semi-bold-black-16px"
+                            data-id="I70:29094;115:646">How to Wash Clothes Gently and Safely</p>
+                        <p class="this-laundry-deterge plusjakartasans-normal-bright-gray-16px"
+                            data-id="I70:29094;115:647">This laundry detergent technology provides key benefits such as
+                            mold resistance...</p>
+                        <div class="button" data-id="I70:29094;115:648">
+                            <div class="base-button-LKVlKj base-button" data-id="I70:29094;115:648;12:2743">
+                                <div class="text-VGzCWy text plusjakartasans-medium-black-14px"
+                                    data-id="I70:29094;115:648;12:2743;12:1939">See more</div><img
+                                    class="vuesaxlineararrow-right-VGzCWy vuesaxlineararrow-right"
+                                    data-id="I70:29094;115:648;12:2743;12:1940"
+                                    src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vuesax-linear-arrow-right-3.svg"
+                                    anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vuesax-linear-arrow-right-3.svg"
+                                    alt="vuesax/linear/arrow-right">
+                            </div>
+                        </div>
+                    </article>
+                    <article class="blog-card" data-id="70:29095">
+                        <div class="frame-31-RJBIac frame-31"
+                            data-id="I70:29095;115:658-046cfbf5-6aeb-49c2-b8ba-530690de7f07"></div>
+                        <p class="how-to-wash-clothes-gently-and-safely plusjakartasans-semi-bold-black-16px"
+                            data-id="I70:29095;115:646">How to Wash Clothes Gently and Safely</p>
+                        <p class="this-laundry-deterge plusjakartasans-normal-bright-gray-16px"
+                            data-id="I70:29095;115:647">This laundry detergent technology provides key benefits such as
+                            mold resistance...</p>
+                        <div class="button" data-id="I70:29095;115:648">
+                            <div class="base-button-WQMgAz base-button" data-id="I70:29095;115:648;12:2743">
+                                <div class="text-YpNbzS text plusjakartasans-medium-black-14px"
+                                    data-id="I70:29095;115:648;12:2743;12:1939">See more</div><img
+                                    class="vuesaxlineararrow-right-YpNbzS vuesaxlineararrow-right"
+                                    data-id="I70:29095;115:648;12:2743;12:1940"
+                                    src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vuesax-linear-arrow-right-3.svg"
+                                    anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vuesax-linear-arrow-right-3.svg"
+                                    alt="vuesax/linear/arrow-right">
+                            </div>
+                        </div>
+                    </article>
+                    <article class="blog-card" data-id="70:29096">
+                        <div class="frame-31-mUSmxN frame-31"
+                            data-id="I70:29096;115:658-d470917d-514f-4ba1-80bc-7b0d290b29e4"></div>
+                        <p class="how-to-wash-clothes-gently-and-safely plusjakartasans-semi-bold-black-16px"
+                            data-id="I70:29096;115:646">How to Wash Clothes Gently and Safely</p>
+                        <p class="this-laundry-deterge plusjakartasans-normal-bright-gray-16px"
+                            data-id="I70:29096;115:647">This laundry detergent technology provides key benefits such as
+                            mold resistance...</p>
+                        <div class="button" data-id="I70:29096;115:648">
+                            <div class="base-button-yh3tDA base-button" data-id="I70:29096;115:648;12:2743">
+                                <div class="text-drweIx text plusjakartasans-medium-black-14px"
+                                    data-id="I70:29096;115:648;12:2743;12:1939">See more</div><img
+                                    class="vuesaxlineararrow-right-drweIx vuesaxlineararrow-right"
+                                    data-id="I70:29096;115:648;12:2743;12:1940"
+                                    src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vuesax-linear-arrow-right-5@2x.png"
+                                    anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vuesax-linear-arrow-right-5@2x.png"
+                                    alt="vuesax/linear/arrow-right">
+                            </div>
+                        </div>
+                    </article>
+                    <article class="blog-card" data-id="70:29097">
+                        <div class="frame-31-4q5EYM frame-31"
+                            data-id="I70:29097;115:658-0d669d1a-dcf0-4ab2-b14e-b99f6853e4e7"></div>
+                        <p class="how-to-wash-clothes-gently-and-safely plusjakartasans-semi-bold-black-16px"
+                            data-id="I70:29097;115:646">How to Wash Clothes Gently and Safely</p>
+                        <p class="this-laundry-deterge plusjakartasans-normal-bright-gray-16px"
+                            data-id="I70:29097;115:647">This laundry detergent technology provides key benefits such as
+                            mold resistance...</p>
+                        <div class="button" data-id="I70:29097;115:648">
+                            <div class="base-button-91nnER base-button" data-id="I70:29097;115:648;12:2743">
+                                <div class="text-Wr2zNb text plusjakartasans-medium-black-14px"
+                                    data-id="I70:29097;115:648;12:2743;12:1939">See more</div><img
+                                    class="vuesaxlineararrow-right-Wr2zNb vuesaxlineararrow-right"
+                                    data-id="I70:29097;115:648;12:2743;12:1940"
+                                    src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vuesax-linear-arrow-right-5@2x.png"
+                                    anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vuesax-linear-arrow-right-5@2x.png"
+                                    alt="vuesax/linear/arrow-right">
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="frame-168-fGtK8H" data-id="70:29098">
+                    <div class="button" data-id="70:29099">
+                        <div class="base-button-P0l8BZ base-button" data-id="I70:29099;12:2109">
+                            <div class="text-vxrxz0 text" data-id="I70:29099;12:2109;12:1935">See all</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <header class="header-7Soxz2" data-id="70:29100">
+                <div class="rectangle-5-obqJsl" data-id="I70:29100;119:19874"></div>
+                <div class="frame-obqJsl frame" data-id="I70:29100;119:19875">
+                    <div class="group-xQ4xgP" data-id="I70:29100;119:19876">
+                        <div class="layer-1-QLml5Z layer-1" data-id="I70:29100;119:19877">
+                            <div class="group-nlCVkn" data-id="I70:29100;119:19878"><img class="vector-Iowv7Y vector"
+                                    data-id="I70:29100;119:19879"
+                                    src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vector-1.svg"
+                                    anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/vector-1.svg"
+                                    alt="Vector"><img class="group-Iowv7Y" data-id="I70:29100;119:19880"
+                                    src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/group-2@2x.png"
+                                    anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/group-2@2x.png"
+                                    alt="Group"><img class="clip-path-group-Iowv7Y clip-path-group"
+                                    data-id="I70:29100;119:19887"
+                                    src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/clip-path-group-1@2x.png"
+                                    anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/clip-path-group-1@2x.png"
+                                    alt="Clip path group"><img class="group-XRxfaS" data-id="I70:29100;119:19913"
+                                    src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/group-3@2x.png"
+                                    anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/670897b14d93c75d65781d29/img/group-3@2x.png"
+                                    alt="Group"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="frame-2-obqJsl" data-id="I70:29100;119:19920">
+                    <div class="frame-4-xexJto" data-id="I70:29100;119:19921">
+                        <article class="menu-587lA2 menu" data-id="I70:29100;119:19922">
+                            <div class="home plusjakartasans-medium-pale-sky-18px"
+                                data-id="I70:29100;119:19922;88:16365">Home</div>
+                        </article>
+                        <article class="menu-4bl9p4 menu" data-id="I70:29100;119:19923">
+                            <div class="home plusjakartasans-medium-pale-sky-18px"
+                                data-id="I70:29100;119:19923;88:16365">About us</div>
+                        </article>
+                        <article class="menu-Tu4RV2 menu" data-id="I70:29100;119:19924">
+                            <div class="home plusjakartasans-medium-pale-sky-18px"
+                                data-id="I70:29100;119:19924;88:16365">Our products</div><img
+                                class="vuesaxlineararrow-down-6ZYzQx vuesaxlineararrow-down"
+                                data-id="I70:29100;119:19924;119:715"
+                                src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down.svg"
+                                anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down.svg"
+                                alt="vuesax/linear/arrow-down">
+                        </article>
+                        <article class="menu-wDqeUx menu" data-id="I70:29100;119:19925">
+                            <div class="home plusjakartasans-medium-pale-sky-18px"
+                                data-id="I70:29100;119:19925;88:16365">Blog</div>
+                        </article>
+                    </div>
+                    <div class="language-xexJto" data-id="I70:29100;121:20272">
+                        <div class="dropdown-button-basic-4J3VpZ" data-id="I70:29100;121:20272;121:20133"><img
+                                class="vuesaxlineararrow-down-QABZz8 vuesaxlineararrow-down"
+                                data-id="I70:29100;121:20272;121:20133;96:757"
+                                src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67087531bf64a14f6308b3b8/img/vuesax-linear-arrow-down-2.svg"
+                                anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67087531bf64a14f6308b3b8/img/vuesax-linear-arrow-down-2.svg"
+                                alt="vuesax/linear/arrow-down">
+                            <div class="content-QABZz8" data-id="I70:29100;121:20272;121:20133;88:17878">
+                                <div class="dropdown-2YIyuU" data-id="I70:29100;121:20272;121:20133;88:17879">EN</div>
+                                <img class="vuesaxlineararrow-down-2YIyuU vuesaxlineararrow-down"
+                                    data-id="I70:29100;121:20272;121:20133;88:17880"
+                                    src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67073bd43d3d99e6a4f4f6e4/img/vuesax-linear-arrow-down-3.svg"
+                                    anima-src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67073bd43d3d99e6a4f4f6e4/img/vuesax-linear-arrow-down-3.svg"
+                                    alt="vuesax/linear/arrow-down">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button" data-id="I70:29100;119:19927">
+                        <div class="base-button-1i4ZWo base-button" data-id="I70:29100;119:19927;12:2107">
+                            <div class="text-HikvV4 text plusjakartasans-medium-black-14px"
+                                data-id="I70:29100;119:19927;12:2107;12:1939">Contact</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </div>
+    <script src="launchpad-js/launchpad-banner.js" async=""></script>
+    <script defer="" src="https://animaapp.s3.amazonaws.com/static/restart-btn.min.js"></script>
+    <div id="anima-interface" data-turbo-permanent="true" class="idle"><!---->
+        <div id="anima-comment-popover" class="popover top" role="tooltip" style="left: -205px; top: -220px;">
+            <div class="arrow" style="margin-left: 128px;"></div>
+            <div class="popover-content" style="align-items:center">
+                <div style="display:flex;flex-direction:column;height: 100%;padding: 20px;">
+                    <h3
+                        style="font-size:18px;margin-bottom:10px;font-weight:500;line-height: 26px;font-family: Roslindale;">
+                        Leave feedback and collaborate
+                    </h3>
+                    <p style="font-size:12px;margin-bottom:20px;font-weight:400;line-height: 20px;">
+                        Login to your account to leave comments. Don't have an account?
+                        Sign up for free!
+                    </p>
+                    <a target="_blank" rel="noopener noreferrer" class="btn"
+                        href="https://projects.animaapp.com/p/undefined/s/undefined?mode=comments&amp;utm_campaign=add-comment&amp;utm_medium=add-comment&amp;utm_source=animaapp.io">Add
+                        comment</a>
+                </div>
+
+                <div style="display:flex;align-items:center;justify-content:center;padding-right:20px">
+                    <img src="https://animaapp.s3.amazonaws.com/static/comment-illustration.svg">
+                </div>
+            </div>
+        </div>
+        <div id="anima-code-popover" class="popover top" role="tooltip" style="left: -205px; top: -220px;">
+            <div class="arrow" style="margin-left: 168px;"></div>
+            <div class="popover-content" style="align-items:center">
+                <div style="display:flex;flex-direction:column;height: 100%;padding: 20px;">
+                    <h3
+                        style="font-size:18px;margin-bottom:10px;font-weight:500;line-height: 26px;font-family: Roslindale;">
+                        Get clean code you’ll love with Anima
+                    </h3>
+                    <p style="font-size:12px;margin-bottom:20px;font-weight:400;line-height: 20px;">
+                        Login and easily export HTML, React or Vue of this prototype.
+                        Don’t have an account? Sign up for free!
+                    </p>
+                    <a target="_blank" rel="noopener noreferrer" class="btn"
+                        href="https://projects.animaapp.com/p/undefined/s/undefined?mode=code&amp;utm_campaign=get-code&amp;utm_medium=get-code&amp;utm_source=animaapp.io">
+                        Get code
+                    </a>
+                </div>
+
+                <img src="https://animaapp.s3.amazonaws.com/static/code-illustration.svg">
+            </div>
+        </div>
+        <div class="omniview-anima-action-links" id="actions-wrap">
+            <div class="omniview-anima-action-links">
+                <div id="page-nav" class="link navigation" style="display: none;">
+                    <svg id="homepage-icon" class="home-icon" width="24" height="24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8.151 11a.25.25 0 01-.167-.436l4.349-3.913a.25.25 0 01.334 0l4.349 3.913a.25.25 0 01-.167.436H8.15zM16 12H9v4a1 1 0 001 1h5a1 1 0 001-1v-4z"
+                            fill="#fff"></path>
+                    </svg>
+
+                    <svg class="icon" id="arrow-left" width="24" height="24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18l-6-6 6-6" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+
+                    <span id="page-num"></span>
+
+                    <svg class="icon" id="arrow-right" width="24" height="24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+
+                <a class="link" id="comment-link" target="_blank" style="display: none;">
+                    <span class="text">Comment</span>
+                    <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M4.301 15.137a.551.551 0 01.199-.55c.314-.23.554-.554.718-.965A6.015 6.015 0 014 10 6.006 6.006 0   0110.001 4 6.006 6.006 0 0116 10.001 6.006 6.006 0 019.999 16a5.98 5.98 0 01-3.095-.86 3.165 3.165 0 01-1.65.438 3.6  3.6 0 01-.57-.044c-.191-.03-.34-.186-.383-.397z"
+                            fill="#fff"></path>
+                    </svg>
+                </a>
+
+                <a class="link" id="code-link" target="_blank" style="display: none;">
+                    <span class="text">Get Code</span>
+                    <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 15.667a1 1 0 01-.707-1.708l3.626-3.625-3.626-3.626a1 1 0 111.415-1.415l4.333 4.333a1 1 0 010 1.414l-4.333 4.333a.993.993 0 01-.707.294zM7.333 5a1 1 0 01.707 1.708l-3.626 3.625 3.627 3.626a1 1 0 11-1.415 1.415L2.293 11.04a1 1 0 010-1.415l4.333-4.333A.992.992 0 017.333 5z"
+                            fill="#fff"></path>
+                    </svg>
+                </a>
+
+                <div class="restart" id="restart-btn" style="display: none;">
+                    <svg style="margin-right: 6px" width="12" height="12" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M6 11.817A5.017 5.017 0 01.994 6.811c0-.207.169-.375.375-.375s.375.168.375.375A4.265 4.265 0 006 11.067a4.265 4.265 0 004.256-4.256A4.265 4.265 0 006 2.555a.376.376 0 01-.375-.376c0-.206.169-.374.375-.374a5.017 5.017 0 015.006 5.006A5.017 5.017 0 016 11.817z"
+                            fill="#fff"></path>
+                        <path
+                            d="M6.75 4.237a.37.37 0 01-.263-.112l-1.65-1.65a.363.363 0 010-.525L6.487.3c.15-.15.375-.15.525 0 .15.15.15.375 0 .525L5.625 2.212 7.012 3.6c.15.15.15.375 0 .525-.056.075-.15.112-.262.112z"
+                            fill="#fff"></path>
+                    </svg>
+                    Restart
+                </div>
+            </div>
+        </div>
+        <!---->
+    </div>
+    <div id="anima-watermark" class="idle" style="display: none;"><!----><a id="anima-watermark-link" target="_blank"
+            href="https://www.animaapp.com?utm_campaign=public-link-banner&amp;utm_medium=public-link-banner&amp;utm_source=animaapp.io"
+            style="right: 20px; left: auto; padding: 6px;">
+            <svg width="20" height="20" viewBox="0 0 20 20" id="anima-logo-icon" fill="none"
+                xmlns="http://www.w3.org/2000/svg" data-hotspot-id="hp-0">
+                <path
+                    d="M4.09293 3.00001H16.5327C16.5484 2.99976 16.5638 3.00351 16.5776 3.01092C16.5913 3.01832 16.603 3.02913 16.6114 3.04231C16.6198 3.0555 16.6247 3.07061 16.6256 3.08622C16.6265 3.10182 16.6233 3.1174 16.6165 3.13146C15.5441 5.29706 13.9276 7.14699 11.9253 8.50009C8.69117 10.6822 5.43436 10.9075 4.09389 10.9196C4.08165 10.9198 4.06949 10.9176 4.05811 10.9131C4.04672 10.9086 4.03636 10.9019 4.02761 10.8933C4.01887 10.8848 4.01192 10.8745 4.00718 10.8633C4.00244 10.852 4 10.8399 4 10.8276V3.09198C4 3.07982 4.00241 3.06778 4.00709 3.05656C4.01177 3.04534 4.01863 3.03516 4.02728 3.02661C4.03592 3.01805 4.04617 3.0113 4.05744 3.00673C4.06871 3.00217 4.08077 2.99988 4.09293 3.00001Z"
+                    fill="#FF6250"></path>
+                <path
+                    d="M6.77772 17.4446C8.31182 17.4446 9.55545 16.201 9.55545 14.6669C9.55545 13.1328 8.31182 11.8892 6.77772 11.8892C5.24363 11.8892 4 13.1328 4 14.6669C4 16.201 5.24363 17.4446 6.77772 17.4446Z"
+                    fill="#FFDF90"></path>
+                <path
+                    d="M12.4559 17.2799C11.6701 16.9799 11.2522 16.1151 11.5185 15.3496L13.6153 9.3656C13.884 8.60003 14.7387 8.22302 15.5245 8.52299C16.3103 8.82344 16.7282 9.68772 16.4619 10.4538L14.365 16.4377C14.0964 17.2033 13.2417 17.5808 12.4559 17.2799Z"
+                    fill="#3366FF"></path>
+            </svg>
+            <span class="text" style="display: none;">Made with Anima</span>
+        </a><!----></div>
+    <div id="hotspots_wrapper">
+        <div class="hotspot" id="hp-0" style="top: 0px; left: 0px; opacity: 0; z-index: -1;"></div>
+    </div>
+    <div id="t_preload_links">
+        <link href="/blog-detail" rel="prefetch">
+        <link href="/list-blog" rel="prefetch">
+        <link href="/products-detail" rel="prefetch">
+        <link href="/frame-149" rel="prefetch">
+        <link href="/hompage" rel="prefetch">
+    </div>
+
+
+</body>
+
+</html>
