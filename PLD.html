@@ -1762,6 +1762,45 @@
                 </div>
             </div>
         </div>
+        <style>
+      
+.product-card:hover .frame-31 .hover-overlay {
+    display: block;
+}
+.hover-overlay {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Chiều cao tùy chỉnh theo ý muốn */
+    background-color: rgba(0, 0, 0, 1);
+    transition: background 0.5s ease-in-out; /* Chuyển mượt mà */
+    z-index: 10; /* Đảm bảo nó ở trên cùng */
+    text-align: center;
+    color: white;
+    line-height: 50px;
+}
+
+.hover-overlay:hover {
+    background: linear-gradient(to right, #0072ff, #f200e4); /* Màu gradient khi hover */
+}
+
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+    const productCard = document.querySelectorAll('.frame-31');
+    productCard.forEach((value) => {
+        if (value) {
+        const overlayDiv = document.createElement('div');
+        overlayDiv.className = 'hover-overlay';
+        overlayDiv.innerHTML = 'View Detail'
+        value.appendChild(overlayDiv);
+    }
+    })
+});
+
+        </script>
         <div class="frame-54-LNEaqw" data-id="54:1423" id="frame-54">
 
             <div class="ellipse-5-AWGt53 ellipse-5" data-id="54:1425"></div>
