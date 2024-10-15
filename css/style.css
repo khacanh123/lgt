@@ -1962,7 +1962,7 @@ input:focus {
 }
 
  .base-button-8XGJNH {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 
  .text-4aawD8 {
@@ -2734,7 +2734,7 @@ input:focus {
     background: linear-gradient(to right, #0072ff, #f200e4); 
     color: white
 }
-.base-button-vB5c2o:hover {
+.base-button-vB5c2o:hover, .base-button-Nx7wWT:hover,.base-button-8XGJNH:hover {
     background: unset;
 }
  .base-input-field {
@@ -2752,8 +2752,9 @@ input:focus {
   -webkit-backdrop-filter: blur(25.266666412353516px) brightness(100%);
   align-items: flex-start;
   backdrop-filter: blur(25.266666412353516px) brightness(100%);
-  background-color: var(--white-2);
-  border: 1px solid;
+  background: linear-gradient(white, white) padding-box, /* Inner background */
+              linear-gradient(to bottom right, #ff7db5, #66cfff) border-box; 
+  border: 2px solid;
   border-color: var(--white);
   border-radius: 16px;
   box-shadow: inset -12.633333206176758px 12.633333206176758px 12.633333206176758px #ffffff1a, inset 12.633333206176758px -12.633333206176758px 12.633333206176758px #c1c1c11a;
@@ -2764,7 +2765,9 @@ input:focus {
   position: relative;
   width: 305px;
 }
-
+.blog-card:hover {
+    border: 2px solid transparent;
+}
  .blog-list {
   align-items: flex-start;
   align-self: stretch;
