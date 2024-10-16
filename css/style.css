@@ -1003,7 +1003,12 @@ body {
   height: 16px;
   width: 16px;
 }
-
+.base-button-5oIgKv:hover , .base-button-mn9be4:hover {
+    background: #E3F0FB !important;
+}
+.base-button-hfxtZF:hover {
+    background: unset !important;
+}
  .image-nKNMxR {
   align-items: flex-start;
   background-color: transparent;
