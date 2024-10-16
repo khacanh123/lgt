@@ -891,11 +891,19 @@ input:focus {
   flex: 0 0 auto;
   flex-wrap: nowrap;
   gap: 24px;
-  overflow-x: scroll;
-  position: relative;
-  width: 100%;
+  overflow-x: auto;
+
+  scroll-behavior: smooth;
+  /* position: relative; */
+  width: 1626px;
 }
 
+body {
+    overflow-x: hidden;
+}
+.base-button-dVyHXN:hover, .base-button-ER23xG:hover {
+    background: #E3F0FB !important;
+}
  .category-nKNMxR {
   background-image: url(../images//property-1-default.png);
   background-position: 50% 50%;
@@ -2731,10 +2739,11 @@ input:focus {
   transition: background 1s ease-in;
 }
 .base-button:hover {
-    background: linear-gradient(to right, #0072ff, #f200e4); 
-    color: white
+    background: linear-gradient(to right, #1578B1, #EA3E94); 
+    color: white;
+    cursor: pointer;
 }
-.base-button-vB5c2o:hover, .base-button-Nx7wWT:hover,.base-button-8XGJNH:hover {
+.base-button-vB5c2o:hover, .base-button-Nx7wWT:hover,.base-button-8XGJNH:hover, .base-button-g5P003:hover {
     background: unset;
 }
  .base-input-field {
