@@ -348,7 +348,7 @@ input:focus {
 :root {}
 
 /* screen - hompage */
- {
+.hompage {
   background-color: var(--white);
   height: 8861px;
   overflow: hidden;
@@ -684,7 +684,7 @@ input:focus {
  .frame-147-G94iEN {
   display: flex;
   position: relative;
-  width: 770px;
+  width: 50%;
 }
 
  .what-drive-us-bxxSDS {
@@ -704,7 +704,7 @@ input:focus {
   margin-top: -1.00px;
   position: relative;
   text-align: left;
-  width: 635px;
+  width: 100%;
 }
 
  .base-button-Qx4vzL {
@@ -1168,6 +1168,10 @@ body {
   height: 1526px;
   overflow: hidden;
   width: 100%;
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  padding: 0px 72px;
 }
 
  .ellipse-5-e742Vi {
@@ -1184,9 +1188,10 @@ body {
 
  .frame-147-e742Vi {
   display: inline-flex;
-  left: 72px;
-  position: absolute;
+  /* left: 72px; */
+  position: relative;
   top: 96px;
+  width: 50%;
 }
 
  .our-technologies-QIhsN5 {
@@ -1199,19 +1204,19 @@ body {
  .this-laundry-deterge-KK3u2f {
   line-height: 24px;
   margin-top: -1.00px;
-  width: 635px;
+  width: 100%;
 }
 
  .rectangle-7-e742Vi {
-  left: 732px;
-  top: 96px;
-  width: 636px;
+  /* left: 732px; */
+  /* top: 96px; */
+  width: 50%;
 }
 
  .rectangle-7-5xgJ3E {
-  left: 72px;
-  top: 803px;
-  width: 627px;
+  /* left: 72px; */
+  /* top: 803px; */
+  /* width: 50%; */
 }
 
  .frame-159-e742Vi {
@@ -1221,9 +1226,9 @@ body {
   flex-direction: column;
   gap: 30px;
   left: 72px;
-  position: absolute;
+  /* position: absolute; */
   top: 359px;
-  width: 578px;
+  width: 100%;
 }
 
  .vuesaxlinearsun-pxViNP {
@@ -1277,7 +1282,7 @@ body {
   left: 790px;
   position: absolute;
   top: 846px;
-  width: 578px;
+  width: 50%;
 }
 
  .vuesaxlinearwind-2-4CnvGV {
@@ -1388,6 +1393,7 @@ body {
   flex: 0 0 auto;
   gap: 24px;
   position: relative;
+  width: 100%;
 }
 
  .brown-by-type-w9eb1I {
@@ -2702,12 +2708,22 @@ body {
 }
 
  .base-button-pzP0q4 {
-  background-color: transparent;
   border: 1px solid;
-  border-color: var(--black);
+  /* background: linear-gradient(white, white) padding-box, /* Inner background */
+  /* linear-gradient(to bottom right, #ff7db5, #66cfff) border-box;  */ 
   padding: 8px 16px;
-}
+  ; /* Gradient border */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  */
 
+}
+.base-button-pzP0q4:hover {
+    /* background: #E3F0FB !important; */
+    border: 2px solid transparent !important;
+    background: linear-gradient(#E3F0FB, #E3F0FB) padding-box, /* Inner background */
+  linear-gradient(to bottom right, #ff7db5, #66cfff) border-box !important; 
+  ; /* Gradient border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
  .text-xE0TWH {
   line-height: 21px;
   text-align: center;
@@ -2808,7 +2824,7 @@ body {
   overflow: hidden;
   padding: 40px;
   position: relative;
-  width: 636px;
+  width: 50%;
 }
 
  .button {
@@ -2959,7 +2975,7 @@ body {
   flex-direction: column;
   gap: 8px;
   position: relative;
-  width: 100%;
+  width: 95%;
 }
 
  .frame-158 {
@@ -3178,7 +3194,7 @@ body {
  .rectangle-7 {
   background-color: transparent;
   height: 627px;
-  position: absolute;
+  /* position: relative; */
 }
 
  .review-card {
@@ -3306,4 +3322,7 @@ body {
   text-align: left;
   white-space: nowrap;
   width: fit-content;
+}
+.img-left{
+    width: 50%;
 }
