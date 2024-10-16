@@ -353,7 +353,7 @@ input:focus {
   height: 8861px;
   overflow: hidden;
   overflow-x: hidden;
-  position: relative;
+  /* position: relative; */
   width: 100%;
 }
 
@@ -512,22 +512,24 @@ input:focus {
   /* width: 1296px; */
   display: flex;
   justify-content: center;
+  width: 100%;
+  padding: 0px 72px;
 }
 
  .image-7tz5D2 {
   background-color: transparent;
-  height: 447px;
+  /* height: 447px; */
   left: 0px;
   /* position: absolute; */
   top: 0px;
-  width: 1296px;
+  width: 100%;
 }
 
  .frame-148-HHe9Eu {
   background-color: var(--white-2);
   display: inline-flex;
   gap: 10px;
-  left: 42px;
+  left: 104px;
   position: absolute;
   top: 320px;
 }
@@ -569,7 +571,7 @@ input:focus {
   background-color: var(--white-2);
   display: inline-flex;
   gap: 10px;
-  left: 43px;
+  left: 104px;
   position: absolute;
   top: 175px;
 }
@@ -611,7 +613,7 @@ input:focus {
   background-color: var(--white-2);
   display: inline-flex;
   gap: 10px;
-  right: 35px;
+  right: 100px;
   position: absolute;
   top: 285px;
 }
