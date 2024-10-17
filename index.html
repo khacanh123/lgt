@@ -55,10 +55,10 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
                 }
               }
               .animate {
-                animation: hidenshow 3.5s ease-in-out infinite;
+                animation: hidenshow 3s ease-in-out infinite;
               }
             </style>
-            <img class="image-7tz5D2 animate" data-id="I34:5564;80:5960" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/image-4.png" alt="image">
+            <img class="image-7tz5D2" id="display-img" data-id="I34:5564;80:5960" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/image-4.png" alt="image">
             <div class="frame-148-HHe9Eu frame-148" data-id="34:5565">
               <div class="base-avatar-xxbU1W base-avatar" data-id="34:5566">
                 <div class="user-image-xv17WU user-image" data-id="I34:5566;51:2377-b72f34d3-2144-4290-ac78-5141846fae0f"></div>
@@ -141,17 +141,17 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
             <div class="frame-146-G94iEN" data-id="34:5591">
               <div class="happy-custoers-5lB5OG" data-id="34:5592">
                 <div class="x10-ODY18i x10 plusjakartasans-bold-steel-gray-72px" data-id="I34:5592;100:6205">
-                  <span class="span0-CxdM7R plusjakartasans-bold-steel-gray-72px">10</span>
+                  <span class="span0-CxdM7R plusjakartasans-bold-steel-gray-72px" id="d1">0</span>
                   <span class="span1-CxdM7R">%</span>
                 </div>
                 <div class="happy-customers plusjakartasans-normal-pale-sky-24px" data-id="I34:5592;100:6206">Happy Customers</div>
               </div>
               <div class="local-stores-5lB5OG" data-id="34:5593">
-                <div class="x200-8YJIJc plusjakartasans-bold-steel-gray-72px" data-id="34:5594">200+</div>
+                <div class="x200-8YJIJc plusjakartasans-bold-steel-gray-72px" data-id="34:5594" id="d2">0+</div>
                 <div class="happy-customers plusjakartasans-normal-pale-sky-24px" data-id="34:5595">Local Stores</div>
               </div>
               <div class="frame-144-5lB5OG" data-id="34:5596">
-                <div class="x10-YRl7aZ x10 plusjakartasans-bold-steel-gray-72px" data-id="34:5597">10+</div>
+                <div class="x10-YRl7aZ x10 plusjakartasans-bold-steel-gray-72px" data-id="34:5597" id="d3">0+</div>
                 <div class="years-of-experience-YRl7aZ plusjakartasans-normal-pale-sky-24px" data-id="34:5598">Years of experience</div>
               </div>
             </div>
@@ -215,13 +215,18 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
           </div>
           <div class="ecommerce-hyperlink-UWwx5l" data-id="34:5609">
             <div class="frame-25-67rxgm" data-id="34:5610">
+              <script>
+                function redirect(link) {
+                  window.location.href= link
+                }
+              </script>
               <div class="distribution-and-sales-system-Wx7oaf plusjakartasans-bold-steel-gray-48px" data-id="34:5611">Distribution and <br>sales system </div>
               <div class="frame-24-Wx7oaf" data-id="34:5612">
                 <div class="frame-22-Kg8LHu" data-id="34:5613">
-                  <img class="image-1-oHew3h" data-id="34:5614" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/image-1.png" alt="image 1">
+                  <img class="image-1-oHew3h" data-id="34:5614" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/image-1.png" onclick="redirect('https://s.shopee.vn/9UjLb21ufO')" style="cursor: pointer;" alt="image 1">
                 </div>
                 <div class="frame-23-Kg8LHu" data-id="34:5615">
-                  <img class="image-AoxeHc" data-id="34:5616" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/image.png" alt="image">
+                  <img class="image-AoxeHc" data-id="34:5616" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/image.png" style="cursor: pointer;" onClick="redirect('https://vt.tiktok.com/ZMhD15w1v/?page=TikTokShop')" onclick="" alt="image">
                 </div>
               </div>
             </div>
@@ -280,6 +285,156 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
               </div>
             </div>
           </div>
+          <style>
+          /* Popup container - hidden by default */
+          .popup-container {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+          }
+          
+          /* Popup content */
+          .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 700px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+          }
+          
+          /* Popup header */
+          .popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+          }
+          
+          /* Close button */
+          .close-btn {
+            font-size: 24px;
+            cursor: pointer;
+          }
+          
+          /* Grid container */
+          .popup-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three items per row */
+            gap: 20px;
+            padding: 20px 0;
+          }
+          
+          /* Individual grid item */
+          .popup-item {
+            text-align: center;
+            cursor: pointer;
+          }
+          
+          .popup-item img {
+            object-fit: contain;
+            margin-bottom: 10px;
+          }
+          
+          .popup-item p {
+            font-weight: bold;
+            font-size: 14px;
+          }
+          </style>
+          <script>
+            function openPopup() {
+  document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+function openPopup1() {
+  document.getElementById("popup1").style.display = "flex";
+}
+
+function closePopup1() {
+  document.getElementById("popup1").style.display = "none";
+}
+          </script>
+         <div class="popup-container" id="popup">
+          <div class="popup-content">
+            <div class="flex justify-between">
+              <h2 class="text-[24px] font-bold">Browse by type</h2>
+              <img src="https://res.cloudinary.com/dhdfr7p4h/image/upload/v1729129751/close-circle_3x_wa12ey.png" onclick="closePopup()" class="cursor-pointer h-6 w-6" alt="">
+            </div>
+            <div class="popup-grid">
+              <div class="popup-item flex justify-center items-center flex-col" >
+                <img src="https://res.cloudinary.com/dhdfr7p4h/image/upload/v1729148410/2b3122788bb7514d618e39a980ca4479_squccj.png" alt="HC SPJ" class="w-[100px] h-[100px] lg:w-[300px] lg:h-[300px]">
+                <p>HC SPJ</p>
+              </div>
+              <div class="popup-item flex justify-center items-center flex-col" >
+                <img src="https://res.cloudinary.com/dhdfr7p4h/image/upload/v1729151974/dfe663c372a362c62aff8df8f8ad5e1c_fecjwq.png" alt="HC Luxury" class="w-[100px] h-[100px] lg:w-[300px] lg:h-[300px]">
+                <p>HC Luxury</p>
+              </div>
+              <div class="popup-item flex justify-center items-center flex-col" >
+                <img src="https://res.cloudinary.com/dhdfr7p4h/image/upload/v1729151973/4cca790b0481a1bf925bf8416bca8346_j6s4mp.png" alt="HC For" class="w-[100px] h-[100px] lg:w-[300px] lg:h-[300px]">
+                <p>HC For</p>
+              </div>
+              <div class="popup-item flex justify-center items-center flex-col" >
+                <img src="https://res.cloudinary.com/dhdfr7p4h/image/upload/v1729151974/fbeccf6b3b42ac7f1fbceb96b27a7595_ctbwvw.png" alt="HC SPJ Baby" class="w-[100px] h-[100px] lg:w-[300px] lg:h-[300px]">
+                <p>HC SPJ Baby</p>
+              </div>
+              <div class="popup-item flex justify-center items-center flex-col" >
+                <img src="https://res.cloudinary.com/dhdfr7p4h/image/upload/v1729151973/612b2d45d4919508463b4f7ccc485726_arhzrd.png" alt="HC EURO" class="w-[100px] h-[100px] lg:w-[300px] lg:h-[300px]">
+                <p>HC EURO</p>
+              </div>
+              <div class="popup-item flex justify-center items-center flex-col" >
+                <img src="https://res.cloudinary.com/dhdfr7p4h/image/upload/v1729151973/baa4f545f3a706c3a6c6a7a8fbc0ac70_kaw7lv.png" alt="HC SPJ" class="w-[100px] h-[100px] lg:w-[300px] lg:h-[300px]">
+                <p>Nước xả vải</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup-container" id="popup1">
+          <div class="popup-content">
+            <div class="flex justify-between">
+              <h2 class="text-[24px] font-bold">Browse by need</h2>
+              <img src="https://res.cloudinary.com/dhdfr7p4h/image/upload/v1729129751/close-circle_3x_wa12ey.png" onclick="closePopup1()" class="cursor-pointer h-6 w-6" alt="">
+            </div>
+            <div class="popup-grid">
+              <div class="popup-item flex justify-center items-center flex-col" >
+                <img src="https://res.cloudinary.com/dhdfr7p4h/image/upload/v1729148410/2b3122788bb7514d618e39a980ca4479_squccj.png" alt="HC SPJ" class="w-[100px] h-[100px] lg:w-[300px] lg:h-[300px]">
+                <p>Odor Removal</p>
+              </div>
+              <div class="popup-item flex justify-center items-center flex-col" >
+                <img src="https://res.cloudinary.com/dhdfr7p4h/image/upload/v1729151974/dfe663c372a362c62aff8df8f8ad5e1c_fecjwq.png" alt="HC Luxury" class="w-[100px] h-[100px] lg:w-[300px] lg:h-[300px]">
+                <p>Stain Removal</p>
+              </div>
+              <div class="popup-item flex justify-center items-center flex-col" >
+                <img src="https://res.cloudinary.com/dhdfr7p4h/image/upload/v1729151973/4cca790b0481a1bf925bf8416bca8346_j6s4mp.png" alt="HC For" class="w-[100px] h-[100px] lg:w-[300px] lg:h-[300px]">
+                <p>Deep Clean</p>
+              </div>
+              <div class="popup-item flex justify-center items-center flex-col" >
+                <img src="https://res.cloudinary.com/dhdfr7p4h/image/upload/v1729151974/fbeccf6b3b42ac7f1fbceb96b27a7595_ctbwvw.png" alt="HC SPJ Baby" class="w-[100px] h-[100px] lg:w-[300px] lg:h-[300px]">
+                <p>Sensitive</p>
+              </div>
+              <div class="popup-item flex justify-center items-center flex-col" >
+                <img src="https://res.cloudinary.com/dhdfr7p4h/image/upload/v1729151973/612b2d45d4919508463b4f7ccc485726_arhzrd.png" alt="HC EURO" class="w-[100px] h-[100px] lg:w-[300px] lg:h-[300px]">
+                <p>Delicates</p>
+              </div>
+              <div class="popup-item flex justify-center items-center flex-col" >
+                <img src="https://res.cloudinary.com/dhdfr7p4h/image/upload/v1729151973/baa4f545f3a706c3a6c6a7a8fbc0ac70_kaw7lv.png" alt="HC SPJ" class="w-[100px] h-[100px] lg:w-[300px] lg:h-[300px]">
+                <p>Bright Colors</p>
+              </div>
+            </div>
+          </div>
+        </div>
+                    
           <div class="browsing-UWwx5l" data-id="34:5653">
             <div class="frame-16-QxhAMw frame-16" data-id="34:5654">
               <p class="find-the-right-products-for-you-Sf8xn5 plusjakartasans-bold-steel-gray-48px" data-id="34:5655">Find the right products for you</p>
@@ -291,7 +446,7 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
                   <div class="brown-by-type-w9eb1I" data-id="I34:5658;95:525">Brown by type</div>
                   <p class="pacs-liquid-powder-and-more-w9eb1I plusjakartasans-normal-pale-sky-16px" data-id="I34:5658;95:526">Pacs, Liquid, Powder and more.</p>
                 </div>
-                <div class="frame-161-ZEQ7ic" data-id="I34:5658;95:527">
+                <div class="frame-161-ZEQ7ic" data-id="I34:5658;95:527" onclick="openPopup()">
                   <div class="ellipse-7-nx5MBy" data-id="I34:5658;95:528"></div>
                   <img class="image-nx5MBy" data-id="I34:5658;95:529" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/image-5@2x.png" alt="image">
                   <img class="image-TsNCze" data-id="I34:5658;95:530" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/image-6@2x.png" alt="image">
@@ -303,7 +458,7 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
                   <div class="brown-by-need-9L12Nj" data-id="I34:5659;95:556">Brown by need</div>
                   <p class="stain-removal-deep-c-9L12Nj plusjakartasans-normal-pale-sky-16px" data-id="I34:5659;95:557">Stain removal, Deep Cleaning, Bright Colors and More</p>
                 </div>
-                <div class="frame-164-qL9YRT" data-id="I34:5659;95:580">
+                <div class="frame-164-qL9YRT" data-id="I34:5659;95:580" onclick="openPopup1()">
                   <img class="image-R27CCs" data-id="I34:5659;95:563" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/image-3.png" alt="image">
                 </div>
               </article>
@@ -444,54 +599,62 @@ cursor: pointer;
               <p class="explore-the-clean-to-qUwH0x plusjakartasans-normal-bright-gray-16px" data-id="34:5670">Explore the #CleanTok™ community of creators committed to staying clean on TikTok.</p>
             </div>
             <div class="frame-18-9notoN" data-id="34:5671">
-              <article class="tiktok" data-id="34:5672-903fb414-2c77-4dee-b631-99c27264c467">
+              <article class="tiktok" data-id="34:5672-903fb414-2c77-4dee-b631-99c27264c467"
+              onclick="redirect('https://www.tiktok.com/@hcvietnam/video/7388157955872460033')"
+              style="background-image: url('https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/4288625936c34586a1e45a74fa8fecaa_1720189582~tplv-photomode-zoomcover:720:720.avif?lk3s=81f88b70&x-expires=1729324800&x-signature=CoSqCmvDisEN%2B8KeESMl33oTWXg%3D&shp=81f88b70&shcp=-');">
                 <div class="frame-148-LaxGf8 frame-148" data-id="I34:5672;132:900">
                   <img class="logostiktok-icon" data-id="I34:5672;132:901" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/logos-tiktok-icon.svg" alt="logos:tiktok-icon">
                   <div class="frame-173" data-id="I34:5672;132:929">
-                    <p class="clean-house-with-hc-vietnam plusjakartasans-semi-bold-bright-gray-16px" data-id="I34:5672;132:905">Clean house with HC Vietnam</p>
-                    <div class="hc-vietnam-hc-laundry plusjakartasans-normal-bright-gray-16px" data-id="I34:5672;132:930">#HCVietnam #HCLaundry</div>
+                    <p class="clean-house-with-hc-vietnam plusjakartasans-semi-bold-bright-gray-16px" data-id="I34:5672;132:905">Có nước giặt xả HC thì mưa rơi cũng chẳng nhằm nhò gì cả</p>
+                    <div class="hc-vietnam-hc-laundry plusjakartasans-normal-bright-gray-16px" data-id="I34:5672;132:930">#hcvietnam #nuocgiatxa #hcspj</div>
                     <div class="frame-174" data-id="I34:5672;132:1073">
                       <img class="vuesaxlinearplay" data-id="I34:5672;132:1036" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-play.svg" alt="vuesax/linear/play">
-                      <div class="x1136-n plusjakartasans-semi-bold-bright-gray-16px" data-id="I34:5672;132:1017">113,6 N</div>
+                      <div class="x1136-n plusjakartasans-semi-bold-bright-gray-16px" data-id="I34:5672;132:1017">2.9 N</div>
                     </div>
                   </div>
                 </div>
               </article>
-              <article class="tiktok" data-id="34:5673-f205941f-2008-445c-9aa0-48a4a0d23f54">
+              <article class="tiktok" data-id="34:5673-f205941f-2008-445c-9aa0-48a4a0d23f54"
+              onclick="redirect('https://www.tiktok.com/@hcvietnam/video/7388157955872460033')"
+               style="background-image: url('https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/fbc1f4f70e9b447bbd2b73902dad0308_1719583616~tplv-photomode-zoomcover:720:720.avif?lk3s=81f88b70&x-expires=1729324800&x-signature=8%2FGVg3MeIik9VnQoD2H3XVLEPEI%3D&shp=81f88b70&shcp=-');">
                 <div class="frame-148-Epualz frame-148" data-id="I34:5673;132:900">
                   <img class="logostiktok-icon" data-id="I34:5673;132:901" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/logos-tiktok-icon-1.svg" alt="logos:tiktok-icon">
-                  <div class="frame-173" data-id="I34:5673;132:929">
-                    <p class="clean-house-with-hc-vietnam plusjakartasans-semi-bold-bright-gray-16px" data-id="I34:5673;132:905">Clean house with HC Vietnam</p>
-                    <div class="hc-vietnam-hc-laundry plusjakartasans-normal-bright-gray-16px" data-id="I34:5673;132:930">#HCVietnam #HCLaundry</div>
+                  <div class="frame-173" data-id="I34:5673;132:929" >
+                    <p class="clean-house-with-hc-vietnam plusjakartasans-semi-bold-bright-gray-16px" data-id="I34:5673;132:905">Các nàng lựa chọn TIỆN LỢI hay TIẾT KIỆM đây nàoo</p>
+                    <div class="hc-vietnam-hc-laundry plusjakartasans-normal-bright-gray-16px" data-id="I34:5673;132:930">#hcvietnam #hcbeauty #hcspj #nuocgiatxa</div>
                     <div class="frame-174" data-id="I34:5673;132:1073">
                       <img class="vuesaxlinearplay" data-id="I34:5673;132:1036" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-play.svg" alt="vuesax/linear/play">
-                      <div class="x1136-n plusjakartasans-semi-bold-bright-gray-16px" data-id="I34:5673;132:1017">113,6 N</div>
+                      <div class="x1136-n plusjakartasans-semi-bold-bright-gray-16px" data-id="I34:5673;132:1017">4.8 N</div>
                     </div>
                   </div>
                 </div>
               </article>
-              <article class="image-j6lY7d" data-id="34:5674-3c0b05db-465a-4a4b-b6e8-7f37fe7aca96">
+              <article class="image-j6lY7d" data-id="34:5674-3c0b05db-465a-4a4b-b6e8-7f37fe7aca96" 
+              onclick="redirect('https://www.tiktok.com/@hcvietnam/video/7388157955872460033')"
+              style="background-image: url('https://p9-sign-sg.tiktokcdn.com/tos-alisg-p-0037/9c9eaeac1f604dc58f754da67b4182a4_1719759504~tplv-photomode-zoomcover:720:720.avif?lk3s=81f88b70&x-expires=1729324800&x-signature=BLf%2Fij3LE44J%2FYsRrBHS%2BXv%2FVec%3D&shp=81f88b70&shcp=-');">
                 <div class="frame-148-XUKSUb frame-148" data-id="I34:5674;132:900">
                   <img class="logostiktok-icon" data-id="I34:5674;132:901" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/logos-tiktok-icon-2.svg" alt="logos:tiktok-icon">
                   <div class="frame-173" data-id="I34:5674;132:929">
-                    <p class="clean-house-with-hc-vietnam plusjakartasans-semi-bold-bright-gray-16px" data-id="I34:5674;132:905">Make up with HC Vietnam</p>
-                    <div class="hc-vietnam-hc-laundry plusjakartasans-normal-bright-gray-16px" data-id="I34:5674;132:930">#HCVietnam #HCLaundry</div>
+                    <p class="clean-house-with-hc-vietnam plusjakartasans-semi-bold-bright-gray-16px" data-id="I34:5674;132:905">Nước giặt xả gì mà thơm hơn nước hoa 🤌🏻✨✨</p>
+                    <div class="hc-vietnam-hc-laundry plusjakartasans-normal-bright-gray-16px" data-id="I34:5674;132:930">#hcvietnam #hcbeauty #hcspj #nuocgiatxa #nuocgiat</div>
                     <div class="frame-174" data-id="I34:5674;132:1073">
                       <img class="vuesaxlinearplay" data-id="I34:5674;132:1036" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-play.svg" alt="vuesax/linear/play">
-                      <div class="x1136-n plusjakartasans-semi-bold-bright-gray-16px" data-id="I34:5674;132:1017">113,6 N</div>
+                      <div class="x1136-n plusjakartasans-semi-bold-bright-gray-16px" data-id="I34:5674;132:1017">7.8 N</div>
                     </div>
                   </div>
                 </div>
               </article>
-              <article class="image-xyjms0" data-id="34:5675-11365f54-9c44-476d-8fc4-419c6c10cbe7">
+              <article class="image-xyjms0" data-id="34:5675-11365f54-9c44-476d-8fc4-419c6c10cbe7"
+              onclick="redirect('https://www.tiktok.com/@hcvietnam/video/7388157955872460033')"
+              style="background-image: url('https://p16-sign-sg.tiktokcdn.com/tos-alisg-p-0037/79c7c310f863404d862d7629aa380d19_1729085803~tplv-photomode-zoomcover:720:720.avif?lk3s=81f88b70&x-expires=1729324800&x-signature=2%2FFQdfnl6Y86f9PHQIEkgGh7508%3D&shp=81f88b70&shcp=-');">
                 <div class="frame-148-CLvSjo frame-148" data-id="I34:5675;132:900">
                   <img class="logostiktok-icon" data-id="I34:5675;132:901" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/logos-tiktok-icon-3.svg" alt="logos:tiktok-icon">
                   <div class="frame-173" data-id="I34:5675;132:929">
-                    <p class="clean-house-with-hc-vietnam plusjakartasans-semi-bold-bright-gray-16px" data-id="I34:5675;132:905">Clean house with HC Vietnam</p>
-                    <div class="hc-vietnam-hc-laundry plusjakartasans-normal-bright-gray-16px" data-id="I34:5675;132:930">#HCVietnam #HCLaundry</div>
+                    <p class="clean-house-with-hc-vietnam plusjakartasans-semi-bold-bright-gray-16px" data-id="I34:5675;132:905">Nước giặt xả HC SPJ 6in1 hỗ trợ các mẹ cân bằng việc nhà và sự nghiệp. 🙋🏻‍♀️⭐️🧺</p>
+                    <div class="hc-vietnam-hc-laundry plusjakartasans-normal-bright-gray-16px" data-id="I34:5675;132:930">#hcvietnam #hcspj</div>
                     <div class="frame-174" data-id="I34:5675;132:1073">
                       <img class="vuesaxlinearplay" data-id="I34:5675;132:1036" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-play.svg" alt="vuesax/linear/play">
-                      <div class="x1136-n plusjakartasans-semi-bold-bright-gray-16px" data-id="I34:5675;132:1017">113,6 N</div>
+                      <div class="x1136-n plusjakartasans-semi-bold-bright-gray-16px" data-id="I34:5675;132:1017">1.6 N</div>
                     </div>
                   </div>
                 </div>
@@ -810,9 +973,9 @@ cursor: pointer;
               <article class="menu-rGWvDx menu" data-id="I34:5711;119:19923">
                 <div class="home plusjakartasans-medium-pale-sky-18px" data-id="I34:5711;119:19923;88:16365">About us</div>
               </article>
-              <article class="menu-Jm8x0C menu" data-id="I34:5711;119:19924">
+              <article class="menu-Jm8x0C menu" data-id="I34:5711;119:19924" id="nav" onclick="openNav()">
                 <div class="home plusjakartasans-medium-pale-sky-18px" data-id="I34:5711;119:19924;88:16365">Our products</div>
-                <img class="vuesaxlineararrow-down-0wm2j3 vuesaxlineararrow-down" data-id="I34:5711;119:19924;119:715" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down.svg" alt="vuesax/linear/arrow-down">
+                <img class="vuesaxlineararrow-down-0wm2j3 vuesaxlineararrow-down" data-id="I34:5711;119:19924;119:715" id="icon" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down.svg" alt="vuesax/linear/arrow-down">
               </article>
               <article class="menu-w1J60a menu" data-id="I34:5711;119:19925">
                 <div class="home plusjakartasans-medium-pale-sky-18px" data-id="I34:5711;119:19925;88:16365">Blog</div>
@@ -834,6 +997,51 @@ cursor: pointer;
             </div>
           </div>
         </header>
+        <div class="navbar fixed top-[80px] w-full px-20 py-5 flex" id="nav-item" style="background-color: white; display: none
+        ;">
+          <div class="w-[251px]">
+            <h1 class="text-[#1B2533] text-[32px] font-bold">Our 
+              products</h1>
+          </div>
+          <div class="w-[345px]">
+            <h5 class="text-[#1B2533] text-[18px] font-semibold leading-[26px]">Laundry detergent </h5>
+            <p class="text-[16px] leading-[24px] font-normal">HC Euro</p>
+            <p class="text-[16px] leading-[24px] font-normal">HC For</p>
+            <p class="text-[16px] leading-[24px] font-normal">HC Luxury</p>
+            <p class="text-[16px] leading-[24px] font-normal">HC SPJ</p>
+            <p class="text-[16px] leading-[24px] font-normal">HC SPJ Baby</p>
+            <p class="text-[16px] leading-[24px] font-normal">Fabric Softener</p>
+          </div>
+          <div class="w-[345px]">
+            <h5 class="text-[#1B2533] text-[18px] font-semibold leading-[26px]">HC Beauty</h5>
+            <p class="text-[16px] leading-[24px] font-normal">Body care</p>
+            <p class="text-[16px] leading-[24px] font-normal">Hair care</p>
+          </div>
+          <div class="w-[345px]">
+            <h5 class="text-[#1B2533] text-[18px] font-semibold leading-[26px]">Other products 
+              in the house </h5>
+            <p class="text-[16px] leading-[24px] font-normal">Dishwashing Liquid</p>
+            <p class="text-[16px] leading-[24px] font-normal">Liquid Hand Soap</p>
+            <p class="text-[16px] leading-[24px] font-normal">Floor Cleaner</p>
+          </div>
+        </div>
+        <script>
+          function openNav() {
+            document.getElementById('nav-item').style.display ='flex';
+            document.getElementById('icon').setAttribute('src', 'https://res.cloudinary.com/dhdfr7p4h/image/upload/v1728967202/arrow-up_ty6jyh.svg')
+          }
+          document.body.addEventListener('click', function(event) {
+    const divABC = document.getElementById('nav-item');
+    
+    // Kiểm tra nếu click xảy ra ngoài div 'abc'
+    if (!divABC.contains(event.target) && !document.getElementById('nav').contains(event.target)) {
+      document.getElementById('icon').setAttribute('src', 'https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down.svg')
+      
+      divABC.style.display = 'none'
+    }
+});
+
+        </script>
       </div>
     </div>
     <script>
@@ -851,6 +1059,60 @@ scrollContainer.scrollLeft +=
 // Cuộn về đầu
 prevBtn.addEventListener('click', () => {
 scrollContainer.scrollLeft = 0;
+});
+
+    </script>
+     <script>
+      const listImg = [
+        'https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/image-4.png',
+        'https://res.cloudinary.com/dhdfr7p4h/image/upload/v1729084551/Property_1_2_pgwujn.png',
+        'https://res.cloudinary.com/dhdfr7p4h/image/upload/v1729084539/image_1_nxqhp2.png'
+      ]
+      const element = document.getElementById('display-img');
+      let i = 0;
+      setInterval(() => {
+      // element.classList.remove('animate')
+      // element.classList.add('animate')
+      element.setAttribute('src', listImg[i])
+       i = i >= 2 ? 0 : i+1
+      }, 3000)
+      // Listen for the scroll event on the window
+      let isFill = true;
+      function animateCount(start, end, duration,id) {
+  const counter = document.getElementById(id);
+  let current = start;
+  const increment = (end - start) / (duration / 100); // Calculate increment per frame
+  const interval = setInterval(() => {
+    current += increment;
+    counter.textContent = Math.floor(current);  // Update the display with the current value
+    if (current >= end) {
+      counter.textContent = end + (id == 'd2' || id == 'd3' ? ' +':'');  // Ensure the final value is exactly the end value
+      clearInterval(interval);    // Stop the animation
+    }
+  }, 100);  // Update every 100ms (adjust for smoother or faster increments)
+}
+
+// Animate from 0 to 10 in 2 seconds (2000 milliseconds)
+// animateCount(0, 10, 2000);
+
+window.addEventListener('scroll', function() {
+  // Select the div you want to apply the class to
+  const divElement = document.getElementById('scrollDiv');
+
+  // Check the scroll position
+  const scrollThreshold = 100;  // You can adjust this value as needed
+
+  // Add the class when the user scrolls past the threshold
+  if (window.scrollY > scrollThreshold) {
+    if(isFill) {
+animateCount(0, 10, 3000, 'd1');
+animateCount(0, 200, 3000, 'd2');
+animateCount(0, 10, 3000, 'd3');
+      
+    }
+    isFill = false
+    // Add class when scrolled
+  } 
 });
 
     </script>

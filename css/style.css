@@ -894,10 +894,9 @@ input:focus {
   flex-wrap: nowrap;
   gap: 24px;
   overflow-x: auto;
-
   scroll-behavior: smooth;
   /* position: relative; */
-  width: 1626px;
+  width: 100%;
 }
 
 body {
@@ -916,7 +915,7 @@ body {
   justify-content: flex-end;
   overflow: hidden;
   padding: 24px;
-  width: 526px;
+  width: 33%;
 }
 
  .frame-148-NxegdH {
@@ -966,7 +965,7 @@ body {
   justify-content: flex-end;
   overflow: hidden;
   padding: 24px;
-  width: 526px;
+  width: 33%;
 }
 
  .frame-148-zuzrCS {
@@ -1026,7 +1025,7 @@ body {
   overflow: hidden;
   padding: 24px;
   position: relative;
-  width: 526px;
+  width: 33%;
 }
 
  .frame-148-xVuNVJ {
@@ -3327,4 +3326,24 @@ body {
 }
 .img-left{
     width: 50%;
+}
+@media (min-width: 1800px) { 
+    .image-7tz5D2 {
+        height: 580px;
+    }
+    .background-HHe9Eu {
+        height: 1120px;
+    }
+    .frame-157-HHe9Eu {
+        height: 1070px;
+    }
+    .frame-148-HHe9Eu {
+        top: 430px;
+    }
+    .frame-148-oaieYR {
+        top: 290px;
+    }
+    .frame-148-U2sh1x {
+        top: 390px;
+    }
 }
