@@ -1360,7 +1360,7 @@ body {
   flex: 0 0 auto;
   flex-direction: column;
   gap: 56px;
-  padding: 96px 72px;
+  padding: 0px 72px;
   position: relative;
   width: 100%;
 }
