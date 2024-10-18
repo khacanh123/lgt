@@ -895,8 +895,8 @@ input:focus {
   gap: 24px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  /* position: relative; */
-  width: 100%;
+  position: relative;
+  width: fit-content;
 }
 
 body {
@@ -915,7 +915,7 @@ body {
   justify-content: flex-end;
   overflow: hidden;
   padding: 24px;
-  width: 33%;
+  width: 526px;
 }
 
  .frame-148-NxegdH {
@@ -965,7 +965,7 @@ body {
   justify-content: flex-end;
   overflow: hidden;
   padding: 24px;
-  width: 33%;
+  width: 526px;
 }
 
  .frame-148-zuzrCS {
@@ -1025,7 +1025,7 @@ body {
   overflow: hidden;
   padding: 24px;
   position: relative;
-  width: 33%;
+  width: 526px;
 }
 
  .frame-148-xVuNVJ {
@@ -2807,8 +2807,6 @@ body {
   flex: 0 0 auto;
   flex-wrap: nowrap;
   gap: 56px;
-  overflow: hidden;
-  overflow-x: scroll;
   padding: 96px 72px;
   position: relative;
   width: 100%;
@@ -3347,9 +3345,15 @@ body {
         top: 390px;
     }
     .image-HHe9Eu {
-        margin-top: 25px;
+        margin-top: 35px;
     }
     .about-us {
         margin-top: 55px;
+    }
+    .category-nKNMxR, .category-kXwdxQ, .image-nKNMxR {
+        width: 33%;
+    }
+    .frame-150-7NEqSR {
+        display: none !important;
     }
 }
