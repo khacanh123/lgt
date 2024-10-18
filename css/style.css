@@ -1447,7 +1447,7 @@ body {
   left: 0px;
   position: absolute;
   top: 44px;
-  width: 125px;
+  width: 100%;
 }
 
  .image-TsNCze {
@@ -3332,7 +3332,7 @@ body {
         height: 580px;
     }
     .background-HHe9Eu {
-        height: 1120px;
+        height: 1150px;
     }
     .frame-157-HHe9Eu {
         height: 1070px;
@@ -3345,5 +3345,11 @@ body {
     }
     .frame-148-U2sh1x {
         top: 390px;
+    }
+    .image-HHe9Eu {
+        margin-top: 25px;
+    }
+    .about-us {
+        margin-top: 55px;
     }
 }
