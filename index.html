@@ -973,20 +973,40 @@ cursor: pointer;
               <article class="menu-rGWvDx menu" data-id="I34:5711;119:19923">
                 <div class="home plusjakartasans-medium-pale-sky-18px" data-id="I34:5711;119:19923;88:16365">About us</div>
               </article>
-              <article class="menu-Jm8x0C menu" data-id="I34:5711;119:19924" id="nav" onclick="openNav()">
+              <article class="menu-Jm8x0C menu" data-id="I34:5711;119:19924" id="nav" onclick="openNav()" style="cursor: pointer;">
                 <div class="home plusjakartasans-medium-pale-sky-18px" data-id="I34:5711;119:19924;88:16365">Our products</div>
                 <img class="vuesaxlineararrow-down-0wm2j3 vuesaxlineararrow-down" data-id="I34:5711;119:19924;119:715" id="icon" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down.svg" alt="vuesax/linear/arrow-down">
+                <div class="hover-dg" id="hover"></div>
               </article>
               <article class="menu-w1J60a menu" data-id="I34:5711;119:19925">
                 <div class="home plusjakartasans-medium-pale-sky-18px" data-id="I34:5711;119:19925;88:16365">Blog</div>
               </article>
             </div>
             <div class="language-0VGihQ" data-id="I34:5711;121:20272">
-              <div class="dropdown-button-basic-LEwcPN" data-id="I34:5711;121:20272;121:20133">
+              <script>
+  function openlg() {
+            document.getElementById('dropdown').style.display ='block';
+            document.getElementById('icon-lg').setAttribute('src', 'https://res.cloudinary.com/dhdfr7p4h/image/upload/v1728967202/arrow-up_ty6jyh.svg')
+          }
+          document.body.addEventListener('click', function(event) {
+    const divABC = document.getElementById('dropdown');
+    
+    // Kiểm tra nếu click xảy ra ngoài div 'abc'
+    if (!divABC.contains(event.target) && !document.getElementById('lg').contains(event.target)) {
+      document.getElementById('icon-lg').setAttribute('src', 'https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down.svg')
+      divABC.style.display = 'none'
+    }
+});
+              </script>
+              <div class="dropdown-button-basic-LEwcPN" data-id="I34:5711;121:20272;121:20133" style="cursor: pointer;" id="lg" onclick="openlg()">
                 <img class="vuesaxlineararrow-down-V0GrFz vuesaxlineararrow-down" data-id="I34:5711;121:20272;121:20133;96:757" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down-2.svg" alt="vuesax/linear/arrow-down">
                 <div class="content-V0GrFz" data-id="I34:5711;121:20272;121:20133;88:17878">
                   <div class="dropdown-51EKPJ plusjakartasans-normal-pale-sky-14px" data-id="I34:5711;121:20272;121:20133;88:17879">EN</div>
-                  <img class="vuesaxlineararrow-down-51EKPJ vuesaxlineararrow-down" data-id="I34:5711;121:20272;121:20133;88:17880" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down-1.svg" alt="vuesax/linear/arrow-down">
+                  <img class="vuesaxlineararrow-down-51EKPJ vuesaxlineararrow-down" data-id="I34:5711;121:20272;121:20133;88:17880" id="icon-lg" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down-1.svg" alt="vuesax/linear/arrow-down">
+                </div>
+                <div class="absolute top-[40px] -left-10 css-button" id="dropdown">
+                  <div class="px-2 py-3 hover:bg-[#ddd] bg-[#ddd] rounded-[8px]">English</div>
+                  <div class="px-2 py-3 hover:bg-[#ddd] rounded-[8px]">Vietnamese</div>
                 </div>
               </div>
             </div>
@@ -997,13 +1017,36 @@ cursor: pointer;
             </div>
           </div>
         </header>
-        <div class="navbar fixed top-[80px] w-full px-20 py-5 flex" id="nav-item" style="background-color: white; display: none
+        <style>
+          .navbar h1, .navbar h5, .navbar p, .css-button div, .popup-content h2, .popup-grid p {
+            font-family: 'Plus Jakarta Sans';
+          }
+          .hover-dg {
+            background: linear-gradient(white, white) padding-box, /* Inner background */ linear-gradient(to bottom right, #ff7db5, #66cfff) border-box;
+    /* height: 1px; */
+    width: 170px;
+    border: 1.5px solid transparent;
+    position: absolute;
+    top: 40px;
+    display: none;
+          }
+          .css-button {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 10px;
+  display: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+          }
+        </style>
+        <div class="navbar fixed top-[80px] w-full px-20 py-5 flex" id="nav-item" style=" display: none
         ;">
-          <div class="w-[251px]">
+        <div class="rectangle-5-7BOs9r" data-id="I34:5711;119:19874" style="height: 210px;"></div>
+          <div class="w-[251px] relative">
             <h1 class="text-[#1B2533] text-[32px] font-bold">Our 
               products</h1>
           </div>
-          <div class="w-[345px]">
+          <div class="w-[345px] relative">
             <h5 class="text-[#1B2533] text-[18px] font-semibold leading-[26px]">Laundry detergent </h5>
             <p class="text-[16px] leading-[24px] font-normal">HC Euro</p>
             <p class="text-[16px] leading-[24px] font-normal">HC For</p>
@@ -1012,12 +1055,12 @@ cursor: pointer;
             <p class="text-[16px] leading-[24px] font-normal">HC SPJ Baby</p>
             <p class="text-[16px] leading-[24px] font-normal">Fabric Softener</p>
           </div>
-          <div class="w-[345px]">
+          <div class="w-[345px] relative">
             <h5 class="text-[#1B2533] text-[18px] font-semibold leading-[26px]">HC Beauty</h5>
             <p class="text-[16px] leading-[24px] font-normal">Body care</p>
             <p class="text-[16px] leading-[24px] font-normal">Hair care</p>
           </div>
-          <div class="w-[345px]">
+          <div class="w-[345px] relative">
             <h5 class="text-[#1B2533] text-[18px] font-semibold leading-[26px]">Other products 
               in the house </h5>
             <p class="text-[16px] leading-[24px] font-normal">Dishwashing Liquid</p>
@@ -1028,6 +1071,7 @@ cursor: pointer;
         <script>
           function openNav() {
             document.getElementById('nav-item').style.display ='flex';
+            document.getElementById('hover').style.display ='block';
             document.getElementById('icon').setAttribute('src', 'https://res.cloudinary.com/dhdfr7p4h/image/upload/v1728967202/arrow-up_ty6jyh.svg')
           }
           document.body.addEventListener('click', function(event) {
@@ -1036,6 +1080,7 @@ cursor: pointer;
     // Kiểm tra nếu click xảy ra ngoài div 'abc'
     if (!divABC.contains(event.target) && !document.getElementById('nav').contains(event.target)) {
       document.getElementById('icon').setAttribute('src', 'https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down.svg')
+      document.getElementById('hover').style.display ='none';
       
       divABC.style.display = 'none'
     }
@@ -1105,7 +1150,7 @@ window.addEventListener('scroll', function() {
   // Add the class when the user scrolls past the threshold
   if (window.scrollY > scrollThreshold) {
     if(isFill) {
-animateCount(0, 10, 3000, 'd1');
+animateCount(0, 90, 3000, 'd1');
 animateCount(0, 200, 3000, 'd2');
 animateCount(0, 10, 3000, 'd3');
       
