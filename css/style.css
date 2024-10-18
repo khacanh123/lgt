@@ -1218,6 +1218,8 @@ body {
   /* left: 72px; */
   /* top: 803px; */
   /* width: 50%; */
+  width: 90%;
+  margin-top: 40px;
 }
 
  .frame-159-e742Vi {
@@ -1279,11 +1281,12 @@ body {
   background-color: transparent;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  /* gap: 30px; */
   left: 790px;
-  position: absolute;
+  /* position: relative; */
   top: 846px;
   width: 50%;
+  padding: 130px 0px;
 }
 
  .vuesaxlinearwind-2-4CnvGV {
@@ -3191,7 +3194,7 @@ body {
 
  .rectangle-7 {
   background-color: transparent;
-  height: 627px;
+  /* height: 627px; */
   /* position: relative; */
 }
 
