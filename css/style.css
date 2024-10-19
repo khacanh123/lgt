@@ -3374,7 +3374,7 @@ body {
 .image-HHe9Eu {
     margin-top: 35px;
 }
-@media (min-width: 1200px) and (max-width: 1400px) {
+@media (min-width: 1200px) and (max-width: 1499px) {
     /* Các CSS điều chỉnh cho màn hình từ 1200px đến 1400px */
     .image-7tz5D2 {
         width: 1200px;
@@ -3390,3 +3390,8 @@ body {
         margin:auto;
     }
 }
+.base-button-pzP0q4:hover .text{
+    background: linear-gradient(to right, #7a00ff, #ff6bbd);
+    -webkit-background-clip: text;
+    color: transparent;/* button background */
+  }
