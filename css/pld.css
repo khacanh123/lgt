@@ -749,7 +749,7 @@ input:focus {
     flex-direction: column;
     gap: 20px;
     overflow: hidden;
-    padding: 48px 72px;
+    padding: 48px 0px;
     position: relative;
     width: 100%;
 }
@@ -798,7 +798,7 @@ input:focus {
     gap: 20px;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 48px 72px;
+    padding: 48px 0px;
     position: relative;
     width: 100%;
 }
@@ -885,7 +885,7 @@ input:focus {
     gap: 20px;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 48px 72px;
+    padding: 48px 0px;
     position: relative;
     width: 100%;
 }
