@@ -669,8 +669,8 @@ input:focus {
   align-items: center;
   display: flex;
   flex: 0 0 auto;
-  gap: 20px;
-  padding: 96px 0px;
+  gap: 40px;
+  padding: 48px 0px;
   width: 1441px;
   margin: auto;
 }
