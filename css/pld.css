@@ -1229,3 +1229,10 @@ input:focus {
     position: relative;
     width: 100%;
 }
+
+@media (min-width: 1200px) and (max-width: 1499px) {
+    /* Các CSS điều chỉnh cho màn hình từ 1200px đến 1400px */
+    .max-w-\[1441px\] {
+        max-width: 1200px;
+    }
+}
