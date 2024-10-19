@@ -3385,7 +3385,10 @@ body {
     .frame-148-U2sh1x {
         right: 140px;
     }
-    .about-us-UWwx5l, .category-UWwx5l, .ecommerce-hyperlink-UWwx5l, .our-technologies-UWwx5l, .browsing-UWwx5l, .max-w-\[1441px\], .frame-31-UWwx5l, .blog-list {
+    .img-left {
+        margin-top: 35px;
+    }
+    .about-us-UWwx5l, .category-UWwx5l, .browsing-UWwx5l, .max-w-\[1441px\], .frame-31-UWwx5l, .blog-list {
         width: 1200px;
         margin:auto;
     }
