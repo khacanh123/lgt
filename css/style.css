@@ -2732,7 +2732,7 @@ body {
 }
 .base-button-pzP0q4:hover {
     /* background: #E3F0FB !important; */
-    border: 2px solid transparent !important;
+    border: 1px solid transparent !important;
     background: linear-gradient(#E3F0FB, #E3F0FB) padding-box, /* Inner background */
   linear-gradient(to bottom right, #ff7db5, #66cfff) border-box !important; 
   ; /* Gradient border */
@@ -3373,4 +3373,20 @@ body {
 }
 .image-HHe9Eu {
     margin-top: 35px;
+}
+@media (min-width: 1200px) and (max-width: 1400px) {
+    /* Các CSS điều chỉnh cho màn hình từ 1200px đến 1400px */
+    .image-7tz5D2 {
+        width: 1200px;
+    }
+    .frame-148-oaieYR, .frame-148-HHe9Eu {
+        left: 144px;
+    }
+    .frame-148-U2sh1x {
+        right: 140px;
+    }
+    .about-us-UWwx5l, .category-UWwx5l, .ecommerce-hyperlink-UWwx5l, .our-technologies-UWwx5l, .browsing-UWwx5l, .max-w-\[1441px\], .frame-31-UWwx5l, .blog-list {
+        width: 1200px;
+        margin:auto;
+    }
 }
