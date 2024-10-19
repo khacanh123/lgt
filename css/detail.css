@@ -323,10 +323,10 @@ input:focus {
 
 .products-detail {
     background-color: var(--white);
-    height: min-content;
+    height: 4700px;
     overflow: hidden;
     overflow-x: hidden;
-    /* position: relative; */
+    position: relative;
     width: 1441px;
     margin: auto;
 }
