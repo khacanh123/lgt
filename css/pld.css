@@ -1131,7 +1131,7 @@ input:focus {
     flex: 0 0 auto;
     position: relative;
     width: 100%;
-    padding: 48px 72px;
+    padding: 48px 0px;
 }
 
 .item-dropdown-menu-item {
