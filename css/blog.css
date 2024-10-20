@@ -305,7 +305,7 @@ input:focus {
 
 .list-blog {
     background-color: var(--white);
-    height: 2416px;
+    height: 2020px;
     overflow: hidden;
     overflow-x: hidden;
     position: relative;
@@ -320,7 +320,6 @@ input:focus {
     left: 0px;
     padding: 96px 72px;
     position: absolute;
-    top: 68px;
     width: 100%;
 }
 
