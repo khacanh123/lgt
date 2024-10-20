@@ -1,0 +1,1853 @@
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@import url("https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:500,700,600,400|Inter:400");
+
+/* The following line is used to measure usage of this code. You can remove it if you want. */
+@import url("https://px.animaapp.com/6614e36db71f0b8421cfefca.6614e36eb71f0b8421cfefcd.LqnDzdx.hch.png");
+
+
+.screen textarea:focus,
+.screen input:focus {
+    outline: none;
+}
+
+.screen * {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
+.screen div {
+    -webkit-text-size-adjust: none;
+}
+
+.component-wrapper a {
+    display: contents;
+    pointer-events: auto;
+    text-decoration: none;
+}
+
+.component-wrapper * {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.component-wrapper a *,
+.component-wrapper input,
+.component-wrapper video,
+.component-wrapper iframe {
+    pointer-events: auto;
+}
+
+.component-wrapper.not-ready,
+.component-wrapper.not-ready * {
+    visibility: hidden !important;
+}
+
+.screen a {
+    display: contents;
+    text-decoration: none;
+}
+
+.full-width-a {
+    width: 100%;
+}
+
+.full-height-a {
+    height: 100%;
+}
+
+.container-center-vertical {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    pointer-events: none;
+}
+
+.container-center-vertical>* {
+    flex-shrink: 0;
+    pointer-events: auto;
+}
+
+.container-center-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    pointer-events: none;
+    width: 100%;
+}
+
+.container-center-horizontal>* {
+    flex-shrink: 0;
+    pointer-events: auto;
+}
+
+.auto-animated div {
+    --z-index: -1;
+    opacity: 0;
+    position: absolute;
+}
+
+.auto-animated input {
+    --z-index: -1;
+    opacity: 0;
+    position: absolute;
+}
+
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+    opacity: 1;
+}
+
+.overlay-base {
+    display: none;
+    height: 100%;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.overlay-base.animate-appear {
+    align-items: center;
+    animation: reveal 0.3s ease-in-out 1 normal forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+}
+
+.overlay-base.animate-disappear {
+    animation: reveal 0.3s ease-in-out 1 reverse forwards;
+    display: block;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.overlay-base.animate-disappear * {
+    pointer-events: none;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.animate-nodelay {
+    animation-delay: 0s;
+}
+
+.align-self-flex-start {
+    align-self: flex-start;
+}
+
+.align-self-flex-end {
+    align-self: flex-end;
+}
+
+.align-self-flex-center {
+    align-self: flex-center;
+}
+
+.valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.valign-text-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+input:focus {
+    outline: none;
+}
+
+.listeners-active,
+.listeners-active * {
+    pointer-events: auto;
+}
+
+.hidden,
+.hidden * {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.smart-layers-pointers,
+.smart-layers-pointers * {
+    pointer-events: auto;
+    visibility: visible;
+}
+
+.listeners-active-click,
+.listeners-active-click * {
+    cursor: pointer;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #000000;
+    --black-haze: #f5f6f8;
+    --bright-gray: #323e4f;
+    --pale-sky: #697483;
+    --steel-gray: #1b2533;
+    --white: #ffffff;
+    --wisp-pink: #fdf2f8;
+
+    --font-size-l: 16px;
+    --font-size-m: 14px;
+    --font-size-s: 12px;
+    --font-size-xl: 18px;
+    --font-size-xxl: 20px;
+    --font-size-xxxl: 24px;
+    --font-size-xxxxl: 40px;
+
+    --font-family-inter: "Inter", Helvetica;
+    --font-family-plus_jakarta_sans: "Plus Jakarta Sans", Helvetica;
+}
+
+.single-linebody-base {
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0px;
+}
+
+.plusjakartasans-normal-bright-gray-14px {
+    color: var(--bright-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.plusjakartasans-normal-pale-sky-16px {
+    color: var(--pale-sky);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.plusjakartasans-medium-steel-gray-16px {
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 500;
+}
+
+.plusjakartasans-normal-pale-sky-14px {
+    color: var(--pale-sky);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.plusjakartasans-medium-white-12px {
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-s);
+    font-style: normal;
+    font-weight: 500;
+}
+
+.plusjakartasans-semi-bold-steel-gray-20px {
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-xxl);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.plusjakartasans-semi-bold-steel-gray-16px {
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.plusjakartasans-medium-pale-sky-18px {
+    color: var(--pale-sky);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-xl);
+    font-style: normal;
+    font-weight: 500;
+}
+
+.plusjakartasans-semi-bold-steel-gray-18px {
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-xl);
+    font-style: normal;
+    font-weight: 600;
+}
+
+:root {}
+
+
+/* screen - list-blog */
+
+.list-blog {
+    background-color: var(--white);
+    height: 2416px;
+    overflow: hidden;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.list-blog .frame-9-jtYsKj {
+    align-items: flex-start;
+    background-color: var(--black-haze);
+    /* display: flex; */
+    gap: 12px;
+    left: 0px;
+    padding: 96px 72px;
+    position: absolute;
+    top: 68px;
+    width: 100%;
+}
+
+.list-blog .frame-87-cIH4CX {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 12px;
+    position: relative;
+}
+
+.list-blog .title-N7BgV0 {
+    background-color: transparent;
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-xxxxl);
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -1.00px;
+    line-height: 48.0px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .frame-10-N7BgV0 {
+    align-items: flex-start;
+    background-color: transparent;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+}
+
+.list-blog .our-blog-has-everyth-yJsMgU {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .frame-4-cIH4CX {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    width: 501px;
+}
+
+.list-blog .subscribe-for-updates-and-never-miss-out-sOBxIk {
+    background-color: transparent;
+    color: var(--bright-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .input-field-sOBxIk {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    width: 100%;
+}
+
+.list-blog .input-Q4XUXC {
+    align-items: center;
+    align-self: stretch;
+    background-color: var(--white);
+    border: 1px solid;
+    border-color: #d9d9d9;
+    border-radius: 8px;
+    display: flex;
+    flex: 0 0 auto;
+    margin-bottom: -1.00px;
+    margin-left: -1.00px;
+    margin-right: -1.00px;
+    margin-top: -1.00px;
+    min-width: 240px;
+    overflow: hidden;
+    padding: 12px 16px;
+    position: relative;
+    width: 100%;
+}
+
+.list-blog .value-50T9py {
+    background-color: transparent;
+    color: #1e1e1e;
+    flex: 1;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    margin-top: -0.50px;
+    position: relative;
+    text-align: left;
+}
+
+.list-blog .base-button-I10BSE {
+    background-color: var(--steel-gray);
+    border-radius: 96px;
+    padding: 8px 12px;
+}
+
+.list-blog .text-GqmgB2 {
+    color: #f6f6f7;
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-s);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 15.6px;
+}
+
+.list-blog .bredcrumb-cIH4CX {
+    align-items: flex-start;
+    background-color: transparent;
+    display: inline-flex;
+    gap: 8px;
+    /* left: 60px; */
+    position: absolute;
+    top: 24px;
+}
+
+.list-blog .menu-wC0V8i {
+    color: var(--pale-sky);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    margin-top: -1.00px;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .arrow-right-wC0V8i {
+    background-color: transparent;
+    height: 12px;
+    position: relative;
+    width: 12px;
+}
+
+.list-blog .menu-VTgzjk {
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    margin-top: -1.00px;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .frame-91-jtYsKj {
+    align-items: flex-start;
+    background-color: transparent;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 24px;
+    /* left: 72px; */
+    /* position: absolute; */
+    top: 428px;
+}
+
+.list-blog .frame-106-G1SjTS {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    width: 856px;
+}
+
+.list-blog .image-Mt6EfO {
+    align-self: stretch;
+    background-image: url(https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67087c5a9661cc2b677d3c23/img/image.svg);
+    height: 308px;
+    width: 100%;
+}
+
+.list-blog .frame-88-Mt6EfO {
+    align-self: stretch;
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.list-blog .june-29-2024-W7utt1 {
+    align-self: stretch;
+}
+
+.list-blog .base-button-UZtULu {
+    background-color: transparent;
+    border-radius: 96px;
+}
+
+.list-blog .text-mvTzko {
+    line-height: 24px;
+}
+
+.list-blog .frame-108-G1SjTS {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 24px;
+    position: relative;
+    width: 855px;
+}
+
+.list-blog .image-s724dF {
+    background-image: url(https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67087c5a9661cc2b677d3c23/img/image-1@2x.png);
+    height: 228px;
+    width: 416px;
+}
+
+.list-blog .frame-88-s724dF {
+    flex: 1;
+    flex-grow: 1;
+}
+
+.list-blog .june-29-2024-OILl0C {
+    align-self: stretch;
+}
+
+.list-blog .base-button-YTK3qX {
+    background-color: transparent;
+    border-radius: 96px;
+}
+
+.list-blog .text-bCViT0 {
+    line-height: 24px;
+}
+
+.list-blog .frame-109-G1SjTS {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 24px;
+    position: relative;
+    width: 855px;
+}
+
+.list-blog .image-jyXgkv {
+    background-image: url(https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67087c5a9661cc2b677d3c23/img/image-2@2x.png);
+    height: 228px;
+    width: 416px;
+}
+
+.list-blog .frame-88-jyXgkv {
+    flex: 1;
+    flex-grow: 1;
+}
+
+.list-blog .june-29-2024-BUqvKp {
+    align-self: stretch;
+}
+
+.list-blog .base-button-jE8xff {
+    background-color: transparent;
+    border-radius: 96px;
+}
+
+.list-blog .text-6PxRtV {
+    line-height: 24px;
+}
+
+.list-blog .frame-110-G1SjTS {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 24px;
+    position: relative;
+    width: 855px;
+}
+
+.list-blog .image-wLPtNe {
+    background-image: url(https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67087c5a9661cc2b677d3c23/img/image-3@2x.png);
+    height: 228px;
+    width: 416px;
+}
+
+.list-blog .frame-88-wLPtNe {
+    flex: 1;
+    flex-grow: 1;
+}
+
+.list-blog .june-29-2024-d6PKwx {
+    align-self: stretch;
+}
+
+.list-blog .base-button-Li5F9i {
+    background-color: transparent;
+    border-radius: 96px;
+}
+
+.list-blog .text-DoRbOZ {
+    line-height: 24px;
+}
+
+.list-blog .frame-111-G1SjTS {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 24px;
+    position: relative;
+    width: 855px;
+}
+
+.list-blog .image-BAPYtU {
+    background-image: url(https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67087c5a9661cc2b677d3c23/img/image-4@2x.png);
+    height: 228px;
+    width: 416px;
+}
+
+.list-blog .frame-88-BAPYtU {
+    flex: 1;
+    flex-grow: 1;
+}
+
+.list-blog .june-29-2024-IRPd1M {
+    align-self: stretch;
+}
+
+.list-blog .base-button-vHdmXq {
+    background-color: transparent;
+    border-radius: 96px;
+}
+
+.list-blog .text-P0Gxpz {
+    line-height: 24px;
+}
+
+.list-blog .frame-107-G1SjTS {
+    align-items: center;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.list-blog .pagination-MQx0vW {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-between;
+    padding: 12px 0px;
+    position: relative;
+    width: 578px;
+}
+
+.list-blog .base-button-ibu6yK {
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.list-blog .arrow-long-square-left-jhfLQZ {
+    background-color: transparent;
+    height: 16px;
+    position: relative;
+    width: 16px;
+}
+
+.list-blog .number-vxmJZP {
+    align-items: flex-start;
+    background-color: transparent;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 2px;
+    position: relative;
+}
+
+.list-blog .line-base-sD5Qds {
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+}
+
+.list-blog .x01-YrxpWW {
+    margin-top: -1.00px;
+}
+
+.list-blog .line-base-D6CjmI {
+    background-color: #f5f6f7;
+    border: 2px solid;
+    border-color: #eaecf0;
+    height: 44px;
+    margin-bottom: -2.00px;
+    margin-top: -2.00px;
+    width: 44px;
+}
+
+.list-blog .line-base-a9xG18 {
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+}
+
+.list-blog .x01-BKWE50 {
+    margin-right: -3.00px;
+    margin-top: -1.00px;
+}
+
+.list-blog .line-base-0yPSLN {
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+}
+
+.list-blog .x01-9mHJnb {
+    margin-top: -1.00px;
+}
+
+.list-blog .line-base-5VHX6f {
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+}
+
+.list-blog .x01-4UAdIs {
+    margin-right: -4.00px;
+    margin-top: -1.00px;
+}
+
+.list-blog .line-base-Y0c9PS {
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+}
+
+.list-blog .x01-x9oszf {
+    margin-right: -3.00px;
+    margin-top: -1.00px;
+}
+
+.list-blog .line-base-HXI83l {
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+}
+
+.list-blog .x01-gx6rn7 {
+    margin-right: -3.00px;
+    margin-top: -1.00px;
+}
+
+.list-blog .base-button-msUNBZ {
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.list-blog .arrow-long-square-right-65bHBa {
+    background-color: transparent;
+    height: 16px;
+    position: relative;
+    width: 16px;
+}
+
+.list-blog .frame-1261154165-jtYsKj {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    left: 952px;
+    /* position: absolute; */
+    /* top: 428px; */
+    /* width: 416px; */
+}
+
+.list-blog .ellipse-5-zLA8aK {
+    background: linear-gradient(180deg, rgb(75.00000312924385, 178.00000458955765, 229.00000154972076) 23.500001430511475%, rgb(234.00000125169754, 62.00000010430813, 148.000006377697) 100%);
+    background-color: transparent;
+    border-radius: 92px/92.5px;
+    filter: blur(200px);
+    ;
+    height: 185px;
+    left: 108px;
+    opacity: 0.3;
+    position: absolute;
+    top: -30px;
+    width: 184px;
+}
+
+.list-blog .categories-zLA8aK {
+    background-color: transparent;
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-xxxl);
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.00px;
+    line-height: 32.4px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .frame-96-zLA8aK {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.list-blog .frame-101-zLA8aK {
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 10px;
+    width: 100%;
+}
+
+.list-blog .popular-posts-Fx1p2L {
+    background-color: transparent;
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-xxxl);
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.00px;
+    line-height: 32.4px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .frame-101-wqykMs {
+    background-image: url(https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67087c5a9661cc2b677d3c23/img/frame-101.svg);
+    background-position: 50% 50%;
+    background-size: cover;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 104px;
+}
+
+.list-blog .june-29-2024-DixxN1 {
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .base-button-zOhFoG {
+    background-color: transparent;
+    border-radius: 96px;
+}
+
+.list-blog .text-u59b17 {
+    line-height: 24px;
+}
+
+.list-blog .frame-101-f05chf {
+    background-image: url(https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67087c5a9661cc2b677d3c23/img/frame-101-1.svg);
+    background-position: 50% 50%;
+    background-size: cover;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 104px;
+}
+
+.list-blog .june-29-2024-Nx18Ix {
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .base-button-NPE94N {
+    background-color: transparent;
+    border-radius: 96px;
+}
+
+.list-blog .text-7Xu4cx {
+    line-height: 24px;
+}
+
+.list-blog .frame-101-hx9U2p {
+    background-image: url(https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67087c5a9661cc2b677d3c23/img/frame-101-2.svg);
+    background-position: 50% 50%;
+    background-size: cover;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 104px;
+}
+
+.list-blog .june-29-2024-k3nPzw {
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .base-button-55UazC {
+    background-color: transparent;
+    border-radius: 96px;
+}
+
+.list-blog .text-mMkUQS {
+    line-height: 24px;
+}
+
+.list-blog .frame-101-pOoaYc {
+    background-image: url(https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/67087c5a9661cc2b677d3c23/img/frame-101-3.svg);
+    background-position: 50% 50%;
+    background-size: cover;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 104px;
+}
+
+.list-blog .june-29-2024-5d7Ki7 {
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .base-button-IfuWM7 {
+    background-color: transparent;
+    border-radius: 96px;
+}
+
+.list-blog .text-ZxWoqa {
+    line-height: 24px;
+}
+
+.list-blog .footer-jtYsKj {
+    align-items: flex-start;
+    background-color: var(--black-haze);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    left: -1px;
+    overflow: hidden;
+    padding: 56px 72px;
+    position: absolute;
+    top: 2002px;
+    width: 100%;
+}
+
+.list-blog .frame-177-dcoV0J {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: #dce5e9;
+    border-left-style: none;
+    border-right-style: none;
+    border-top-style: none;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-between;
+    padding: 0px 0px 56px;
+    position: relative;
+    width: 100%;
+}
+
+.list-blog .frame-KfSU3s {
+    align-items: flex-start;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 10px;
+    padding: 6px 0px;
+}
+
+.list-blog .group-y9pziQ {
+    background-color: transparent;
+    height: 103.75440979003906px;
+    position: relative;
+    width: 200px;
+}
+
+.list-blog .layer-1-pKAk9i {
+    height: 104px;
+    width: 200px;
+}
+
+.list-blog .group-Dn9rbZ {
+    background-color: transparent;
+    height: 104px;
+    left: 0px;
+    position: relative;
+    top: 0px;
+    width: 200px;
+}
+
+.list-blog .vector-9fEVsR {
+    height: 104px;
+    width: 96px;
+}
+
+.list-blog .group-9fEVsR {
+    background-color: transparent;
+    height: 104px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 96px;
+}
+
+.list-blog .clip-path-group-9fEVsR {
+    height: 104px;
+    width: 96px;
+}
+
+.list-blog .group-839SMx {
+    background-color: transparent;
+    height: 46px;
+    left: 110px;
+    position: absolute;
+    top: 29px;
+    width: 90px;
+}
+
+.list-blog .section-02-KfSU3s {
+    background-color: transparent;
+    flex: 1;
+    flex-grow: 1;
+    height: 164px;
+    position: relative;
+}
+
+.list-blog .frame-178-x8JHwN {
+    left: 0px;
+    top: 0px;
+    width: 324px;
+}
+
+.list-blog .about-us-Kzrb6U {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 27.9px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.list-blog .our-story-Kzrb6U {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .our-mission-Kzrb6U {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .our-vision-Kzrb6U {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .core-value-Kzrb6U {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .section-5-KfSU3s {
+    background-color: transparent;
+    flex: 1;
+    flex-grow: 1;
+    height: 198px;
+    position: relative;
+}
+
+.list-blog .frame-178-WHwxbs {
+    left: 0px;
+    top: 0px;
+    width: 324px;
+}
+
+.list-blog .products-fDRdOk {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 27.9px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.list-blog .laundry-detergent-fDRdOk {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .hc-beauty-fDRdOk {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .floor-cleaner-fDRdOk {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .dishwashing-liquid-fDRdOk {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .hand-sanitizer-fDRdOk {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .frame-178-KfSU3s {
+    flex: 1;
+    flex-grow: 1;
+}
+
+.list-blog .contact-us-f3vNKm {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 27.9px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.list-blog .frame-112-f3vNKm {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    width: 100%;
+}
+
+.list-blog .frame-114-FIkUcM {
+    align-items: center;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 12px;
+    position: relative;
+    width: 100%;
+}
+
+.list-blog .vuesaxlinearcall-calling-6xdDm5 {
+    background-color: transparent;
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+.list-blog .x84-912-488-627-ohnz4j {
+    background-color: transparent;
+    flex: 1;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+}
+
+.list-blog .frame-115-FIkUcM {
+    align-items: center;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 12px;
+    position: relative;
+    width: 100%;
+}
+
+.list-blog .vuesaxlinearsms-tracking-MBmS2C {
+    background-color: transparent;
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+.list-blog .hcvietnaminfogmailcom-IkeQ9s {
+    background-color: transparent;
+    flex: 1;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+}
+
+.list-blog .frame-116-FIkUcM {
+    align-items: center;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 12px;
+    position: relative;
+    width: 100%;
+}
+
+.list-blog .vuesaxlinearlocation-iLrkdS {
+    background-color: transparent;
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+.list-blog .x522-minh-khai-vinh-t-UxJZvZ {
+    background-color: transparent;
+    flex: 1;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.list-blog .frame-179-dcoV0J {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+}
+
+.list-blog .x2024-copyright-do-minh-tung-lam-studio-2xvAll {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .frame-180-2xvAll {
+    background-color: transparent;
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.list-blog .header-jtYsKj {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    gap: 10px;
+    left: 0px;
+    padding: 0px 72px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+
+.list-blog .rectangle-5-4ZpCnx {
+    -webkit-backdrop-filter: blur(91.73332977294922px) brightness(100%);
+    backdrop-filter: blur(91.73332977294922px) brightness(100%);
+    background-color: #ffffff1a;
+    box-shadow: inset -45.86666488647461px 45.86666488647461px 45.86666488647461px #ffffff1a, inset 45.86666488647461px -45.86666488647461px 45.86666488647461px #c1c1c11a;
+    height: 80px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.list-blog .frame-4ZpCnx {
+    height: 80px;
+    width: 134px;
+}
+
+.list-blog .group-kr0mQe {
+    background-color: transparent;
+    height: 66px;
+    left: 7px;
+    position: relative;
+    top: 8px;
+    width: 127px;
+}
+
+.list-blog .layer-1-PU7cby {
+    height: 66px;
+    width: 127px;
+}
+
+.list-blog .group-ekfOgj {
+    background-color: transparent;
+    height: 66px;
+    left: 0px;
+    position: relative;
+    top: 0px;
+    width: 127px;
+}
+
+.list-blog .vector-VbjS57 {
+    height: 66px;
+    width: 61px;
+}
+
+.list-blog .group-VbjS57 {
+    background-color: transparent;
+    height: 66px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 61px;
+}
+
+.list-blog .clip-path-group-VbjS57 {
+    height: 66px;
+    width: 61px;
+}
+
+.list-blog .group-mK1Ufe {
+    background-color: transparent;
+    height: 29px;
+    left: 70px;
+    position: absolute;
+    top: 18px;
+    width: 57px;
+}
+
+.list-blog .frame-2-4ZpCnx {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    flex: 1;
+    flex-grow: 1;
+    gap: 20px;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.list-blog .frame-4-x5xM37 {
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-end;
+    width: 538px;
+}
+
+.list-blog .menu-hyHC6v {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-grow: 1;
+    gap: 10px;
+    justify-content: center;
+    padding: 8px;
+}
+
+.list-blog .menu-41b9aV {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-grow: 1;
+    gap: 10px;
+    justify-content: center;
+    padding: 8px;
+}
+
+.list-blog .menu-bp0z0X {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 10px;
+    justify-content: center;
+    padding: 8px;
+}
+
+.list-blog .vuesaxlineararrow-down-0qP5gx {
+    height: 24px;
+    width: 24px;
+}
+
+.list-blog .menu-Jiwjf8 {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-grow: 1;
+    gap: 10px;
+    justify-content: center;
+    padding: 8px;
+}
+
+.list-blog .language-x5xM37 {
+    align-items: flex-start;
+    background-color: transparent;
+    display: inline-flex;
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.list-blog .dropdown-button-basic-dVTvAG {
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid;
+    border-color: #dadce0;
+    border-radius: 8px;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 4px;
+    padding: 0px 16px;
+    position: relative;
+}
+
+.list-blog .vuesaxlineararrow-down-d9ZdK2 {
+    height: 14px;
+    width: 14px;
+}
+
+.list-blog .content-d9ZdK2 {
+    align-items: center;
+    background-color: transparent;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 4px;
+    height: 32px;
+    position: relative;
+}
+
+.list-blog .dropdown-nxtZhz {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .vuesaxlineararrow-down-nxtZhz {
+    height: 14px;
+    width: 14px;
+}
+
+.list-blog .base-button-1pNcJY {
+    background-color: transparent;
+    border: 1px solid;
+    border-color: var(--black);
+    border-radius: 8px;
+    padding: 8px 16px;
+}
+
+.list-blog .text-dneRuz {
+    color: var(--black);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+.list-blog .action {
+    align-items: flex-start;
+    background-color: transparent;
+    display: inline-flex;
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.list-blog .badge {
+    align-items: flex-start;
+    background-color: transparent;
+    display: inline-flex;
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.list-blog .base-badge {
+    align-items: center;
+    background-color: var(--wisp-pink);
+    border-radius: 50px;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 4px;
+    padding: 4px 12px;
+    position: relative;
+}
+
+.list-blog .base-button {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 8px;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.list-blog .bredcrumb-base {
+    align-items: center;
+    background-color: transparent;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 8px;
+    position: relative;
+}
+
+.list-blog .button {
+    align-items: flex-start;
+    background-color: transparent;
+    display: inline-flex;
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.list-blog .clip-path-group {
+    background-color: transparent;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+}
+
+.list-blog .frame {
+    background-color: transparent;
+    overflow: hidden;
+    position: relative;
+}
+
+.list-blog .frame-101 {
+    align-self: stretch;
+    background-color: transparent;
+    position: relative;
+}
+
+.list-blog .frame-102 {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 6px;
+    position: relative;
+}
+
+.list-blog .frame-178 {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.list-blog .frame-4 {
+    background-color: transparent;
+    display: flex;
+    position: relative;
+}
+
+.list-blog .frame-62 {
+    align-items: center;
+    background-color: var(--black-haze);
+    border-radius: 100px;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 10px;
+    padding: 8px;
+    position: relative;
+}
+
+.list-blog .frame-88 {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    position: relative;
+}
+
+.list-blog .home {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 27.9px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .image {
+    background-color: transparent;
+    background-position: 50% 50%;
+    background-size: cover;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.list-blog .june-29-2024 {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+}
+
+.list-blog .label {
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(180deg, rgb(234.00000125169754, 62.00000010430813, 148.000006377697) 0%, rgb(21.000000648200512, 120.00000044703484, 177.0000046491623) 100%);
+    background-clip: text;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 15.6px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+    text-fill-color: transparent;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .layer-1 {
+    background-color: transparent;
+    left: 0px;
+    position: relative;
+    top: 0px;
+}
+
+.list-blog .line-base {
+    align-items: flex-start;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 12px;
+    position: relative;
+}
+
+.list-blog .menu {
+    background-color: transparent;
+    position: relative;
+}
+
+.list-blog .pagination-button {
+    align-items: flex-start;
+    background-color: transparent;
+    display: inline-flex;
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.list-blog .posts {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: var(--white);
+    border-radius: 8px;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 12px;
+    padding: 8px;
+    position: relative;
+    width: 100%;
+}
+
+.list-blog .review-card {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: #f5f6f880;
+    border: 1px solid;
+    border-color: var(--white);
+    border-radius: 16px;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    position: relative;
+    width: 100%;
+}
+
+.list-blog .secret-to-washing-wh {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24.0px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.list-blog .text {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.list-blog .the-secret-to-ironin {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.list-blog .vector {
+    background-color: transparent;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+}
+
+.list-blog .vuesaxlineararrow-down {
+    background-color: transparent;
+    position: relative;
+}
+
+.list-blog .vuesaxoutlinearrow-right {
+    background-color: transparent;
+    height: 20px;
+    position: relative;
+    width: 20px;
+}
+
+.list-blog .white-shirts-are-an {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+}
+
+.list-blog .x01 {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+}
