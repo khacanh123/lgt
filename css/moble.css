@@ -811,3 +811,3170 @@ input:focus {
     position: relative;
     width: 16px;
 }
+
+.screen textarea:focus,
+.screen input:focus {
+    outline: none;
+}
+
+.screen * {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
+.screen div {
+    -webkit-text-size-adjust: none;
+}
+
+.component-wrapper a {
+    display: contents;
+    pointer-events: auto;
+    text-decoration: none;
+}
+
+.component-wrapper * {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.component-wrapper a *,
+.component-wrapper input,
+.component-wrapper video,
+.component-wrapper iframe {
+    pointer-events: auto;
+}
+
+.component-wrapper.not-ready,
+.component-wrapper.not-ready * {
+    visibility: hidden !important;
+}
+
+.screen a {
+    display: contents;
+    text-decoration: none;
+}
+
+.full-width-a {
+    width: 100%;
+}
+
+.full-height-a {
+    height: 100%;
+}
+
+.container-center-vertical {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    pointer-events: none;
+}
+
+.container-center-vertical>* {
+    flex-shrink: 0;
+    pointer-events: auto;
+}
+
+.container-center-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    pointer-events: none;
+    width: 100%;
+}
+
+.container-center-horizontal>* {
+    flex-shrink: 0;
+    pointer-events: auto;
+}
+
+.auto-animated div {
+    --z-index: -1;
+    opacity: 0;
+    position: absolute;
+}
+
+.auto-animated input {
+    --z-index: -1;
+    opacity: 0;
+    position: absolute;
+}
+
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+    opacity: 1;
+}
+
+.overlay-base {
+    display: none;
+    height: 100%;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.overlay-base.animate-appear {
+    align-items: center;
+    animation: reveal 0.3s ease-in-out 1 normal forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+}
+
+.overlay-base.animate-disappear {
+    animation: reveal 0.3s ease-in-out 1 reverse forwards;
+    display: block;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.overlay-base.animate-disappear * {
+    pointer-events: none;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.animate-nodelay {
+    animation-delay: 0s;
+}
+
+.align-self-flex-start {
+    align-self: flex-start;
+}
+
+.align-self-flex-end {
+    align-self: flex-end;
+}
+
+.align-self-flex-center {
+    align-self: flex-center;
+}
+
+.valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.valign-text-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+input:focus {
+    outline: none;
+}
+
+.listeners-active,
+.listeners-active * {
+    pointer-events: auto;
+}
+
+.hidden,
+.hidden * {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.smart-layers-pointers,
+.smart-layers-pointers * {
+    pointer-events: auto;
+    visibility: visible;
+}
+
+.listeners-active-click,
+.listeners-active-click * {
+    cursor: pointer;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #000000;
+    --black-haze: #f5f6f8;
+    --black-haze-2: #f6f6f7;
+    --black-haze-3: #f5f6f880;
+    --bright-gray: #323e4f;
+    --pale-sky: #697483;
+    --steel-gray: #1b2533;
+    --swans-down: #dce5e9;
+    --white: #ffffff;
+    --white-2: #ffffff4c;
+    --white-3: #ffffff80;
+    --white-4: #ffffff66;
+
+    --font-size-l: 16px;
+    --font-size-m: 14px;
+    --font-size-s: 12px;
+    --font-size-xl: 18px;
+    --font-size-xxl: 20px;
+    --font-size-xxxl: 24px;
+    --font-size-xxxxl: 48px;
+
+    --font-family-plus_jakarta_sans: "Plus Jakarta Sans", Helvetica;
+}
+
+.plusjakartasans-normal-pale-sky-14px {
+    color: var(--pale-sky);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.plusjakartasans-bold-steel-gray-24px {
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-xxxl);
+    font-style: normal;
+    font-weight: 700;
+}
+
+.plusjakartasans-medium-black-14px {
+    color: var(--black);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 500;
+}
+
+.plusjakartasans-semi-bold-steel-gray-16px {
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.plusjakartasans-normal-bright-gray-14px {
+    color: var(--bright-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.plusjakartasans-semi-bold-bright-gray-14px {
+    color: var(--bright-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.plusjakartasans-normal-bright-gray-16px {
+    color: var(--bright-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.plusjakartasans-semi-bold-steel-gray-18px {
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-xl);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.plusjakartasans-semi-bold-black-16px {
+    color: var(--black);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.plusjakartasans-medium-steel-gray-14px {
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 500;
+}
+
+.plusjakartasans-normal-bright-gray-12px {
+    color: var(--bright-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-s);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.plusjakartasans-medium-black-haze-16px {
+    color: var(--black-haze-2);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 500;
+}
+
+.plusjakartasans-normal-pale-sky-16px {
+    color: var(--pale-sky);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.plusjakartasans-bold-steel-gray-48px {
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-xxxxl);
+    font-style: normal;
+    font-weight: 700;
+}
+
+.plusjakartasans-medium-bright-gray-14px {
+    color: var(--bright-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 500;
+}
+
+:root {}
+
+
+/* screen - mobileu47hompageu47en */
+
+.mobileu47hompageu47en {
+    align-items: flex-start;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0px;
+    overflow: hidden;
+    overflow-x: hidden;
+    position: relative;
+    top: 0px;
+}
+
+.mobileu47hompageu47en .frame-1261154170-1lDjsl {
+    background-color: transparent;
+    height: 774px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .background-FYhjzg {
+    background-color: var(--white);
+    height: 701px;
+    left: -218px;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    width: 986px;
+}
+
+.mobileu47hompageu47en .ellipse-5-QJseLx {
+    background: linear-gradient(180deg, rgb(193.00000369548798, 227.00000166893005, 246.0000005364418) 0%);
+    border-radius: 124.76px;
+    filter: blur(114.98834228515625px);
+    ;
+    height: 250px;
+    left: 452px;
+    opacity: 0.8;
+    top: 193px;
+    width: 250px;
+}
+
+.mobileu47hompageu47en .ellipse-5-bslUzy {
+    background: linear-gradient(180deg, rgb(218.00000220537186, 40.00000141561031, 120.00000044703484) 0%, rgb(75.00000312924385, 178.00000458955765, 229.00000154972076) 76.49999856948853%);
+    border-radius: 189.73px;
+    filter: blur(229.9766845703125px);
+    ;
+    height: 379px;
+    left: 87px;
+    top: -51px;
+    width: 379px;
+}
+
+.mobileu47hompageu47en .rectangle-4-QJseLx {
+    -webkit-backdrop-filter: blur(94.44375610351562px) brightness(100%);
+    backdrop-filter: blur(94.44375610351562px) brightness(100%);
+    background-color: #ffffff1a;
+    box-shadow: inset -47.22187805175781px 47.22187805175781px 47.22187805175781px #ffffff1a, inset 47.22187805175781px -47.22187805175781px 47.22187805175781px #c1c1c11a;
+    height: 589px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 828px;
+}
+
+.mobileu47hompageu47en .frame-132-QJseLx {
+    background-color: transparent;
+    height: 922px;
+    left: -93px;
+    position: absolute;
+    top: -275px;
+    width: 1244px;
+}
+
+.mobileu47hompageu47en .ellipse-6-yyQ6sW {
+    border-radius: 251.82px;
+    height: 504px;
+    left: 0px;
+    top: 166px;
+    width: 504px;
+}
+
+.mobileu47hompageu47en .ellipse-6-copskX {
+    border-radius: 251.82px;
+    height: 504px;
+    left: 317px;
+    top: 418px;
+    width: 504px;
+}
+
+.mobileu47hompageu47en .ellipse-6-F8wNcU {
+    border-radius: 311.04px;
+    height: 622px;
+    left: 622px;
+    top: -0px;
+    width: 622px;
+}
+
+.mobileu47hompageu47en .frame-1261154175-FYhjzg {
+    background-color: transparent;
+    height: 682px;
+    left: 0px;
+    position: absolute;
+    /* top: 60px; */
+    width: 100%;
+}
+
+.mobileu47hompageu47en .header-mobile-eE4eQQ {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    height: 52px;
+    justify-content: space-between;
+    left: 0px;
+    padding: 0px 16px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .rectangle-5-WP8Ks9 {
+    -webkit-backdrop-filter: blur(91.73332977294922px) brightness(100%);
+    backdrop-filter: blur(91.73332977294922px) brightness(100%);
+    background-color: #ffffff1a;
+    box-shadow: inset -45.86666488647461px 45.86666488647461px 45.86666488647461px #ffffff1a, inset 45.86666488647461px -45.86666488647461px 45.86666488647461px #c1c1c11a;
+    height: 112px;
+    left: 0px;
+    position: absolute;
+    top: -60px;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-WP8Ks9 {
+    height: 48px;
+    margin-left: -377px;
+    width: 80px;
+}
+
+.mobileu47hompageu47en .group-awIhli {
+    background-color: transparent;
+    height: 40px;
+    left: 4px;
+    position: relative;
+    top: 5px;
+    width: 76px;
+}
+
+.mobileu47hompageu47en .layer-1-TIC1mI {
+    height: 40px;
+    width: 76px;
+}
+
+.mobileu47hompageu47en .group-7jxNmV {
+    background-color: transparent;
+    height: 40px;
+    left: 0px;
+    position: relative;
+    top: 0px;
+    width: 76px;
+}
+
+.mobileu47hompageu47en .vector-trhvSr {
+    height: 40px;
+    width: 37px;
+}
+
+.mobileu47hompageu47en .group-trhvSr {
+    background-color: transparent;
+    height: 40px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 37px;
+}
+
+.mobileu47hompageu47en .clip-path-group-trhvSr {
+    height: 40px;
+    width: 37px;
+}
+
+.mobileu47hompageu47en .group-B5p14D {
+    background-color: transparent;
+    height: 18px;
+    left: 42px;
+    position: absolute;
+    top: 11px;
+    width: 34px;
+}
+
+.mobileu47hompageu47en .vuesaxlineararrow-down-WP8Ks9 {
+    background-color: transparent;
+    height: 24px;
+    margin-left: -377px;
+    position: relative;
+    width: 24px;
+}
+
+.mobileu47hompageu47en .frame-133-eE4eQQ {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* left: 20px; */
+    position: absolute;
+    top: 84px;
+    width: 100%;
+    padding: 0px 16px;
+}
+
+.mobileu47hompageu47en .find-comfort-in-every-corner-VN7ksx {
+    align-self: stretch;
+    background-color: transparent;
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: -1.00px;
+    line-height: 48.0px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: center;
+}
+
+.mobileu47hompageu47en .we-are-full-of-pride-VN7ksx {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: center;
+}
+
+.mobileu47hompageu47en .base-button-N9uXX2 {
+    background-color: var(--steel-gray);
+    padding: 8px 16px;
+}
+
+.mobileu47hompageu47en .text-772aNx {
+    line-height: 24px;
+    text-align: center;
+}
+
+.mobileu47hompageu47en .vuesaxlineararrow-right-772aNx {
+    height: 20px;
+    width: 20px;
+}
+
+.mobileu47hompageu47en .image-eE4eQQ {
+    background-color: transparent;
+    height: 326px;
+    /* left: 10px; */
+    position: absolute;
+    top: 356px;
+    width: 100%;
+    /* padding: 0px 16px; */
+}
+
+.mobileu47hompageu47en .image-CAjuTp {
+    background-color: transparent;
+    height: 326px;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    padding: 0px 16px;
+}
+
+.mobileu47hompageu47en .frame-148-eE4eQQ {
+    background-color: var(--white-2);
+    display: inline-flex;
+    gap: 10px;
+    left: 25px;
+    position: absolute;
+    top: 544px;
+}
+
+.mobileu47hompageu47en .base-avatar-LXOMMX {
+    height: 40px;
+    width: 40px;
+}
+
+.mobileu47hompageu47en .user-image-mchiI1 {
+    background-image: url(https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/67053a4cc64b9b54194b4401/img/name-image-06.png);
+    height: 40px;
+    width: 40px;
+}
+
+.mobileu47hompageu47en .frame-149-LXOMMX {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+    position: relative;
+    width: 233px;
+}
+
+.mobileu47hompageu47en .rating-JxxKhB {
+    gap: 4px;
+}
+
+.mobileu47hompageu47en .leslie-alexander-JxxKhB {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+    width: 167px;
+}
+
+.mobileu47hompageu47en .received-the-goods-t-JxxKhB {
+    align-self: stretch;
+    background-color: transparent;
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .about-us-1lDjsl {
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    padding: 32px 16px;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .ellipse-5-1JyGV2 {
+    background: linear-gradient(180deg, rgb(234.00000125169754, 62.00000010430813, 148.000006377697) 0%, rgb(75.00000312924385, 178.00000458955765, 229.00000154972076) 76.49999856948853%);
+    border-radius: 330px;
+    filter: blur(400px);
+    ;
+    height: 660px;
+    left: 47px;
+    opacity: 0.2;
+    top: 9px;
+    width: 660px;
+}
+
+.mobileu47hompageu47en .what-drive-us-0hSiBl {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 32.4px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .as-society-continues-8RwTUw {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .base-button-PTa8Eu {
+    background-color: var(--steel-gray);
+    padding: 8px 16px;
+}
+
+.mobileu47hompageu47en .text-NKhZvO {
+    line-height: 24px;
+    text-align: center;
+}
+
+.mobileu47hompageu47en .vuesaxlineararrow-right-NKhZvO {
+    height: 20px;
+    width: 20px;
+}
+
+.mobileu47hompageu47en .frame-146-1JyGV2 {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .happy-custoers-3ICy3E {
+    align-items: center;
+    align-self: stretch;
+    background-color: transparent;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: var(--swans-down);
+    border-left-style: none;
+    border-right-style: none;
+    border-top-style: none;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    padding: 0px 0px 8px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .title-x4J6Gh {
+    align-self: stretch;
+    background-color: transparent;
+    color: var(--bright-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-xxxxl);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .span0-BKaBp7 {
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: -0.72px;
+    line-height: 60px;
+}
+
+.mobileu47hompageu47en .span1-BKaBp7 {
+    font-size: 36px;
+    letter-spacing: -0.36px;
+    line-height: 43.9px;
+}
+
+.mobileu47hompageu47en .happy-customers-x4J6Gh {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .local-stores-3ICy3E {
+    align-items: center;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: var(--swans-down);
+    border-left-style: none;
+    border-right-style: none;
+    border-top-style: none;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    padding: 0px 0px 8px;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .x200-Q1m5m6 {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: -1.50px;
+    line-height: 60px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .span0-jxWr7D {
+    letter-spacing: -0.72px;
+}
+
+.mobileu47hompageu47en .span1-jxWr7D {
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-xxxxl);
+    letter-spacing: -0.72px;
+}
+
+.mobileu47hompageu47en .local-stores-Q1m5m6 {
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .frame-144-3ICy3E {
+    align-items: center;
+    align-self: stretch;
+    background-color: transparent;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: var(--swans-down);
+    border-left-style: none;
+    border-right-style: none;
+    border-top-style: none;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    padding: 0px 0px 8px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .x10-mXTLZv {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: -1.50px;
+    line-height: 60px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .years-of-experience-mXTLZv {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .category-1lDjsl {
+    flex: 0 0 auto;
+    gap: 32px;
+    padding: 32px 16px;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-16-iC7Jyq {
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.mobileu47hompageu47en .our-products-epmVZB {
+    background-color: transparent;
+    flex: 1;
+    letter-spacing: 0.00px;
+    line-height: 32.4px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .frame-150-epmVZB {
+    display: inline-flex;
+}
+
+.mobileu47hompageu47en .base-button-wKGJ4w {
+    background-color: var(--black-haze);
+    padding: 10px;
+}
+
+.mobileu47hompageu47en .base-button-an8XHo {
+    background-color: var(--black-haze);
+    padding: 10px;
+}
+
+.mobileu47hompageu47en .vuesaxlineararrow-right-11LEBA {
+    height: 20px;
+    width: 20px;
+}
+
+.mobileu47hompageu47en .frame-28-iC7Jyq::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+.mobileu47hompageu47en .frame-28-iC7Jyq {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+    height: 345px;
+    margin-right: -681.00px;
+    overflow-x: scroll;
+    position: relative;
+    width: 1042px;
+}
+
+.mobileu47hompageu47en .category-oAcJ7c {
+    align-self: stretch;
+    background-image: url(https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/67053a4cc64b9b54194b4401/img/property-1-default.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    border-radius: 8px;
+    flex: 1;
+    flex-grow: 1;
+    gap: 8px;
+    justify-content: flex-end;
+    overflow: hidden;
+    padding: 8px;
+}
+
+.mobileu47hompageu47en .frame-148-OtnHxr {
+    align-self: stretch;
+    background-color: var(--white-4);
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .laundry-detergent-xMxBBn {
+    line-height: 32.4px;
+    margin-top: -1.00px;
+}
+
+.mobileu47hompageu47en .this-laundry-deterge-xMxBBn {
+    line-height: 20.3px;
+}
+
+.mobileu47hompageu47en .base-button-vC87HI {
+    background-color: transparent;
+}
+
+.mobileu47hompageu47en .text-rCHzF1 {
+    line-height: 21px;
+    text-align: center;
+}
+
+.mobileu47hompageu47en .vuesaxlineararrow-right-rCHzF1 {
+    height: 16px;
+    width: 16px;
+}
+
+.mobileu47hompageu47en .category-G59Nnw {
+    align-self: stretch;
+    background-image: url(https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/67053a4cc64b9b54194b4401/img/property-1-default.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    border-radius: 8px;
+    flex: 1;
+    flex-grow: 1;
+    gap: 8px;
+    justify-content: flex-end;
+    overflow: hidden;
+    padding: 24px;
+}
+
+.mobileu47hompageu47en .frame-148-Z7rQx0 {
+    align-self: stretch;
+    background-color: var(--white-4);
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .laundry-detergent-xcxsHF {
+    line-height: 32.4px;
+    margin-top: -1.00px;
+}
+
+.mobileu47hompageu47en .this-laundry-deterge-xcxsHF {
+    line-height: 24px;
+}
+
+.mobileu47hompageu47en .base-button-3xYFge {
+    background-color: transparent;
+}
+
+.mobileu47hompageu47en .text-vZrXph {
+    line-height: 21px;
+    text-align: center;
+}
+
+.mobileu47hompageu47en .vuesaxlineararrow-right-vZrXph {
+    height: 16px;
+    width: 16px;
+}
+
+.mobileu47hompageu47en .image-oAcJ7c {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    background-image: url(https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/67053a4cc64b9b54194b4401/img/property-1-default.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    border-radius: 8px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 8px;
+    justify-content: flex-end;
+    overflow: hidden;
+    padding: 24px;
+    position: relative;
+}
+
+.mobileu47hompageu47en .frame-148-wLU3B7 {
+    align-self: stretch;
+    background-color: var(--white-4);
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .laundry-detergent-5Vf4tQ {
+    line-height: 32.4px;
+    margin-top: -1.00px;
+}
+
+.mobileu47hompageu47en .this-laundry-deterge-5Vf4tQ {
+    line-height: 24px;
+}
+
+.mobileu47hompageu47en .base-button-rVXEnA {
+    background-color: transparent;
+}
+
+.mobileu47hompageu47en .text-csdrIc {
+    line-height: 21px;
+    text-align: center;
+}
+
+.mobileu47hompageu47en .vuesaxlineararrow-right-csdrIc {
+    height: 16px;
+    width: 16px;
+}
+
+.mobileu47hompageu47en .ecommerce-hyperlink-1lDjsl {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 56px;
+    padding: 32px 16px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-25-W9u4fS {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .distribution-and-sales-system-b0Y7cR {
+    align-self: stretch;
+    background-color: transparent;
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.50px;
+    line-height: 40px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .frame-24-b0Y7cR {
+    align-items: center;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-22-81JtRW {
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0px 4px 16px -2px #1b25330f;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 10px;
+    justify-content: center;
+    padding: 16px;
+    position: relative;
+}
+
+.mobileu47hompageu47en .image-1-AanSHr {
+    align-self: stretch;
+    background-color: transparent;
+    height: 52px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-23-81JtRW {
+    align-items: center;
+    align-self: stretch;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0px 4px 16px -2px #1b25330f;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 10px;
+    justify-content: center;
+    padding: 16px;
+    position: relative;
+}
+
+.mobileu47hompageu47en .image-xxEinO {
+    align-self: stretch;
+    background-color: transparent;
+    height: 47px;
+    object-fit: cover;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .browsing-1lDjsl {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 16px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-16-fxuQ4m {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mobileu47hompageu47en .find-the-right-products-for-you-ak7YpD {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 32.4px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .choose-products-base-on-what-you-need-ak7YpD {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.mobileu47hompageu47en .frame-163-fxuQ4m {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 24px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .browning-DORzwy {
+    align-self: stretch;
+    justify-content: space-between;
+}
+
+.mobileu47hompageu47en .browse-by-type-H9Txq8 {
+    align-self: stretch;
+    background-color: transparent;
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-xxl);
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.00px;
+    line-height: 24.0px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .pacs-liquid-powder-and-more-H9Txq8 {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .frame-161-flDwiT {
+    align-self: stretch;
+    background-color: transparent;
+    height: 98px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .ellipse-7-x53unT {
+    background-color: var(--steel-gray);
+    border-radius: 70.44px/4.39px;
+    filter: blur(80px);
+    ;
+    height: 9px;
+    left: -3px;
+    opacity: 0.5;
+    position: absolute;
+    top: 80px;
+    width: 141px;
+}
+
+.mobileu47hompageu47en .image-x53unT {
+    background-color: transparent;
+    height: 71px;
+    left: -8px;
+    position: absolute;
+    top: 14px;
+    width: 50px;
+}
+
+.mobileu47hompageu47en .image-LBqrNP {
+    background-color: transparent;
+    height: 79px;
+    left: 83px;
+    position: absolute;
+    top: 5px;
+    width: 61px;
+}
+
+.mobileu47hompageu47en .image-QBp3HD {
+    background-color: transparent;
+    height: 85px;
+    left: 36px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 60px;
+}
+
+.mobileu47hompageu47en .browning-bDIwl2 {
+    gap: 16px;
+    justify-content: center;
+}
+
+.mobileu47hompageu47en .browse-by-need-m7cc45 {
+    align-self: stretch;
+    background-color: transparent;
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-xxl);
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.00px;
+    line-height: 24.0px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .stain-removal-deep-c-m7cc45 {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .frame-164-Nu4tma {
+    align-self: stretch;
+    background-color: transparent;
+    height: 98px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .image-h1P6Y4 {
+    background-color: transparent;
+    height: 76px;
+    left: -3px;
+    object-fit: cover;
+    position: absolute;
+    top: 8px;
+    width: 142px;
+}
+
+.mobileu47hompageu47en .our-technologies-1lDjsl {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    overflow: hidden;
+    padding: 32px 16px;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-1261154169-Sfwd1y {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 40px;
+    position: relative;
+}
+
+.mobileu47hompageu47en .frame-1261154167-xdVWAV {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-1261154166-uhnBsJ {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .our-technologies-NsnJ35 {
+    align-self: stretch;
+    letter-spacing: 0.00px;
+    line-height: 32.4px;
+    margin-top: -1.00px;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .this-laundry-deterge-OiRvED {
+    line-height: 20.3px;
+    margin-top: -1.00px;
+}
+
+.mobileu47hompageu47en .frame-159-xcB4a3 {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-1261154180-CtIZfe {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .vuesaxlinearsun-j2xUxi {
+    background-color: transparent;
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+.mobileu47hompageu47en .anti-mold-ZgYJnE {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .this-laundry-deterge-ZgYJnE {
+    line-height: 20.3px;
+}
+
+.mobileu47hompageu47en .vuesaxlinearwind-cU293C {
+    background-color: transparent;
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+.mobileu47hompageu47en .preserve-the-fragrance-xDvh7E {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .this-laundry-deterge-xDvh7E {
+    line-height: 20.3px;
+}
+
+.mobileu47hompageu47en .frame-157-CtIZfe {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .vuesaxlinearwind-2-ZxiBhd {
+    background-color: transparent;
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+.mobileu47hompageu47en .no-fading-W5JhK7 {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .this-laundry-deterge-W5JhK7 {
+    line-height: 20.3px;
+}
+
+.mobileu47hompageu47en .frame-1261154168-xdVWAV {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-160-Yuy8tR {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .ellipse-5-mKdrJH {
+    background: linear-gradient(180deg, rgb(75.00000312924385, 178.00000458955765, 229.00000154972076) 23.500001430511475%, rgb(234.00000125169754, 62.00000010430813, 148.000006377697) 100%);
+    border-radius: 330px;
+    filter: blur(400px);
+    ;
+    height: 660px;
+    left: -428px;
+    opacity: 0.2;
+    top: -402px;
+    width: 660px;
+}
+
+.mobileu47hompageu47en .washing-machine-mI1YAW {
+    background-color: transparent;
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+.mobileu47hompageu47en .git-v-ty-tt-HEUTR9 {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .this-laundry-deterge-HEUTR9 {
+    line-height: 20.3px;
+}
+
+.mobileu47hompageu47en .vuesaxlinearpet-lkMG9V {
+    background-color: transparent;
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+.mobileu47hompageu47en .washes-and-bleaches-well-AeRQfF {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .this-laundry-deterge-AeRQfF {
+    line-height: 20.3px;
+}
+
+.mobileu47hompageu47en .vuesaxlineartree-MylpWq {
+    background-color: transparent;
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+.mobileu47hompageu47en .fuel-efficient-environmentally-friendly-4BXllX {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .this-laundry-deterge-4BXllX {
+    line-height: 20.3px;
+}
+
+.mobileu47hompageu47en .web-banner-51-1lDjsl {
+    background-color: transparent;
+    flex: 0 0 auto;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-32-1lDjsl {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 16px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-16-lfTOfB {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mobileu47hompageu47en .explore-our-community-4GTKp3 {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 32.4px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .explore-the-clean-to-4GTKp3 {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .frame-150-lfTOfB {
+    align-self: stretch;
+    display: flex;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .base-button-gxzNgi {
+    background-color: var(--black-haze);
+    padding: 10px;
+}
+
+.mobileu47hompageu47en .base-button-hnO6Af {
+    background-color: var(--black-haze);
+    padding: 10px;
+}
+
+.mobileu47hompageu47en .vuesaxlineararrow-right-5v1o6D {
+    height: 20px;
+    width: 20px;
+}
+
+.mobileu47hompageu47en .frame-1261154171-lfTOfB {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    gap: 16px;
+    height: 400px;
+    margin-right: -754.00px;
+    position: relative;
+    width: 1115px;
+}
+
+.mobileu47hompageu47en .frame-148-MUVNar {
+    align-self: stretch;
+    background-color: var(--white-3);
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: flex-end;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-148-TqZrtL {
+    align-self: stretch;
+    background-color: var(--white-3);
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: flex-end;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-148-L3cu9h {
+    align-self: stretch;
+    background-color: var(--white-3);
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: flex-end;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .logostiktok-icon-S2ltcc {
+    margin-left: -393.50px;
+    margin-top: -1690.00px;
+}
+
+.mobileu47hompageu47en .vuesaxlinearplay-zAxfPR {
+    margin-left: -405.50px;
+    margin-top: -1791.00px;
+}
+
+.mobileu47hompageu47en .frame-148-MIPC3J {
+    align-self: stretch;
+    background-color: var(--white-3);
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: flex-end;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .logostiktok-icon-2Dhab5 {
+    margin-left: -676.25px;
+    margin-top: -1690.00px;
+}
+
+.mobileu47hompageu47en .vuesaxlinearplay-MGBH85 {
+    margin-left: -688.25px;
+    margin-top: -1791.00px;
+}
+
+.mobileu47hompageu47en .blog-list-1lDjsl::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+.mobileu47hompageu47en .blog-list-1lDjsl {
+    align-self: stretch;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-1261154172-y158aK {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .what-our-customers-say-about-us-wRXStM {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 32.4px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .discover-what-satisf-wRXStM {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .frame-172-y158aK {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-150-ajjhLv {
+    align-self: stretch;
+    display: flex;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .base-button-Ng6rlN {
+    background-color: var(--black-haze);
+    padding: 10px;
+}
+
+.mobileu47hompageu47en .base-button-xxIiR8 {
+    background-color: var(--black-haze);
+    padding: 10px;
+}
+
+.mobileu47hompageu47en .vuesaxlineararrow-right-AxlZqT {
+    height: 20px;
+    width: 20px;
+}
+
+.mobileu47hompageu47en .frame-1261154173-ajjhLv {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 24px;
+    margin-right: -645.00px;
+    position: relative;
+    width: 1006px;
+}
+
+.mobileu47hompageu47en .rating-sfkg0r {
+    gap: 8px;
+}
+
+.mobileu47hompageu47en .text-Iv5BE7 {
+    line-height: 20.3px;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .customers-like-the-c-sfkg0r {
+    line-height: 20.3px;
+}
+
+.mobileu47hompageu47en .base-avatar-FAvT7c {
+    height: 56px;
+    left: 0px;
+    top: 0px;
+    width: 56px;
+}
+
+.mobileu47hompageu47en .user-image-BPqJJe {
+    background-image: url(https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/67053a4cc64b9b54194b4401/img/name-image-02.png);
+    border: 1.5px solid;
+    border-color: var(--white);
+    height: 56px;
+    width: 56px;
+}
+
+.mobileu47hompageu47en .rating-VBI9lY {
+    gap: 8px;
+}
+
+.mobileu47hompageu47en .text-vIL2gT {
+    line-height: 20.3px;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .customers-like-the-c-VBI9lY {
+    line-height: 20.3px;
+}
+
+.mobileu47hompageu47en .base-avatar-2MYaP5 {
+    height: 56px;
+    left: 0px;
+    top: 0px;
+    width: 56px;
+}
+
+.mobileu47hompageu47en .user-image-ldTWz6 {
+    background-image: url(https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/67053a4cc64b9b54194b4401/img/name-image-05.png);
+    border: 1.5px solid;
+    border-color: var(--white);
+    height: 56px;
+    width: 56px;
+}
+
+.mobileu47hompageu47en .ellipse-5-VBI9lY {
+    background: linear-gradient(180deg, rgb(75.00000312924385, 178.00000458955765, 229.00000154972076) 23.500001430511475%, rgb(234.00000125169754, 62.00000010430813, 148.000006377697) 100%);
+    border-radius: 102px/102.5px;
+    filter: blur(200px);
+    ;
+    height: 205px;
+    left: 50px;
+    opacity: 0.6;
+    top: 56px;
+    width: 204px;
+}
+
+.mobileu47hompageu47en .rating-mf4TEu {
+    gap: 8px;
+}
+
+.mobileu47hompageu47en .text-gFOjGn {
+    line-height: 20.3px;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .customers-like-the-c-mf4TEu {
+    line-height: 24px;
+}
+
+.mobileu47hompageu47en .base-avatar-d1Dotx {
+    height: 56px;
+    left: 0px;
+    top: 0px;
+    width: 56px;
+}
+
+.mobileu47hompageu47en .user-image-cKzLeY {
+    background-image: url(https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/67053a4cc64b9b54194b4401/img/name-image-11.png);
+    border: 1.5px solid;
+    border-color: var(--white);
+    height: 56px;
+    width: 56px;
+}
+
+.mobileu47hompageu47en .frame-123-y158aK {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .input-field-OW9pEv {
+    flex: 0 0 auto;
+}
+
+.mobileu47hompageu47en .base-input-field-kQhcdN {
+    flex: 0 0 auto;
+}
+
+.mobileu47hompageu47en .field-NrH6vr {
+    align-items: center;
+    height: 36px;
+}
+
+.mobileu47hompageu47en .emailexamplecom-QusFk9 {
+    margin-bottom: -1.00px;
+    margin-top: -3.00px;
+}
+
+.mobileu47hompageu47en .input-field-mxojxl {
+    flex: 0 0 auto;
+}
+
+.mobileu47hompageu47en .base-input-field-6ysOet {
+    flex: 0 0 auto;
+}
+
+.mobileu47hompageu47en .field-4WDjt3 {
+    align-items: center;
+    height: 36px;
+}
+
+.mobileu47hompageu47en .emailexamplecom-vokxmB {
+    margin-bottom: -1.00px;
+    margin-top: -3.00px;
+}
+
+.mobileu47hompageu47en .input-field-1Vxemr {
+    height: 102px;
+}
+
+.mobileu47hompageu47en .base-input-field-HxnC2j {
+    flex: 1;
+    flex-grow: 1;
+}
+
+.mobileu47hompageu47en .field-GxqAx8 {
+    align-items: flex-start;
+    flex: 1;
+    flex-grow: 1;
+}
+
+.mobileu47hompageu47en .emailexamplecom-jps9fK {
+    margin-top: -1.00px;
+}
+
+.mobileu47hompageu47en .base-button-OW9pEv {
+    background-color: var(--black);
+    padding: 8px 16px;
+}
+
+.mobileu47hompageu47en .text-0yxGL6 {
+    line-height: 24px;
+    text-align: center;
+}
+
+.mobileu47hompageu47en .blog-list-Jhmhsu::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+.mobileu47hompageu47en .blog-list-Jhmhsu {
+    justify-content: center;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .ellipse-5-J5ahXS {
+    background: linear-gradient(180deg, rgb(75.00000312924385, 178.00000458955765, 229.00000154972076) 23.500001430511475%, rgb(234.00000125169754, 62.00000010430813, 148.000006377697) 100%);
+    border-radius: 242px/242.5px;
+    filter: blur(400px);
+    ;
+    height: 485px;
+    left: -45px;
+    opacity: 0.4;
+    top: 144px;
+    width: 484px;
+}
+
+.mobileu47hompageu47en .frame-16-J5ahXS {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mobileu47hompageu47en .frame-169-AxnSEk {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .our-blog-9Cxnfa {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 32.4px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .our-blog-has-everyth-9Cxnfa {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    margin-right: -377.00px;
+    position: relative;
+    text-align: left;
+    width: 738px;
+}
+
+.mobileu47hompageu47en .frame-150-AxnSEk {
+    align-self: stretch;
+    display: flex;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .base-button-WfBm2o {
+    background-color: var(--black-haze);
+    padding: 10px;
+}
+
+.mobileu47hompageu47en .base-button-dQwp73 {
+    background-color: var(--black-haze);
+    padding: 10px;
+}
+
+.mobileu47hompageu47en .vuesaxlineararrow-right-lHINjR {
+    height: 20px;
+    width: 20px;
+}
+
+.mobileu47hompageu47en .frame-167-J5ahXS::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+.mobileu47hompageu47en .frame-167-J5ahXS {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-wrap: nowrap;
+    gap: 24px;
+    overflow: hidden;
+    overflow-x: scroll;
+    position: relative;
+    width: fit-content;
+}
+
+.mobileu47hompageu47en .frame-31-IVPLaU {
+    background-image: url(https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6715e5c9b1fffdcedb758107/img/frame-31.svg);
+}
+
+.mobileu47hompageu47en .this-laundry-deterge-IVPLaU {
+    line-height: 20.3px;
+}
+
+.mobileu47hompageu47en .base-button-x0hxbQ {
+    background-color: transparent;
+}
+
+.mobileu47hompageu47en .text-ufZ5xO {
+    line-height: 21px;
+    text-align: center;
+}
+
+.mobileu47hompageu47en .frame-31-qSK08N {
+    background-image: url(https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6715e5c9b1fffdcedb758107/img/frame-31-1.svg);
+}
+
+.mobileu47hompageu47en .this-laundry-deterge-qSK08N {
+    line-height: 20.3px;
+}
+
+.mobileu47hompageu47en .base-button-XAuLDP {
+    background-color: transparent;
+}
+
+.mobileu47hompageu47en .text-qqAVxM {
+    line-height: 21px;
+    text-align: center;
+}
+
+.mobileu47hompageu47en .frame-31-qY3exC {
+    background-image: url(https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6715e5c9b1fffdcedb758107/img/frame-31-2.svg);
+}
+
+.mobileu47hompageu47en .this-laundry-deterge-qY3exC {
+    line-height: 24px;
+}
+
+.mobileu47hompageu47en .base-button-jJ0FpN {
+    background-color: transparent;
+}
+
+.mobileu47hompageu47en .text-sRea65 {
+    line-height: 21px;
+    text-align: center;
+}
+
+.mobileu47hompageu47en .frame-31-sqwoBK {
+    background-image: url(https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6715e5c9b1fffdcedb758107/img/frame-31-3.svg);
+}
+
+.mobileu47hompageu47en .this-laundry-deterge-sqwoBK {
+    line-height: 24px;
+}
+
+.mobileu47hompageu47en .base-button-pkIzi8 {
+    background-color: transparent;
+}
+
+.mobileu47hompageu47en .text-VJliMv {
+    line-height: 21px;
+    text-align: center;
+}
+
+.mobileu47hompageu47en .frame-31-8W2MAv {
+    background-image: url(https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6715e5c9b1fffdcedb758107/img/frame-31-4.svg);
+}
+
+.mobileu47hompageu47en .this-laundry-deterge-8W2MAv {
+    line-height: 24px;
+}
+
+.mobileu47hompageu47en .base-button-4ZbpAr {
+    background-color: transparent;
+}
+
+.mobileu47hompageu47en .text-jd0yxZ {
+    line-height: 21px;
+    text-align: center;
+}
+
+.mobileu47hompageu47en .frame-31-PpLKiP {
+    background-image: url(https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6715e5c9b1fffdcedb758107/img/frame-31-5.svg);
+}
+
+.mobileu47hompageu47en .this-laundry-deterge-PpLKiP {
+    line-height: 24px;
+}
+
+.mobileu47hompageu47en .base-button-yxyVmp {
+    background-color: transparent;
+}
+
+.mobileu47hompageu47en .text-NuFnMl {
+    line-height: 21px;
+    text-align: center;
+}
+
+.mobileu47hompageu47en .frame-168-J5ahXS {
+    align-items: center;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .base-button-1I0x0V {
+    background-color: transparent;
+    border: 1px solid;
+    border-color: var(--black);
+    padding: 8px 16px;
+}
+
+.mobileu47hompageu47en .text-UeURIx {
+    color: var(--black);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+}
+
+.mobileu47hompageu47en .footer-mobile-1lDjsl {
+    align-items: flex-start;
+    background-color: var(--black-haze);
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 24px;
+    overflow: hidden;
+    padding: 32px 16px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-177-QdbbCx {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: var(--swans-down);
+    border-left-style: none;
+    border-right-style: none;
+    border-top-style: none;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0px 0px 32px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-xtdssZ {
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 10px;
+    padding: 6px 0px;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .group-mCTvTa {
+    background-color: transparent;
+    height: 52.484886169433594px;
+    position: relative;
+    width: 101.17138671875px;
+}
+
+.mobileu47hompageu47en .layer-1-WKWkcb {
+    height: 52px;
+    width: 101px;
+}
+
+.mobileu47hompageu47en .group-yJEu6n {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: relative;
+    top: 0px;
+    width: 101px;
+}
+
+.mobileu47hompageu47en .vector-OJT5X4 {
+    height: 52px;
+    width: 49px;
+}
+
+.mobileu47hompageu47en .group-OJT5X4 {
+    background-color: transparent;
+    height: 52px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 49px;
+}
+
+.mobileu47hompageu47en .clip-path-group-OJT5X4 {
+    height: 52px;
+    width: 49px;
+}
+
+.mobileu47hompageu47en .group-x9Yacw {
+    background-color: transparent;
+    height: 23px;
+    left: 56px;
+    position: absolute;
+    top: 15px;
+    width: 46px;
+}
+
+.mobileu47hompageu47en .frame-1261154174-xtdssZ {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 16px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .section-02-xYLNOF {
+    background-color: transparent;
+    flex: 1;
+    flex-grow: 1;
+    height: 148px;
+    position: relative;
+}
+
+.mobileu47hompageu47en .frame-178-uQWIhA {
+    left: 0px;
+    top: 0px;
+    width: 172px;
+}
+
+.mobileu47hompageu47en .about-us-pL7OqG {
+    align-self: stretch;
+    letter-spacing: 0.00px;
+    line-height: 27.9px;
+    margin-top: -1.00px;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .our-story-pL7OqG {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.mobileu47hompageu47en .our-mission-pL7OqG {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.mobileu47hompageu47en .our-vision-pL7OqG {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.mobileu47hompageu47en .core-value-pL7OqG {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.mobileu47hompageu47en .section-5-xYLNOF {
+    background-color: transparent;
+    flex: 1;
+    flex-grow: 1;
+    height: 178px;
+    position: relative;
+}
+
+.mobileu47hompageu47en .frame-178-s31PBF {
+    left: 0px;
+    top: 0px;
+    width: 172px;
+}
+
+.mobileu47hompageu47en .products-RIqAFA {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 27.9px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .laundry-detergent-RIqAFA {
+    line-height: 20.3px;
+    white-space: nowrap;
+}
+
+.mobileu47hompageu47en .hc-beauty-RIqAFA {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.mobileu47hompageu47en .floor-cleaner-RIqAFA {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.mobileu47hompageu47en .dishwashing-liquid-RIqAFA {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.mobileu47hompageu47en .hand-sanitizer-RIqAFA {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.mobileu47hompageu47en .frame-178-xtdssZ {
+    align-self: stretch;
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .contact-us-gbH9hj {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 27.9px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .frame-112-gbH9hj {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-114-DT7VBC {
+    align-items: center;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 8px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .vuesaxlinearcall-calling-wk82wI {
+    background-color: transparent;
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+.mobileu47hompageu47en .x84-912-488-627-184Zmt {
+    background-color: transparent;
+    flex: 1;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .frame-115-DT7VBC {
+    align-items: center;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 8px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .vuesaxlinearsms-tracking-rxSaIw {
+    background-color: transparent;
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+.mobileu47hompageu47en .hcvietnaminfogmailcom-xM2Tjt {
+    background-color: transparent;
+    flex: 1;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .frame-116-DT7VBC {
+    align-items: center;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 8px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .vuesaxlinearlocation-3xBj5M {
+    background-color: transparent;
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+.mobileu47hompageu47en .x522-minh-khai-vinh-t-GHW599 {
+    background-color: transparent;
+    flex: 1;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .frame-179-QdbbCx {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .x2024-copyright-do-minh-tung-lam-studio-jHJexZ {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.mobileu47hompageu47en .frame-180-jHJexZ {
+    background-color: transparent;
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.mobileu47hompageu47en .about-us {
+    background-color: transparent;
+    position: relative;
+}
+
+.mobileu47hompageu47en .avatar {
+    background-color: transparent;
+    height: 56px;
+    position: relative;
+    width: 56px;
+}
+
+.mobileu47hompageu47en .base-avatar {
+    background-color: transparent;
+    box-shadow: 0px 8px 32px -2px #1b25330f;
+    position: relative;
+}
+
+.mobileu47hompageu47en .base-button {
+    align-items: center;
+    border-radius: 8px;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 8px;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.mobileu47hompageu47en .base-input-field {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .blog-card {
+    -webkit-backdrop-filter: blur(25.266666412353516px) brightness(100%);
+    align-items: flex-start;
+    backdrop-filter: blur(25.266666412353516px) brightness(100%);
+    background-color: var(--white-2);
+    border: 1px solid;
+    border-color: var(--white);
+    border-radius: 16px;
+    box-shadow: inset -12.633333206176758px 12.633333206176758px 12.633333206176758px #ffffff1a, inset 12.633333206176758px -12.633333206176758px 12.633333206176758px #c1c1c11a;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+    position: relative;
+    width: 305px;
+}
+
+.mobileu47hompageu47en .blog-list {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 32px;
+    overflow: hidden;
+    overflow-x: scroll;
+    padding: 32px 16px;
+    position: relative;
+}
+
+.mobileu47hompageu47en .browning {
+    align-items: center;
+    background-color: var(--black-haze);
+    border-radius: 8px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+    padding: 16px;
+    position: relative;
+}
+
+.mobileu47hompageu47en .button {
+    align-items: flex-start;
+    background-color: transparent;
+    display: inline-flex;
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.mobileu47hompageu47en .cameron-williamson {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 27.9px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.mobileu47hompageu47en .category {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.mobileu47hompageu47en .clean-house-with-hc-vietnam {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .clip-path-group {
+    background-color: transparent;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+}
+
+.mobileu47hompageu47en .customers-like-the-c {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .ellipse-5 {
+    background-color: transparent;
+    position: absolute;
+}
+
+.mobileu47hompageu47en .ellipse-6 {
+    background-color: transparent;
+    border: 0.5749416947364807px solid;
+    border-color: var(--swans-down);
+    position: absolute;
+}
+
+.mobileu47hompageu47en .emailexamplecom {
+    background-color: transparent;
+    flex: 1;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .field {
+    align-self: stretch;
+    background-color: var(--white);
+    border: 1px solid;
+    border-color: var(--swans-down);
+    border-radius: 8px;
+    display: flex;
+    gap: 8px;
+    overflow: hidden;
+    padding: 10px 12px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame {
+    background-color: transparent;
+    overflow: hidden;
+    position: relative;
+}
+
+.mobileu47hompageu47en .frame-10 {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-147 {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-148 {
+    -webkit-backdrop-filter: blur(25.266666412353516px) brightness(100%);
+    align-items: flex-start;
+    backdrop-filter: blur(25.266666412353516px) brightness(100%);
+    border-radius: 16px;
+    box-shadow: inset -12.633333206176758px 12.633333206176758px 12.633333206176758px #ffffff1a, inset 12.633333206176758px -12.633333206176758px 12.633333206176758px #c1c1c11a;
+    padding: 8px 12px;
+}
+
+.mobileu47hompageu47en .frame-150 {
+    align-items: center;
+    background-color: transparent;
+    flex: 0 0 auto;
+    gap: 12px;
+    position: relative;
+}
+
+.mobileu47hompageu47en .frame-156 {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-158 {
+    align-items: center;
+    background: linear-gradient(180deg, rgb(252.00000017881393, 231.00000143051147, 243.00000071525574) 0%, rgb(241.00000083446503, 249.00000035762787, 254.00000005960464) 100%);
+    background-color: transparent;
+    border-radius: 96px;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 10px;
+    padding: 8px;
+    position: relative;
+}
+
+.mobileu47hompageu47en .frame-16 {
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-162 {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-170 {
+    align-items: center;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-171 {
+    align-self: stretch;
+    background-color: transparent;
+    flex: 0 0 auto;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-173 {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-174 {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 4px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-178 {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.mobileu47hompageu47en .frame-31 {
+    align-self: stretch;
+    background-color: transparent;
+    background-position: 50% 50%;
+    background-size: cover;
+    border-radius: 4px;
+    height: 157px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .frame-62 {
+    align-items: center;
+    background-color: var(--black-haze);
+    border-radius: 100px;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 10px;
+    padding: 8px;
+    position: relative;
+}
+
+.mobileu47hompageu47en .hc-vietnam-hc-laundry {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 15.6px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .how-to-wash-clothes-gently-and-safely {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .input-field {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .label {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .laundry-detergent {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    position: relative;
+    text-align: left;
+    width: fit-content;
+}
+
+.mobileu47hompageu47en .layer-1 {
+    background-color: transparent;
+    left: 0px;
+    position: relative;
+    top: 0px;
+}
+
+.mobileu47hompageu47en .local-stores {
+    align-self: stretch;
+    background-color: transparent;
+    position: relative;
+}
+
+.mobileu47hompageu47en .logostiktok-icon {
+    background-color: transparent;
+    height: 29px;
+    position: relative;
+    width: 26px;
+}
+
+.mobileu47hompageu47en .our-technologies {
+    background-color: transparent;
+    position: relative;
+}
+
+.mobileu47hompageu47en .rating {
+    align-items: center;
+    background-color: transparent;
+    display: inline-flex;
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.mobileu47hompageu47en .rectangle-7 {
+    align-self: stretch;
+    background-color: transparent;
+    height: 270px;
+    position: relative;
+    width: 100%;
+}
+
+.mobileu47hompageu47en .review-card {
+    align-items: flex-start;
+    background-color: var(--black-haze-3);
+    border: 1px solid;
+    border-color: var(--white);
+    border-radius: 16px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 16px;
+    padding: 16px;
+    position: relative;
+}
+
+.mobileu47hompageu47en .span1 {
+    font-style: normal;
+    font-weight: 500;
+}
+
+.mobileu47hompageu47en .star {
+    background-color: transparent;
+    height: 16px;
+    position: relative;
+    width: 16px;
+}
+
+.mobileu47hompageu47en .star-group {
+    align-items: flex-start;
+    background-color: transparent;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 4px;
+    position: relative;
+}
+
+.mobileu47hompageu47en .text {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.mobileu47hompageu47en .this-laundry-deterge {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    position: relative;
+    text-align: left;
+}
+
+.mobileu47hompageu47en .tiktok {
+    align-items: center;
+    align-self: stretch;
+    background-color: transparent;
+    background-image: url(https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/67053a4cc64b9b54194b4401/img/tiktok@2x.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    border-radius: 8px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 40px;
+    justify-content: flex-end;
+    overflow: hidden;
+    padding: 8px;
+    position: relative;
+}
+
+.mobileu47hompageu47en .user-image {
+    background-color: transparent;
+    background-position: 50% 50%;
+    background-size: cover;
+    border-radius: 5000px;
+    left: 0px;
+    position: relative;
+    top: 0px;
+}
+
+.mobileu47hompageu47en .vector {
+    background-color: transparent;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+}
+
+.mobileu47hompageu47en .vuesaxlineararrow-left {
+    background-color: transparent;
+    height: 20px;
+    position: relative;
+    width: 20px;
+}
+
+.mobileu47hompageu47en .vuesaxlineararrow-right {
+    background-color: transparent;
+    position: relative;
+}
+
+.mobileu47hompageu47en .vuesaxlinearplay {
+    align-self: stretch;
+    background-color: transparent;
+    position: relative;
+    width: 24px;
+}
+
+.mobileu47hompageu47en .vuesaxoutlinearrow-right {
+    background-color: transparent;
+    height: 16px;
+    position: relative;
+    width: 16px;
+}
+
+.mobileu47hompageu47en .x1136-n {
+    background-color: transparent;
+    letter-spacing: 0.00px;
+    line-height: 20.3px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
+}
