@@ -1,5 +1,149 @@
 
-        /* screen - mobileu47hompageu47en */
+:root {
+    --black: #000000;
+    --black-haze: #f5f6f8;
+    --black-haze-2: #f6f6f7;
+    --black-haze-3: #f5f6f880;
+    --bright-gray: #323e4f;
+    --pale-sky: #697483;
+    --steel-gray: #1b2533;
+    --swans-down: #dce5e9;
+    --white: #ffffff;
+    --white-2: #ffffff4c;
+    --white-3: #ffffff80;
+    --white-4: #ffffff66;
+
+    --font-size-l: 16px;
+    --font-size-m: 14px;
+    --font-size-s: 12px;
+    --font-size-xl: 18px;
+    --font-size-xxl: 20px;
+    --font-size-xxxl: 24px;
+    --font-size-xxxxl: 48px;
+
+    --font-family-plus_jakarta_sans: "Plus Jakarta Sans", Helvetica;
+}
+
+.plusjakartasans-normal-pale-sky-14px {
+    color: var(--pale-sky);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.plusjakartasans-bold-steel-gray-24px {
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-xxxl);
+    font-style: normal;
+    font-weight: 700;
+}
+
+.plusjakartasans-medium-black-14px {
+    color: var(--black);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 500;
+}
+
+.plusjakartasans-semi-bold-steel-gray-16px {
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.plusjakartasans-normal-bright-gray-14px {
+    color: var(--bright-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.plusjakartasans-semi-bold-bright-gray-14px {
+    color: var(--bright-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.plusjakartasans-normal-bright-gray-16px {
+    color: var(--bright-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.plusjakartasans-semi-bold-steel-gray-18px {
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-xl);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.plusjakartasans-semi-bold-black-16px {
+    color: var(--black);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.plusjakartasans-medium-steel-gray-14px {
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 500;
+}
+
+.plusjakartasans-normal-bright-gray-12px {
+    color: var(--bright-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-s);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.plusjakartasans-medium-black-haze-16px {
+    color: var(--black-haze-2);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 500;
+}
+
+.plusjakartasans-normal-pale-sky-16px {
+    color: var(--pale-sky);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.plusjakartasans-bold-steel-gray-48px {
+    color: var(--steel-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-xxxxl);
+    font-style: normal;
+    font-weight: 700;
+}
+
+.plusjakartasans-medium-bright-gray-14px {
+    color: var(--bright-gray);
+    font-family: var(--font-family-plus_jakarta_sans);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 500;
+}
+       /* screen - mobileu47hompageu47en */
 
         .mobileu47hompageu47en {
             align-items: flex-start;
@@ -119,6 +263,7 @@
             position: absolute;
             top: 0px;
             width: 100%;
+            display: none;
         }
 
         .mobileu47hompageu47en .rectangle-5-WP8Ks9 {
