@@ -245,6 +245,7 @@ input:focus {
     overflow-x: hidden;
     position: relative;
     width: 100%;
+    margin-top: -20px;
 }
 
 .mobileu47menuu47-expand .rectangle-4-XEF87x {
@@ -341,6 +342,7 @@ input:focus {
     position: absolute;
     /* top: 60px; */
     width: 100%;
+    margin-top: px;
 }
 
 .mobileu47menuu47-expand .rectangle-5-NfZAQx {
@@ -436,7 +438,7 @@ input:focus {
 .mobileu47menuu47-expand .frame-1261154190-XEF87x {
     align-items: flex-start;
     background-color: transparent;
-    display: flex;
+    display: none;
     flex-direction: column;
     left: 0px;
     padding: 0px 16px;
