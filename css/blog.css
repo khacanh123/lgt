@@ -444,7 +444,9 @@ input:focus {
     border-radius: 96px;
     padding: 8px 12px;
 }
-
+.base-button:hover {
+    background: unset;
+}
 .list-blog .text-GqmgB2 {
     color: #f6f6f7;
     font-family: var(--font-family-plus_jakarta_sans);

@@ -2730,7 +2730,7 @@ body {
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  */
 
 }
-.base-button-pzP0q4:hover, .base-button-fazAxq:hover {
+.base-button-pzP0q4:hover, .base-button-fazAxq:hover, .base-button-rmgPum:hover {
     /* background: #E3F0FB !important; */
     border: 1px solid transparent !important;
     background: linear-gradient(#E3F0FB, #E3F0FB) padding-box, /* Inner background */
@@ -3393,7 +3393,7 @@ body {
         margin:auto;
     }
 }
-.base-button-pzP0q4:hover .text, .base-button-fazAxq:hover .text{
+.base-button-pzP0q4:hover .text, .base-button-fazAxq:hover .text, .base-button-rmgPum:hover .text{
     background: linear-gradient(to right, #7a00ff, #ff6bbd);
     -webkit-background-clip: text;
     color: transparent;/* button background */
