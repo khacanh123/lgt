@@ -988,18 +988,18 @@ cursor: pointer;
           <div class="frame-2-7BOs9r" data-id="I34:5711;119:19920">
             <div class="frame-4-0VGihQ" data-id="I34:5711;119:19921">
               <article class="menu-Jfkml2 menu" data-id="I34:5711;119:19922">
-                <div class="home plusjakartasans-medium-pale-sky-18px" data-id="I34:5711;119:19922;88:16365">Home</div>
+                <div class="home plusjakartasans-medium-pale-sky-18px" id="menu-1" data-id="I34:5711;119:19922;88:16365">Home</div>
               </article>
               <article class="menu-rGWvDx menu" data-id="I34:5711;119:19923">
                 <div class="home plusjakartasans-medium-pale-sky-18px" data-id="I34:5711;119:19923;88:16365">About us</div>
               </article>
               <article class="menu-Jm8x0C menu" data-id="I34:5711;119:19924" id="nav" onclick="openNav()" style="cursor: pointer;">
-                <div class="home plusjakartasans-medium-pale-sky-18px" data-id="I34:5711;119:19924;88:16365">Our products</div>
+                <div class="home plusjakartasans-medium-pale-sky-18px" id="menu-2" data-id="I34:5711;119:19924;88:16365">Our products</div>
                 <img class="vuesaxlineararrow-down-0wm2j3 vuesaxlineararrow-down" data-id="I34:5711;119:19924;119:715" id="icon" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down.svg" alt="vuesax/linear/arrow-down">
                 <div class="hover-dg" id="hover"></div>
               </article>
               <article class="menu-w1J60a menu" data-id="I34:5711;119:19925">
-                <div class="home plusjakartasans-medium-pale-sky-18px" data-id="I34:5711;119:19925;88:16365">Blog</div>
+                <div class="home plusjakartasans-medium-pale-sky-18px" id="menu-3" data-id="I34:5711;119:19925;88:16365">Blog</div>
               </article>
             </div>
             <div class="language-0VGihQ" data-id="I34:5711;121:20272">
@@ -1121,6 +1121,21 @@ cursor: pointer;
 });
 
         </script>
+        <script>
+          function checkAndAddClass(element, path) {
+              // Lấy path hiện tại (phần sau domain)
+              const currentPath = window.location.pathname;
+          
+              // So sánh path
+              if (currentPath === path) {
+                  // Thêm class 'text-[#1B2533]' nếu path trùng khớp
+                  element.classList.add('text-[#1B2533]');
+              }
+          }
+          checkAndAddClass(document.getElementById('menu-1','/index.html'))
+          checkAndAddClass(document.getElementById('menu-2','/our-product'))
+          checkAndAddClass(document.getElementById('menu-3','/blog'))
+          </script>
       </div>
     </div>
     <script>
@@ -1139,19 +1154,19 @@ scrollContainer.scrollLeft +=
 prevBtn.addEventListener('click', () => {
 scrollContainer.scrollLeft = 0;
 });
-
-const scrollContainer1 = document.querySelector('.scroll1');
-const nextBtn1 = document.getElementById('next1');
-const prevBtn1 = document.getElementById('prev1');
-
-// Cuộn tới cuối
 nextBtn1.addEventListener('click', () => {
-  scrollContainer1.scrollLeft += scrollContainer1.offsetWidth;
+  scrollContainer1.scrollBy({
+    left: scrollContainer1.offsetWidth,
+    behavior: 'smooth'
+  });
 });
 
-// Cuộn về đầu
+// Cuộn về đầu với hiệu ứng cuộn mượt
 prevBtn1.addEventListener('click', () => {
-scrollContainer1.scrollLeft = 0;
+  scrollContainer1.scrollTo({
+    left: 0,
+    behavior: 'smooth'
+  });
 });
     </script>
      <script>
