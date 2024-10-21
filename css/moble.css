@@ -300,10 +300,10 @@ input:focus {
 .mobileu47menuu47-expand .frame-132-lqAxDY {
     background-color: transparent;
     height: 1603px;
-    left: -162px;
+    /* left: -162px; */
     position: absolute;
     top: -479px;
-    width: 2163px;
+    width: 100%;
 }
 
 .mobileu47menuu47-expand .ellipse-6-3sCbPY {
@@ -340,7 +340,7 @@ input:focus {
     padding: 0px 16px;
     position: absolute;
     /* top: 60px; */
-    width: 393px;
+    width: 100%;
 }
 
 .mobileu47menuu47-expand .rectangle-5-NfZAQx {
@@ -442,7 +442,7 @@ input:focus {
     padding: 0px 16px;
     position: absolute;
     top: 72px;
-    width: 392px;
+    width: 100%;
 }
 
 .mobileu47menuu47-expand .frame-1261154186-27rxIy {
