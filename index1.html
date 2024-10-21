@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
-
+    <!-- <link rel="stylesheet" href="./css/moble.css"> -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header class="header-HHe9Eu" data-id="34:5711" style="z-index: 1;">
+    <header class="header-HHe9Eu lg:flex hidden z-[10]" data-id="34:5711" >
+        <style>
+        
+        </style>
         <div class="rectangle-5-7BOs9r" data-id="I34:5711;119:19874"></div>
         <div class="frame-7BOs9r frame" data-id="I34:5711;119:19875">
           <div class="group-CxJKI1" data-id="I34:5711;119:19876">
@@ -26,25 +29,52 @@
         <div class="frame-2-7BOs9r" data-id="I34:5711;119:19920">
           <div class="frame-4-0VGihQ" data-id="I34:5711;119:19921">
             <article class="menu-Jfkml2 menu" data-id="I34:5711;119:19922">
-              <div class="home plusjakartasans-medium-pale-sky-18px" data-id="I34:5711;119:19922;88:16365">Home</div>
+              <div class="home plusjakartasans-medium-pale-sky-18px" id="menu-1" data-id="I34:5711;119:19922;88:16365">Home</div>
             </article>
             <article class="menu-rGWvDx menu" data-id="I34:5711;119:19923">
               <div class="home plusjakartasans-medium-pale-sky-18px" data-id="I34:5711;119:19923;88:16365">About us</div>
             </article>
-            <article class="menu-Jm8x0C menu" data-id="I34:5711;119:19924">
-              <div class="home plusjakartasans-medium-pale-sky-18px" data-id="I34:5711;119:19924;88:16365">Our products</div>
-              <img class="vuesaxlineararrow-down-0wm2j3 vuesaxlineararrow-down" data-id="I34:5711;119:19924;119:715" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down.svg" alt="vuesax/linear/arrow-down">
+            <article class="menu-Jm8x0C menu" data-id="I34:5711;119:19924" id="nav" onclick="openNav()" style="cursor: pointer;">
+              <div class="home plusjakartasans-medium-pale-sky-18px" id="menu-2" data-id="I34:5711;119:19924;88:16365">Our products</div>
+              <img class="vuesaxlineararrow-down-0wm2j3 vuesaxlineararrow-down" data-id="I34:5711;119:19924;119:715" id="icon" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down.svg" alt="vuesax/linear/arrow-down">
+              <div class="hover-dg" id="hover"></div>
             </article>
             <article class="menu-w1J60a menu" data-id="I34:5711;119:19925">
-              <div class="home plusjakartasans-medium-pale-sky-18px" data-id="I34:5711;119:19925;88:16365">Blog</div>
+              <div class="home plusjakartasans-medium-pale-sky-18px" id="menu-3" data-id="I34:5711;119:19925;88:16365">Blog</div>
             </article>
           </div>
           <div class="language-0VGihQ" data-id="I34:5711;121:20272">
-            <div class="dropdown-button-basic-LEwcPN" data-id="I34:5711;121:20272;121:20133">
+            <script>
+function openlg() {
+  if(document.getElementById('dropdown').style.display == 'block') {
+
+    document.getElementById('dropdown').style.display ='none';
+          document.getElementById('icon-lg').setAttribute('src', 'https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down.svg')
+  }else {
+
+    document.getElementById('dropdown').style.display ='block';
+          document.getElementById('icon-lg').setAttribute('src', 'https://res.cloudinary.com/dhdfr7p4h/image/upload/v1728967202/arrow-up_ty6jyh.svg')
+  }
+        }
+        document.body.addEventListener('click', function(event) {
+  const divABC = document.getElementById('dropdown');
+  
+  // Kiểm tra nếu click xảy ra ngoài div 'abc'
+  if (!divABC.contains(event.target) && !document.getElementById('lg').contains(event.target)) {
+    document.getElementById('icon-lg').setAttribute('src', 'https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down.svg')
+    divABC.style.display = 'none'
+  }
+});
+            </script>
+            <div class="dropdown-button-basic-LEwcPN" data-id="I34:5711;121:20272;121:20133" style="cursor: pointer;" id="lg" onclick="openlg()">
               <img class="vuesaxlineararrow-down-V0GrFz vuesaxlineararrow-down" data-id="I34:5711;121:20272;121:20133;96:757" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down-2.svg" alt="vuesax/linear/arrow-down">
               <div class="content-V0GrFz" data-id="I34:5711;121:20272;121:20133;88:17878">
                 <div class="dropdown-51EKPJ plusjakartasans-normal-pale-sky-14px" data-id="I34:5711;121:20272;121:20133;88:17879">EN</div>
-                <img class="vuesaxlineararrow-down-51EKPJ vuesaxlineararrow-down" data-id="I34:5711;121:20272;121:20133;88:17880" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down-1.svg" alt="vuesax/linear/arrow-down">
+                <img class="vuesaxlineararrow-down-51EKPJ vuesaxlineararrow-down" data-id="I34:5711;121:20272;121:20133;88:17880" id="icon-lg" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down-1.svg" alt="vuesax/linear/arrow-down">
+              </div>
+              <div class="absolute top-[40px] -left-10 css-button" id="dropdown">
+                <div class="p-3 text-[#1B2533] hover:bg-[#ECF1F3] bg-[#ECF1F3] rounded-[8px]">English</div>
+                <div class="p-3 text-[#1B2533] hover:bg-[#ECF1F3] rounded-[8px]">Vietnamese</div>
               </div>
             </div>
           </div>
@@ -54,70 +84,212 @@
             </div>
           </div>
         </div>
-        <div class="absolute left-0 top-[30px] py-[15px] px-[30px] ">aaa</div>
       </header>
-<div class="bg-[red] p-10"></div>
-      <footer class="footer-UWwx5l" data-id="34:5710">
-        <div class="frame-177-TyRov3" data-id="I34:5710;135:1785">
-          <div class="frame-khaIqL frame" data-id="I34:5710;135:1735">
-            <div class="group-ASFF7P" data-id="I34:5710;135:1736">
-              <div class="layer-1-csmEtj layer-1" data-id="I34:5710;135:1737">
-                <div class="group-VG2YiT" data-id="I34:5710;135:1738">
-                  <img class="vector-SbCYLV vector" data-id="I34:5710;135:1739" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vector.svg" alt="Vector">
-                  <img class="group-SbCYLV" data-id="I34:5710;135:1740" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/group@2x.png" alt="Group">
-                  <img class="clip-path-group-SbCYLV clip-path-group" data-id="I34:5710;135:1747" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/clip-path-group-1@2x.png" alt="Clip path group">
-                  <img class="group-lCQwkU" data-id="I34:5710;135:1773" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/group-1@2x.png" alt="Group">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="section-02-khaIqL" data-id="I34:5710;135:1781">
-            <div class="frame-178-VaRNRU frame-178" data-id="I34:5710;135:1812">
-              <div class="about-us-XAyxAZ about-us plusjakartasans-semi-bold-steel-gray-18px" data-id="I34:5710;135:1782">About us</div>
-              <div class="our-story-XAyxAZ plusjakartasans-normal-pale-sky-16px" data-id="I34:5710;135:1810">Our story</div>
-              <div class="our-mission-XAyxAZ plusjakartasans-normal-pale-sky-16px" data-id="I34:5710;135:1813">Our mission</div>
-              <div class="our-vision-XAyxAZ plusjakartasans-normal-pale-sky-16px" data-id="I34:5710;135:1821">Our vision</div>
-              <div class="core-value-XAyxAZ plusjakartasans-normal-pale-sky-16px" data-id="I34:5710;135:1823">Core Value</div>
-            </div>
-          </div>
-          <div class="section-5-khaIqL" data-id="I34:5710;135:1815">
-            <div class="frame-178-RRaKT1 frame-178" data-id="I34:5710;135:1816">
-              <div class="products-sBVF0D plusjakartasans-semi-bold-steel-gray-18px" data-id="I34:5710;135:1817">Products</div>
-              <div class="laundry-detergent-sBVF0D laundry-detergent plusjakartasans-normal-pale-sky-16px" data-id="I34:5710;135:1818">Laundry Detergent</div>
-              <div class="hc-beauty-sBVF0D plusjakartasans-normal-pale-sky-16px" data-id="I34:5710;135:1819">HC Beauty</div>
-              <div class="floor-cleaner-sBVF0D plusjakartasans-normal-pale-sky-16px" data-id="I34:5710;135:1832">Floor Cleaner</div>
-              <div class="dishwashing-liquid-sBVF0D plusjakartasans-normal-pale-sky-16px" data-id="I34:5710;135:1834">Dishwashing Liquid</div>
-              <div class="hand-sanitizer-sBVF0D plusjakartasans-normal-pale-sky-16px" data-id="I34:5710;135:1836">Hand Sanitizer</div>
-            </div>
-          </div>
-          <div class="frame-178-khaIqL frame-178" data-id="I34:5710;135:1838">
-            <div class="contact-us-SEXSxH plusjakartasans-semi-bold-steel-gray-18px" data-id="I34:5710;135:1839">Contact us</div>
-            <div class="frame-112-SEXSxH" data-id="I34:5710;135:1846">
-              <div class="frame-114-kfxn1z" data-id="I34:5710;135:1847">
-                <div class="frame-62" data-id="I34:5710;135:1848">
-                  <img class="vuesaxlinearcall-calling-bbiclI" data-id="I34:5710;135:1849" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-call-calling.svg" alt="vuesax/linear/call-calling">
-                </div>
-                <div class="x84-912-488-627-CNEaGC plusjakartasans-normal-pale-sky-16px" data-id="I34:5710;135:1850">(+84) 912 488 627</div>
-              </div>
-              <div class="frame-115-kfxn1z" data-id="I34:5710;135:1851">
-                <div class="frame-62" data-id="I34:5710;135:1852">
-                  <img class="vuesaxlinearsms-tracking-l5pQxu" data-id="I34:5710;135:1853" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-sms-tracking.svg" alt="vuesax/linear/sms-tracking">
-                </div>
-                <div class="hcvietnaminfogmailcom-dHo01e plusjakartasans-normal-pale-sky-16px" data-id="I34:5710;135:1854">hcvietnam.info@gmail.com</div>
-              </div>
-              <div class="frame-116-kfxn1z" data-id="I34:5710;135:1855">
-                <div class="frame-62" data-id="I34:5710;135:1856">
-                  <img class="vuesaxlinearlocation-knr20S" data-id="I34:5710;135:1857" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-location.svg" alt="vuesax/linear/location">
-                </div>
-                <p class="x522-minh-khai-vinh-t-rMqhf4 plusjakartasans-normal-pale-sky-16px" data-id="I34:5710;135:1858">522 Minh Khai, Vinh Tuy Ward, Hai Ba Trung District, Hanoi</p>
-              </div>
-            </div>
-          </div>
+      <style>
+        .navbar h1, .navbar h5, .navbar p, .css-button div, .popup-content h2, .popup-grid p {
+          font-family: 'Plus Jakarta Sans';
+        }
+        .hover-dg {
+          background: linear-gradient(white, white) padding-box, /* Inner background */ linear-gradient(to bottom right, #ff7db5, #66cfff) border-box;
+  /* height: 1px; */
+  width: 170px;
+  border: 1.5px solid transparent;
+  position: absolute;
+  top: 40px;
+  display: none;
+        }
+        .css-button {
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+border-radius: 8px;
+background-color: #fff;
+padding: 12px;
+display: none;
+border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+      </style>
+      <div class="navbar fixed top-[80px] w-full px-20 py-5 flex" id="nav-item" style=" display: none
+      ;">
+      <div class="rectangle-5-7BOs9r" data-id="I34:5711;119:19874" style="height: 210px;"></div>
+        <div class="w-[251px] relative">
+          <h1 class="text-[#1B2533] text-[32px] font-bold">Our 
+            products</h1>
         </div>
-        <div class="frame-179-TyRov3" data-id="I34:5710;135:1882">
-          <p class="x2024-copyright-do-minh-tung-lam-studio-S1hgbm" data-id="I34:5710;135:1652">2024 Copyright Do Minh Tung Lam Studio</p>
-          <img class="frame-180-S1hgbm" data-id="I34:5710;135:1913" src="https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/frame-180.svg" alt="Frame 180">
+        <div class="w-[345px] relative">
+          <h5 class="text-[#1B2533] text-[18px] font-semibold leading-[26px]">Laundry detergent </h5>
+          <p class="text-[16px] leading-[24px] font-normal">HC Euro</p>
+          <p class="text-[16px] leading-[24px] font-normal">HC For</p>
+          <p class="text-[16px] leading-[24px] font-normal">HC Luxury</p>
+          <p class="text-[16px] leading-[24px] font-normal">HC SPJ</p>
+          <p class="text-[16px] leading-[24px] font-normal">HC SPJ Baby</p>
+          <p class="text-[16px] leading-[24px] font-normal">Fabric Softener</p>
         </div>
-      </footer>
+        <div class="w-[345px] relative">
+          <h5 class="text-[#1B2533] text-[18px] font-semibold leading-[26px]">HC Beauty</h5>
+          <p class="text-[16px] leading-[24px] font-normal">Body care</p>
+          <p class="text-[16px] leading-[24px] font-normal">Hair care</p>
+        </div>
+        <div class="w-[345px] relative">
+          <h5 class="text-[#1B2533] text-[18px] font-semibold leading-[26px]">Other products 
+            in the house </h5>
+          <p class="text-[16px] leading-[24px] font-normal">Dishwashing Liquid</p>
+          <p class="text-[16px] leading-[24px] font-normal">Liquid Hand Soap</p>
+          <p class="text-[16px] leading-[24px] font-normal">Floor Cleaner</p>
+        </div>
+      </div>
+      <script>
+        function openNav() {
+          if(document.getElementById('nav-item').style.display == 'flex') {
+            document.getElementById('nav-item').style.display ='none';
+          document.getElementById('hover').style.display ='none';
+          document.getElementById('icon').setAttribute('src', 'https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down.svg')
+          }else {
+            document.getElementById('nav-item').style.display ='flex';
+          document.getElementById('hover').style.display ='block';
+          document.getElementById('icon').setAttribute('src', 'https://res.cloudinary.com/dhdfr7p4h/image/upload/v1728967202/arrow-up_ty6jyh.svg')
+          }
+          
+        }
+        document.body.addEventListener('click', function(event) {
+  const divABC = document.getElementById('nav-item');
+  
+  // Kiểm tra nếu click xảy ra ngoài div 'abc'
+  if (!divABC.contains(event.target) && !document.getElementById('nav').contains(event.target)) {
+    document.getElementById('icon').setAttribute('src', 'https://cdn.animaapp.com/projects/6614e467617c01c94b5d8e0a/releases/6705406d8aa5470c68a24708/img/vuesax-linear-arrow-down.svg')
+    document.getElementById('hover').style.display ='none';
+    
+    divABC.style.display = 'none'
+  }
+});
+
+      </script>
+      <script>
+        function checkAndAddClass(element, path) {
+            // Lấy path hiện tại (phần sau domain)
+            const currentPath = window.location.pathname;
+        
+            // So sánh path
+            if (currentPath === path) {
+                // Thêm class 'text-[#1B2533]' nếu path trùng khớp
+                element.classList.add('text-[#1B2533]');
+            }
+        }
+        checkAndAddClass(document.getElementById('menu-1','/'))
+        checkAndAddClass(document.getElementById('menu-2','/our-product'))
+        checkAndAddClass(document.getElementById('menu-3','/blog'))
+        </script>
+        <style>
+            .expand {
+                height: fit-content;
+            }
+            .ft {
+                height:0;
+                overflow: hidden;
+            }
+        </style>
+        <script>
+            function closeNav(id) {
+                for(let i = 1; i < 4; i++) {
+                    if(i == id) {
+                        document.getElementById('img-'+id).setAttribute('src', 'https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/vuesax-linear-arrow-down-1.svg');
+                        document.getElementById('list-'+id).classList.remove('ft');
+                        document.getElementById('list-'+id).classList.add('expand');
+
+                    }else {
+                        document.getElementById('img-'+i).setAttribute('src', 'https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/vuesax-linear-arrow-right.svg');
+                        document.getElementById('list-'+i).classList.remove('expand');
+                        document.getElementById('list-'+i).classList.add('ft');
+                    }
+                }
+            }
+        </script>
+        <div class="mobileu47menuu47-expand lg:hidden block " data-id="8:1133">
+            <div class="rectangle-4-XEF87x rectangle-4" data-id="8:1134"></div>
+            <div class="background-XEF87x" data-id="8:1135">
+                <div class="ellipse-5-lqAxDY ellipse-5" data-id="I8:1135;38:12807"></div>
+                <div class="ellipse-5-3Xo9jG ellipse-5" data-id="I8:1135;38:12810"></div>
+                <div class="rectangle-4-lqAxDY rectangle-4" data-id="I8:1135;38:12812"></div>
+                <div class="frame-132-lqAxDY" data-id="I8:1135;38:18334">
+                    <div class="ellipse-6-3sCbPY ellipse-6" data-id="I8:1135;38:18313"></div>
+                    <div class="ellipse-6-HrBpLx ellipse-6" data-id="I8:1135;38:18319"></div>
+                    <div class="ellipse-6-Npn2Pz ellipse-6" data-id="I8:1135;38:18326"></div>
+                </div>
+            </div>
+            <div class="header-mobile-XEF87x" data-id="8:1136">
+                <div class="rectangle-5-NfZAQx" data-id="I8:1136;290:8949"></div>
+                <div class="frame-NfZAQx" data-id="I8:1136;290:8950">
+                    <div class="group-e2Z6sj" data-id="I8:1136;290:8951">
+                        <div class="layer-1-LxS2wj" data-id="I8:1136;290:8952">
+                            <div class="group-A1zc6u" data-id="I8:1136;290:8953"><img class="vector-1MXxs5" data-id="I8:1136;290:8954" src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/vector.svg" anima-src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/vector.svg" alt="Vector"><img class="group-1MXxs5" data-id="I8:1136;290:8955" src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/group@2x.png" anima-src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/group@2x.png" alt="Group"><img class="clip-path-group-1MXxs5" data-id="I8:1136;290:8962" src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/clip-path-group@2x.png" anima-src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/clip-path-group@2x.png" alt="Clip path group"><img class="group-sYMoDQ" data-id="I8:1136;290:8988" src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/group-1@2x.png" anima-src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/group-1@2x.png" alt="Group"></div>
+                        </div>
+                    </div>
+                </div><img class="vuesaxlineararrow-down-NfZAQx vuesaxlineararrow-down" data-id="I8:1136;290:8995" src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/vuesax-linear-arrow-down.svg" anima-src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/vuesax-linear-arrow-down.svg" alt="vuesax/linear/arrow-down">
+            </div>
+            <div class="frame-1261154190-XEF87x" data-id="8:1138">
+                <div class="frame-1261154186-27rxIy" data-id="8:1139">
+                    <div class="home plusjakartasans-semi-bold-bright-gray-20px" data-id="I8:1139;415:11680">Home</div>
+                </div>
+                <div class="frame-1261154187-27rxIy" data-id="8:1140">
+                    <div class="home plusjakartasans-semi-bold-bright-gray-20px" data-id="I8:1140;415:11680">About us
+                    </div>
+                </div>
+                <div class="frame-1261154188-27rxIy" data-id="8:1141">
+                    <div class="home plusjakartasans-semi-bold-bright-gray-20px" data-id="I8:1141;415:11680">Our
+                        products</div><img class="vuesaxlineararrow-down-Mug6Sl vuesaxlineararrow-down" data-id="I8:1141;415:11681" src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/vuesax-linear-arrow-down-1.svg" anima-src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/vuesax-linear-arrow-down-1.svg" alt="vuesax/linear/arrow-down">
+                </div>
+                <div class="frame-1261154192-27rxIy frame-1261154192" data-id="8:1142">
+                    <div class="frame-1261154191-aqwfCJ" data-id="8:1143" onClick="closeNav(1)">
+                        <div class="laundry-detergent-HB9zxj plusjakartasans-semi-bold-bright-gray-18px" data-id="8:1144">Laundry detergent</div>
+                        <img class="vuesaxlineararrow-down-HB9zxj vuesaxlineararrow-down" data-id="8:1145" src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/vuesax-linear-arrow-right.svg" id="img-1" anima-src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/vuesax-linear-arrow-down-1.svg" alt="vuesax/linear/arrow-down">
+                    </div>
+                    <div class="frame-178-aqwfCJ ft" id="list-1" data-id="8:1146">
+                        <div class="hc-euro-KcGogJ plusjakartasans-normal-bright-gray-16px" data-id="8:1147">HC Euro
+                        </div>
+                        <div class="hc-for-KcGogJ plusjakartasans-normal-bright-gray-16px" data-id="8:1148">HC For</div>
+                        <div class="hc-luxury-KcGogJ plusjakartasans-normal-bright-gray-16px" data-id="8:1149">HC Luxury
+                        </div>
+                        <div class="hc-spj-KcGogJ plusjakartasans-normal-bright-gray-16px" data-id="8:1150">HC SPJ</div>
+                        <div class="hc-spj-baby-KcGogJ plusjakartasans-normal-bright-gray-16px" data-id="8:1151">HC SPJ
+                            Baby</div>
+                        <div class="fabric-softener-KcGogJ plusjakartasans-normal-bright-gray-16px" data-id="8:1152">
+                            Fabric Softener</div>
+                    </div>
+                    <div class="frame-1261154192-aqwfCJ frame-1261154192" data-id="8:1153" onclick="closeNav(2)">
+                        <div class="hc-beauty-4psv0Y plusjakartasans-semi-bold-bright-gray-18px" data-id="8:1154">HC
+                            Beauty</div><img class="vuesaxlineararrow-right" data-id="8:1155" id="img-2" src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/vuesax-linear-arrow-right.svg" anima-src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/vuesax-linear-arrow-right.svg" alt="vuesax/linear/arrow-right">
+                    </div>
+                    <div class="frame-178-aqwfCJ ft" id="list-2" data-id="8:1146">
+                        <div class="hc-euro-KcGogJ plusjakartasans-normal-bright-gray-16px" data-id="8:1147">HC Euro
+                        </div>
+                        <div class="hc-for-KcGogJ plusjakartasans-normal-bright-gray-16px" data-id="8:1148">HC For</div>
+                        
+                    </div>
+                    <div class="frame-1261154192-aqwfCJ frame-1261154192" onClick="closeNav(3)" data-id="8:1156">
+                        <p class="other-products-in-the-house-roTcDE plusjakartasans-semi-bold-bright-gray-18px" data-id="8:1157">Other products in the house</p>
+                        <img class="vuesaxlineararrow-right" data-id="8:1158" id="img-3" src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/vuesax-linear-arrow-right.svg" anima-src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/vuesax-linear-arrow-right.svg" alt="vuesax/linear/arrow-right">
+                    </div>
+                    <div class="frame-178-aqwfCJ ft" data-id="8:1146" id="list-3">
+                        <div class="hc-euro-KcGogJ plusjakartasans-normal-bright-gray-16px" data-id="8:1147">HC Euro
+                        </div>
+                        <div class="hc-for-KcGogJ plusjakartasans-normal-bright-gray-16px" data-id="8:1148">HC For</div>
+                        
+                    </div>
+                </div>
+                <div class="frame-1261154189-27rxIy" data-id="8:1159">
+                    <div class="home plusjakartasans-semi-bold-bright-gray-20px" data-id="I8:1159;415:11680">Blog</div>
+                </div>
+            </div>
+            <div class="language-XEF87x" data-id="8:1160">
+                <div class="dropdown-button-basic-22RyLj" data-id="I8:1160;144:1315"><img class="vuesaxlineararrow-down-b5Thj2 vuesaxlineararrow-down" data-id="I8:1160;144:1315;96:757" src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/vuesax-linear-arrow-down-3.svg" anima-src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/vuesax-linear-arrow-down-3.svg" alt="vuesax/linear/arrow-down">
+                    <div class="content-b5Thj2" data-id="I8:1160;144:1315;88:17878">
+                        <div class="dropdown-sm3k0y" data-id="I8:1160;144:1315;88:17879">VN</div><img class="vuesaxlineararrow-down-sm3k0y vuesaxlineararrow-down" data-id="I8:1160;144:1315;88:17880" src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/vuesax-linear-arrow-down-4.svg" anima-src="https://cdn.animaapp.com/projects/65bb093655cc34dc9ac154af/releases/6716008fd35889107e5a9f9a/img/vuesax-linear-arrow-down-4.svg" alt="vuesax/linear/arrow-down">
+                    </div>
+                </div>
+            </div>
+            <div class="button-XEF87x" data-id="8:1161">
+                <div class="base-button-eYYPr7" data-id="I8:1161;12:2107">
+                    <div class="text-wUcM35" data-id="I8:1161;12:2107;12:1939">Liên hệ</div>
+                </div>
+            </div>
+        </div>
 </body>
 </html>

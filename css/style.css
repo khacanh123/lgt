@@ -174,11 +174,6 @@ input:focus {
   pointer-events: auto;
 }
 
-.hidden,
-.hidden * {
-  pointer-events: none;
-  visibility: hidden;
-}
 
 .smart-layers-pointers,
 .smart-layers-pointers * {
