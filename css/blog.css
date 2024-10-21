@@ -440,12 +440,17 @@ input:focus {
 }
 
 .list-blog .base-button-I10BSE {
-    background-color: var(--steel-gray);
+    background: var(--steel-gray);
     border-radius: 96px;
     padding: 8px 12px;
 }
 .base-button:hover {
     background: unset;
+}
+.base-button-I10BSE:hover {
+    background: linear-gradient(to right, #1578B1, #EA3E94) !important; 
+    color: white;
+    cursor: pointer;
 }
 .list-blog .text-GqmgB2 {
     color: #f6f6f7;
